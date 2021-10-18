@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "first test", "first test\first test.csproj", "{A8F706B1-36C5-452C-938D-75A4CB14B805}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26AD4841-CC32-4591-9535-22EA767F674B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "delegete,events", "delegete,events\delegete,events.csproj", "{4C152109-3B11-4E24-B309-780385568412}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8F706B1-36C5-452C-938D-75A4CB14B805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8F706B1-36C5-452C-938D-75A4CB14B805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8F706B1-36C5-452C-938D-75A4CB14B805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8F706B1-36C5-452C-938D-75A4CB14B805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C152109-3B11-4E24-B309-780385568412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C152109-3B11-4E24-B309-780385568412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C152109-3B11-4E24-B309-780385568412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C152109-3B11-4E24-B309-780385568412}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B0BF96B-25A6-4E7B-A043-84E9F7725E39}
+	EndGlobalSection
+EndGlobal
