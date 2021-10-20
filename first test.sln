@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "delegete,events", "delegete,events\delegete,events.csproj", "{4C152109-3B11-4E24-B309-780385568412}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvenetWithWindowsForm", "EvenetWithWindowsForm\EvenetWithWindowsForm.csproj", "{39E107D7-D4C0-4D65-9F24-4AD049DA19FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Attributes and Reflection", "Attributes and Reflection\Attributes and Reflection.csproj", "{C4A7BB26-CCF4-45CE-8A68-286DE024D5CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{4C152109-3B11-4E24-B309-780385568412}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C152109-3B11-4E24-B309-780385568412}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C152109-3B11-4E24-B309-780385568412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39E107D7-D4C0-4D65-9F24-4AD049DA19FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39E107D7-D4C0-4D65-9F24-4AD049DA19FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39E107D7-D4C0-4D65-9F24-4AD049DA19FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39E107D7-D4C0-4D65-9F24-4AD049DA19FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4A7BB26-CCF4-45CE-8A68-286DE024D5CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4A7BB26-CCF4-45CE-8A68-286DE024D5CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4A7BB26-CCF4-45CE-8A68-286DE024D5CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4A7BB26-CCF4-45CE-8A68-286DE024D5CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

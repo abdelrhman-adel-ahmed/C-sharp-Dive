@@ -1,5 +1,6 @@
 ﻿using System;
 using delegete_events_weather;
+using delegete_events.Delegate_Event;
 
 
 namespace delegete_events
@@ -49,16 +50,31 @@ namespace delegete_events
 
             //Console.WriteLine("---------------EventHandler-------------");
             //EventHandler_and_sender.run();
-            //EventHandler_and_sender2.run();
+            // EventHandler_and_sender2.run();
 
-            Console.WriteLine("---------------student course observer-------------");
+            //Console.WriteLine("---------------student course observer-------------");
             //StudentCourse_observer.run();
-            Weather_News_observer.run();
+            //Weather_News_observer.run();
+            StudentCourse_observer2.run();
 
+            //Console.WriteLine("---------------Viedo Encoder Event Delegate-------------");
+            //VideoEncoder.run();
 
+            //test t = new test();
+            //t.mm += sub;
+            //t.mm(1);
         }
 
-
+        class test
+        {
+            public Action<int> mm;
+            
+          
+        }
+        static void sub(int x)
+        {
+            Console.WriteLine("ahmed");
+        }
 
 
     }

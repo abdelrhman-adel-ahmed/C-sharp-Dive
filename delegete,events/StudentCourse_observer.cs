@@ -76,7 +76,8 @@ namespace delegete_events
             ObserverWitingList.Add(b);
 
         }
-      
+
+        //problem need to be fixed: when same user Unsubscribe twice 
         public void Unsubscribe(IObserver b)
         {
             ObserverList.Remove(b);

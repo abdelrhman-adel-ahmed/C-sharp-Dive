@@ -72,9 +72,13 @@ namespace delegete_events_weather
 
             NewsAgency n1 = new NewsAgency("bbc");
             NewsAgency n2 = new NewsAgency("nbc");
+            NewsAgency n3 = new NewsAgency("abc");
+
             w.Subscribe(n1);
             w.Subscribe(n2);
+            w.Subscribe(n3);
             w.Temperature = 32;
+            
         }
     }
 }

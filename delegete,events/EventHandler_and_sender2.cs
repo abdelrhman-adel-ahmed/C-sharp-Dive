@@ -18,7 +18,7 @@ namespace delegete_events
         {
             CurrentCowState = CuurentState;
         }
-    }
+    } 
     class cow2
     {
         public EventHandler<CowTippedEventArgs> cow_event;
