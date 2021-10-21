@@ -52,14 +52,13 @@ namespace Reflections
                     if (a is TestAttribute)
                     {
                         Console.WriteLine("running test suite " + e.Name);
-                        foreach (var m in e.GetMethods())
+                        foreach (MethodInfo m in e.GetMethods())
                         {
                             foreach (Attribute z in m.GetCustomAttributes(false))
                             if(z is TestMethodAttribue)
                             {
                                 object testsuiteinstance = Activator.CreateInstance(e);
-                                MethodInfo info=m;
-                                info.Invoke(testsuiteinstance, new object[0]);
+                                m.Invoke(testsuiteinstance, new object[0]);
                                     
                             }
                         }

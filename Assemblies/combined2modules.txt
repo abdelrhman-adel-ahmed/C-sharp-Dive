@@ -1,0 +1,73 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.8.3928.0
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.module extern MyFirstModule.netmodule
+.module extern MySecondModule.netmodule
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly Program
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .hash algorithm 0x00008004
+  .ver 0:0:0:0
+}
+.file MyFirstModule.netmodule
+    .hash = (72 99 88 94 C4 9E A0 AF A2 17 4E 32 68 4C 5B 77   // r.........N2hL[w
+             7B 20 EC 86 )                                     // { ..
+.file MySecondModule.netmodule
+    .hash = (08 0A BA 5C 4B 0D 05 4F 06 7B 40 75 A2 C2 58 26   // ...\K..O.{@u..X&
+             10 36 D6 02 )                                     // .6..
+.module Program.exe
+// MVID: {91C88BE7-D464-487E-8069-B86198C927BA}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000001    //  ILONLY
+// Image base: 0x045F0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit Assemblies.Program
+       extends [mscorlib]System.Object
+{
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       14 (0xe)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  call       void [.module MyFirstModule.netmodule]Assemblies.MyFirstModule::Hello()
+    IL_0006:  nop
+    IL_0007:  call       void [.module MySecondModule.netmodule]Assemblies.MySecondModule::Hello()
+    IL_000c:  nop
+    IL_000d:  ret
+  } // end of method Program::Main
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+} // end of class Assemblies.Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************
+// WARNING: Created Win32 resource file combined2modules.res
