@@ -60,7 +60,7 @@ namespace delegete_events_weather
         }
         public void Update(float temp)
         {
-                Console.WriteLine($"news agency {AgencyName} reporting {temp} degree");
+                Console.WriteLine("news agency "+ AgencyName + "reporting " +temp+ " degree");
         }
     }
     class Weather_News_observer

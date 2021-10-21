@@ -4,7 +4,7 @@ using System.Text;
 
 namespace delegete_events.Delegate_Event
 {
-    class StudentCourse_observer2
+    public class StudentCourse_observer2
     {
         public static void run()
         {
@@ -84,7 +84,7 @@ namespace delegete_events.Delegate_Event
             public void NotifyMe(object sender,EventArgs args)
             {
                 course.NotifyWaiting -= NotifyMe;
-                Console.WriteLine($"{Name} had been added to the course {course.course_name} finally");
+                Console.WriteLine(Name +" had been added to the course " +course.course_name +" finally");
             }
             
         }
