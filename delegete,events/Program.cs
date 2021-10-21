@@ -63,6 +63,7 @@ namespace delegete_events
             //test t = new test();
             //t.mm += sub;
             //t.mm(1);
+            Console.ReadLine();
         }
 
         class test

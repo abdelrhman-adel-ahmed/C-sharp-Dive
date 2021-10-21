@@ -1,4 +1,5 @@
 ﻿using System;
+using LibAssembly; //assembly that we add to our dependencies
 
 namespace Assemblies
 {
@@ -6,8 +7,9 @@ namespace Assemblies
     {
         static void Main(string[] args)
         {
-            MyFirstModule.Hello();
-            MySecondModule.Hello();
+            Console.WriteLine(Sample.Print());//function in the libassembly dll
+            Console.WriteLine();
+            Console.ReadLine();
         }
     }
 }

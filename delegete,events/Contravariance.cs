@@ -17,10 +17,10 @@ namespace delegete_events
 
         static void run()
         {
-            mydelegate d1 = TakeDrive;
-            d1(new Drived());
-            d1(new Base());
-            mydelegate d2 = TakeBase;
+            //mydelegate d1 = TakeDrive;
+            //d1(new Drived());
+            //d1(new Base());
+            //mydelegate d2 = TakeBase;
         }
     }
 }
