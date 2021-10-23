@@ -7,10 +7,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{88AC759C-FAEA-4AB8-B0EE-A9FEC92C002F}</ProjectGuid>
+    <ProjectGuid>{1A67EB29-0011-4AAF-8331-CEB4F5C1AA6D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_.net_assimbles</RootNamespace>
-    <AssemblyName>_.net assimbles</AssemblyName>
+    <RootNamespace>LINQ</RootNamespace>
+    <AssemblyName>LINQ</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
