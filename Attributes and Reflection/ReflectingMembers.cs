@@ -18,13 +18,27 @@ namespace Attributes_and_Reflection
             {
                 Console.WriteLine(member);
             }
+            //why binding flag construction made this way ?
             MemberInfo[] members1 = typeof(Emp).GetMembers(BindingFlags.Instance | BindingFlags.NonPublic);
             Console.WriteLine("----------private and instance members of emp-----------");
             foreach (var member in members1)
             {
                 Console.WriteLine(member);
             }
+            Console.WriteLine("----------Field info-----------");
 
+            FieldInfo[] fields = typeof(Emp).GetFields(BindingFlags.NonPublic |BindingFlags.Instance);
+            foreach (var field in fields)
+            {
+                Console.WriteLine(field);
+            }
+            Console.WriteLine("----------method info-----------");
+
+            MemberInfo[] methods = typeof(Emp).GetMethods();
+            foreach (var method in methods)
+            {
+                  Console.WriteLine(method);
+            }
         }
 
 

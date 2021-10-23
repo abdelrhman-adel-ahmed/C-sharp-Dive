@@ -25,10 +25,12 @@ namespace Attributes_and_Reflection
             //Console.WriteLine("----------------instantiatingTypes----------------");
             //instantiatingTypes.run();
 
-            Console.WriteLine("----------------ReflectingMembers----------------");
-            ReflectingMembers.run();
+            //Console.WriteLine("----------------ReflectingMembers----------------");
+            //ReflectingMembers.run();
 
-
+            Console.WriteLine("----------------InvokeUsingReflection----------------");
+            InvokeUsingReflection.run();
+            
 
         }
     }
