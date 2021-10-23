@@ -1,0 +1,77 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.8.3928.0
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly StrongNameLibAssembly
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .publickey = (00 24 00 00 04 80 00 00 94 00 00 00 06 02 00 00   // .$..............
+                00 24 00 00 52 53 41 31 00 04 00 00 01 00 01 00   // .$..RSA1........
+                65 34 18 18 22 C3 2A 19 0B ED 1A 82 39 51 BA 11   // e4..".*.....9Q..
+                A8 98 C6 FB D8 F8 25 41 BB FB F1 D2 06 0A A8 A9   // ......%A........
+                76 15 C5 A3 13 B2 13 49 D7 D0 BB CA CF E9 F5 FD   // v......I........
+                7B 87 5D 64 7D DD A4 F0 FC 08 32 4D D7 27 6C 41   // {.]d}.....2M.'lA
+                54 C2 3A C4 FF C4 ED 03 65 E1 33 65 40 A3 56 82   // T.:.....e.3e@.V.
+                57 D3 FF 68 FC 4F D9 FD 3A ED 81 D7 43 12 1B 5E   // W..h.O..:...C..^
+                AB F2 BA 3B 96 B6 D2 34 3A DB A3 1F 68 57 CA 48   // ...;...4:...hW.H
+                9A 8D 32 8E F7 ED F5 CD 8F 31 CB 62 80 C4 D0 DB ) // ..2......1.b....
+  .hash algorithm 0x00008004
+  .ver 0:0:0:0
+}
+.module StrongNameLibAssembly.dll
+// MVID: {C2464EB4-5F97-44A7-9821-BE1F53051751}
+.imagebase 0x10000000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000009    //  ILONLY
+// Image base: 0x059C0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class public auto ansi beforefieldinit LibAssembly.Sample
+       extends [mscorlib]System.Object
+{
+  .method public hidebysig static string 
+          Print() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (string V_0)
+    IL_0000:  nop
+    IL_0001:  ldstr      "hello from the other side"
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Sample::Print
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Sample::.ctor
+
+} // end of class LibAssembly.Sample
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************
+// WARNING: Created Win32 resource file StrongNameLibAssembly.res

@@ -5,9 +5,9 @@
     {
         static void Main(string[] args)
         {
-            FirstModule.Print();
-            SecondModule.Print();
-            Console.ReadLine();
+            //FirstModule.Print();
+            //SecondModule.Print();
+            //Console.ReadLine();
 
         }
     }

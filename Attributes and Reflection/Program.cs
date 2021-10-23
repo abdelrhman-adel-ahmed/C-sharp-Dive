@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Remoting;
 using Reflections;
+
 namespace Attributes_and_Reflection
 {
     class Program
@@ -11,15 +14,25 @@ namespace Attributes_and_Reflection
             //Console.WriteLine("----------------Reflection----------------");
             //Reflection.run();
             //Console.WriteLine("----------------Attributes----------------");
-            Attributes.run();
+            //Attributes.run();
 
             //string x="ahmed";
             //Type t = typeof(String); //return the type of the object that get passed
 
-            Console.WriteLine("----------------Attributes Example----------------");
-            attribute_example.run();
+            //Console.WriteLine("----------------Attributes Example----------------");
+            //attribute_example.run();
+
+            //Console.WriteLine("----------------instantiatingTypes----------------");
+            //instantiatingTypes.run();
+
+            Console.WriteLine("----------------ReflectingMembers----------------");
+            ReflectingMembers.run();
+
 
 
         }
     }
+
+   
+   
 }

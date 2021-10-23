@@ -1,0 +1,16 @@
+/compile to dll
+csc /t:library /out:name.dll   inputfile(code) 
+csc /t:library /out:name.dll keyfile:**.snk   inputfile(code) 
+
+/compile to module 
+csc /t:module /out:name.netmodule inputfile(code) 
+
+
+/add refrence
+csc /r:yourfile /r: youfiels inputfile(that will linke all of those) 
+
+/generate key pair
+sn-k **.snk
+
+/put in gac
+gacutil -i yourdll
