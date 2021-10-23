@@ -33,15 +33,9 @@ namespace Attributes_and_Reflection
             //Console.WriteLine("----------------Attributes Example----------------");
             //attribute_example.run();
 
-            foreach (var item in Assembly.GetExecutingAssembly().GetTypes())
-            {
-                foreach (var cus in item.GetCustomAttributes())
-                {
-                    if (item.Name == "MyTestSuite")
-                        Console.WriteLine($"class {item} arrtr {cus}");
-                    
-                }
-            }
+            Console.WriteLine("----------------PlayerListAttributConstain----------------");
+            PlayerListAttributConstain.run();
+
         }
 
        
