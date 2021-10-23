@@ -10,7 +10,7 @@ namespace Reflections
     class TestMethodAttribue : Attribute { }
 
 
-    [TestAttribute] //attribute word not necessary compiler will add 
+    [TestAttribute] //attribute word not necessary compiler will add it
     class MyTestSuite 
     {
         public void helper()
@@ -32,7 +32,7 @@ namespace Reflections
     }
     
 
-    class Reflection
+    class ReflectionAttributeExample
     {
         /*we will use those attribute that is just sit in top of our functions its just meta data 
          * that get created that we can access later to decide if we want to do somthing 
