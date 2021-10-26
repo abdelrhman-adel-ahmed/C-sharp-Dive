@@ -28,7 +28,8 @@ namespace LINQ
 			//if i want to combine the two the date part and the time part we can do this 
 			DateTime combine = Combine(datePart, timePart);
 			Console.WriteLine($"combined date and time {combine}");
-			//if we want to do this 
+			//if we want to do this ,to access the function on the type (datetime) which is value type ,
+			//we need extension method
 			DateTime combined2 = datePart.Combine(timePart);
 
 		}
