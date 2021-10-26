@@ -14,7 +14,7 @@ namespace LINQ
 			ExtensionMethods.run();
 			Console.ReadLine();
 			
-			Console.WriteLine("-------------------how Extension methods-------------------");
+			Console.WriteLine("-------------------how Extension methods------------------");
 		}
 	}
 }
