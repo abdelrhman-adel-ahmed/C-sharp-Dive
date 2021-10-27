@@ -12,9 +12,12 @@ namespace LINQ
 		{
 			Console.WriteLine("-------------------Extension methods-------------------");
 			ExtensionMethods.run();
+
+		
+
 			Console.ReadLine();
-			
-			Console.WriteLine("-------------------how Extension methods-------------------");
+
+
 		}
 	}
 }
