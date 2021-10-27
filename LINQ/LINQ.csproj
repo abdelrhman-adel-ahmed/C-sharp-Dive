@@ -50,9 +50,12 @@
   <ItemGroup>
     <Compile Include="ExtensionMethodExample.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="LINQ Degenerate Select Clauses.cs" />
+    <Compile Include="Linq1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThisInCsharp.cs" />
+    <Compile Include="Writing Your Own LINQ Extension Method.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

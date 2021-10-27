@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EvenetWithWindowsForm\EvenetWithWindowsForm.csproj" />
     <ProjectReference Include="..\LibAssembly\LibAssembly.csproj" />
   </ItemGroup>
 

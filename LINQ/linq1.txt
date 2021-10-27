@@ -1,0 +1,363 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.8.3928.0
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System.Core
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly Linq1
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .hash algorithm 0x00008004
+  .ver 0:0:0:0
+}
+.module Linq1.dll
+// MVID: {421CF777-4C86-4D00-816F-2A01D2A6601D}
+.imagebase 0x10000000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000001    //  ILONLY
+// Image base: 0x05170000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit LINQ.Linq1
+       extends [mscorlib]System.Object
+{
+  .field private static class [mscorlib]System.Func`2<int32,bool> 'CS$<>9__CachedAnonymousMethodDelegate7'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,bool> 'CS$<>9__CachedAnonymousMethodDelegate8'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,int32> 'CS$<>9__CachedAnonymousMethodDelegate9'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,bool> 'CS$<>9__CachedAnonymousMethodDelegatea'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,int32> 'CS$<>9__CachedAnonymousMethodDelegateb'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,bool> 'CS$<>9__CachedAnonymousMethodDelegatec'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Func`2<int32,int32> 'CS$<>9__CachedAnonymousMethodDelegated'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method public hidebysig static void  run() cil managed
+  {
+    // Code size       356 (0x164)
+    .maxstack  3
+    .locals init (class [mscorlib]System.Collections.Generic.List`1<int32> V_0,
+             int32[] V_1,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> V_2,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> V_3,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> V_4,
+             class [mscorlib]System.Collections.Generic.IEnumerable`1<int32> V_5,
+             int32 V_6,
+             class [mscorlib]System.Collections.Generic.IEnumerator`1<int32> V_7,
+             bool V_8)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<int32>::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldc.i4.s   9
+    IL_0009:  newarr     [mscorlib]System.Int32
+    IL_000e:  dup
+    IL_000f:  ldtoken    field valuetype '<PrivateImplementationDetails>{421CF777-4C86-4D00-816F-2A01D2A6601D}'/'__StaticArrayInitTypeSize=36' '<PrivateImplementationDetails>{421CF777-4C86-4D00-816F-2A01D2A6601D}'::'$$method0x6000001-1'
+    IL_0014:  call       void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(class [mscorlib]System.Array,
+                                                                                                        valuetype [mscorlib]System.RuntimeFieldHandle)
+    IL_0019:  stloc.1
+    IL_001a:  ldloc.1
+    IL_001b:  ldsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_0020:  brtrue.s   IL_0035
+
+    IL_0022:  ldnull
+    IL_0023:  ldftn      bool LINQ.Linq1::'<run>b__0'(int32)
+    IL_0029:  newobj     instance void class [mscorlib]System.Func`2<int32,bool>::.ctor(object,
+                                                                                        native int)
+    IL_002e:  stsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_0033:  br.s       IL_0035
+
+    IL_0035:  ldsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegate7'
+    IL_003a:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Where<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                         class [mscorlib]System.Func`2<!!0,bool>)
+    IL_003f:  stloc.2
+    IL_0040:  ldloc.1
+    IL_0041:  ldsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegate8'
+    IL_0046:  brtrue.s   IL_005b
+
+    IL_0048:  ldnull
+    IL_0049:  ldftn      bool LINQ.Linq1::'<run>b__1'(int32)
+    IL_004f:  newobj     instance void class [mscorlib]System.Func`2<int32,bool>::.ctor(object,
+                                                                                        native int)
+    IL_0054:  stsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegate8'
+    IL_0059:  br.s       IL_005b
+
+    IL_005b:  ldsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegate8'
+    IL_0060:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Where<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                         class [mscorlib]System.Func`2<!!0,bool>)
+    IL_0065:  ldsfld     class [mscorlib]System.Func`2<int32,int32> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegate9'
+    IL_006a:  brtrue.s   IL_007f
+
+    IL_006c:  ldnull
+    IL_006d:  ldftn      int32 LINQ.Linq1::'<run>b__2'(int32)
+    IL_0073:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_0078:  stsfld     class [mscorlib]System.Func`2<int32,int32> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegate9'
+    IL_007d:  br.s       IL_007f
+
+    IL_007f:  ldsfld     class [mscorlib]System.Func`2<int32,int32> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegate9'
+    IL_0084:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<int32,int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_0089:  stloc.3
+    IL_008a:  ldloc.1
+    IL_008b:  ldsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegatea'
+    IL_0090:  brtrue.s   IL_00a5
+
+    IL_0092:  ldnull
+    IL_0093:  ldftn      bool LINQ.Linq1::'<run>b__3'(int32)
+    IL_0099:  newobj     instance void class [mscorlib]System.Func`2<int32,bool>::.ctor(object,
+                                                                                        native int)
+    IL_009e:  stsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegatea'
+    IL_00a3:  br.s       IL_00a5
+
+    IL_00a5:  ldsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegatea'
+    IL_00aa:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Where<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                         class [mscorlib]System.Func`2<!!0,bool>)
+    IL_00af:  ldsfld     class [mscorlib]System.Func`2<int32,int32> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegateb'
+    IL_00b4:  brtrue.s   IL_00c9
+
+    IL_00b6:  ldnull
+    IL_00b7:  ldftn      int32 LINQ.Linq1::'<run>b__4'(int32)
+    IL_00bd:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_00c2:  stsfld     class [mscorlib]System.Func`2<int32,int32> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegateb'
+    IL_00c7:  br.s       IL_00c9
+
+    IL_00c9:  ldsfld     class [mscorlib]System.Func`2<int32,int32> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegateb'
+    IL_00ce:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<int32,int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_00d3:  stloc.s    V_4
+    IL_00d5:  ldloc.1
+    IL_00d6:  ldsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegatec'
+    IL_00db:  brtrue.s   IL_00f0
+
+    IL_00dd:  ldnull
+    IL_00de:  ldftn      bool LINQ.Linq1::'<run>b__5'(int32)
+    IL_00e4:  newobj     instance void class [mscorlib]System.Func`2<int32,bool>::.ctor(object,
+                                                                                        native int)
+    IL_00e9:  stsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegatec'
+    IL_00ee:  br.s       IL_00f0
+
+    IL_00f0:  ldsfld     class [mscorlib]System.Func`2<int32,bool> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegatec'
+    IL_00f5:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0> [System.Core]System.Linq.Enumerable::Where<int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                         class [mscorlib]System.Func`2<!!0,bool>)
+    IL_00fa:  ldsfld     class [mscorlib]System.Func`2<int32,int32> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_00ff:  brtrue.s   IL_0114
+
+    IL_0101:  ldnull
+    IL_0102:  ldftn      int32 LINQ.Linq1::'<run>b__6'(int32)
+    IL_0108:  newobj     instance void class [mscorlib]System.Func`2<int32,int32>::.ctor(object,
+                                                                                         native int)
+    IL_010d:  stsfld     class [mscorlib]System.Func`2<int32,int32> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_0112:  br.s       IL_0114
+
+    IL_0114:  ldsfld     class [mscorlib]System.Func`2<int32,int32> LINQ.Linq1::'CS$<>9__CachedAnonymousMethodDelegated'
+    IL_0119:  call       class [mscorlib]System.Collections.Generic.IEnumerable`1<!!1> [System.Core]System.Linq.Enumerable::Select<int32,int32>(class [mscorlib]System.Collections.Generic.IEnumerable`1<!!0>,
+                                                                                                                                                class [mscorlib]System.Func`2<!!0,!!1>)
+    IL_011e:  stloc.s    V_5
+    IL_0120:  nop
+    IL_0121:  ldloc.s    V_5
+    IL_0123:  callvirt   instance class [mscorlib]System.Collections.Generic.IEnumerator`1<!0> class [mscorlib]System.Collections.Generic.IEnumerable`1<int32>::GetEnumerator()
+    IL_0128:  stloc.s    V_7
+    .try
+    {
+      IL_012a:  br.s       IL_013f
+
+      IL_012c:  ldloc.s    V_7
+      IL_012e:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+      IL_0133:  stloc.s    V_6
+      IL_0135:  nop
+      IL_0136:  ldloc.s    V_6
+      IL_0138:  call       void [mscorlib]System.Console::WriteLine(int32)
+      IL_013d:  nop
+      IL_013e:  nop
+      IL_013f:  ldloc.s    V_7
+      IL_0141:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0146:  stloc.s    V_8
+      IL_0148:  ldloc.s    V_8
+      IL_014a:  brtrue.s   IL_012c
+
+      IL_014c:  leave.s    IL_0162
+
+    }  // end .try
+    finally
+    {
+      IL_014e:  ldloc.s    V_7
+      IL_0150:  ldnull
+      IL_0151:  ceq
+      IL_0153:  stloc.s    V_8
+      IL_0155:  ldloc.s    V_8
+      IL_0157:  brtrue.s   IL_0161
+
+      IL_0159:  ldloc.s    V_7
+      IL_015b:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_0160:  nop
+      IL_0161:  endfinally
+    }  // end handler
+    IL_0162:  nop
+    IL_0163:  ret
+  } // end of method Linq1::run
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Linq1::.ctor
+
+  .method private hidebysig static bool  '<run>b__0'(int32 number) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  2
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.3
+    IL_0002:  cgt
+    IL_0004:  stloc.0
+    IL_0005:  br.s       IL_0007
+
+    IL_0007:  ldloc.0
+    IL_0008:  ret
+  } // end of method Linq1::'<run>b__0'
+
+  .method private hidebysig static bool  '<run>b__1'(int32 number) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  2
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.3
+    IL_0002:  cgt
+    IL_0004:  stloc.0
+    IL_0005:  br.s       IL_0007
+
+    IL_0007:  ldloc.0
+    IL_0008:  ret
+  } // end of method Linq1::'<run>b__1'
+
+  .method private hidebysig static int32 
+          '<run>b__2'(int32 number) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       6 (0x6)
+    .maxstack  1
+    .locals init (int32 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  stloc.0
+    IL_0002:  br.s       IL_0004
+
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+  } // end of method Linq1::'<run>b__2'
+
+  .method private hidebysig static bool  '<run>b__3'(int32 number) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  2
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.3
+    IL_0002:  cgt
+    IL_0004:  stloc.0
+    IL_0005:  br.s       IL_0007
+
+    IL_0007:  ldloc.0
+    IL_0008:  ret
+  } // end of method Linq1::'<run>b__3'
+
+  .method private hidebysig static int32 
+          '<run>b__4'(int32 number) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       6 (0x6)
+    .maxstack  1
+    .locals init (int32 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  stloc.0
+    IL_0002:  br.s       IL_0004
+
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+  } // end of method Linq1::'<run>b__4'
+
+  .method private hidebysig static bool  '<run>b__5'(int32 number) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       9 (0x9)
+    .maxstack  2
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.3
+    IL_0002:  cgt
+    IL_0004:  stloc.0
+    IL_0005:  br.s       IL_0007
+
+    IL_0007:  ldloc.0
+    IL_0008:  ret
+  } // end of method Linq1::'<run>b__5'
+
+  .method private hidebysig static int32 
+          '<run>b__6'(int32 number) cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       6 (0x6)
+    .maxstack  1
+    .locals init (int32 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  stloc.0
+    IL_0002:  br.s       IL_0004
+
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+  } // end of method Linq1::'<run>b__6'
+
+} // end of class LINQ.Linq1
+
+.class private auto ansi '<PrivateImplementationDetails>{421CF777-4C86-4D00-816F-2A01D2A6601D}'
+       extends [mscorlib]System.Object
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .class explicit ansi sealed nested private '__StaticArrayInitTypeSize=36'
+         extends [mscorlib]System.ValueType
+  {
+    .pack 1
+    .size 36
+  } // end of class '__StaticArrayInitTypeSize=36'
+
+  .field static assembly valuetype '<PrivateImplementationDetails>{421CF777-4C86-4D00-816F-2A01D2A6601D}'/'__StaticArrayInitTypeSize=36' '$$method0x6000001-1' at I_000020F0
+} // end of class '<PrivateImplementationDetails>{421CF777-4C86-4D00-816F-2A01D2A6601D}'
+
+
+// =============================================================
+
+.data cil I_000020F0 = bytearray (
+                 01 00 00 00 02 00 00 00 03 00 00 00 04 00 00 00
+                 15 00 00 00 03 00 00 00 39 01 00 00 43 00 00 00  // ........9...C...
+                 08 00 00 00) 
+// *********** DISASSEMBLY COMPLETE ***********************
+// WARNING: Created Win32 resource file linq1.res
