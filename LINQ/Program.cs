@@ -18,6 +18,8 @@ namespace LINQ
 			Console.ReadLine();
 
 
+			
+			Console.WriteLine("-------------------how Extension methods------------------");
 		}
 	}
 }
