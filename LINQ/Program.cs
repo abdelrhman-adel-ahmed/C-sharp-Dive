@@ -13,13 +13,16 @@ namespace LINQ
 			Console.WriteLine("-------------------Extension methods-------------------");
 			ExtensionMethods.run();
 
-		
+
+			Console.WriteLine("-------------------how Extension methods------------------");
+			ThisInCsharp.run();
+
+
+			Console.WriteLine("-------------------Extension methods Example------------------");
+			ExtensionMethodExample.run();
+
 
 			Console.ReadLine();
-
-
-			
-			Console.WriteLine("-------------------how Extension methods------------------");
 		}
 	}
 }

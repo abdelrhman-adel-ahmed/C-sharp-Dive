@@ -13,4 +13,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Attributes and Reflection\Attributes and Reflection.csproj" />
+  </ItemGroup>
+
 </Project>
