@@ -48,8 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compiler Translation of a Larger Example.cs" />
     <Compile Include="ExtensionMethodExample.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Introduction To Deferred Execution.cs" />
+    <Compile Include="Introduction_To_Deferred_Execution 2.cs" />
     <Compile Include="LINQ Degenerate Select Clauses.cs" />
     <Compile Include="Linq1.cs" />
     <Compile Include="Program.cs" />

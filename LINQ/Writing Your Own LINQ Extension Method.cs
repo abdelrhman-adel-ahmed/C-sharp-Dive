@@ -9,7 +9,7 @@ namespace LINQ
 
 	static class Test
 	{
-		 public static IEnumerable<T> Where<T>(this IEnumerable<T> source,Func<T,bool> p)
+		 public static IEnumerable<T> OurWhere<T>(this IEnumerable<T> source,Func<T,bool> p)
 
 		{
 			foreach (T item in source)
