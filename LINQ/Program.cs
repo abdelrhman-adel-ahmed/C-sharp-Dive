@@ -39,9 +39,13 @@ namespace LINQ
             //Introduction_To_Deferred_Execution.run();
 
 
-            Console.WriteLine("-------------------Introduction_To_Deferred_Execution 2------------------");
-            Introduction_To_Deferred_Execution_2.run();
+            //Console.WriteLine("-------------------Introduction_To_Deferred_Execution 2------------------");
+            //Introduction_To_Deferred_Execution_2.run();
 
+            Console.WriteLine("-------------------Deferred_Execution___Assembly_Line------------------");
+            Deferred_Execution___Assembly_Line.run();
+
+            
             Console.ReadLine();
 		}
 	}

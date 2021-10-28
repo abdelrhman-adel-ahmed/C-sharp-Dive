@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LINQ
 {
+    //       the exection order is from outer most to the inner most
     static class Introduction_To_Deferred_Execution_2
     {
         static IEnumerable<T> Where<T>(this IEnumerable<T> collection, Func<T, bool> predicate)
@@ -26,6 +27,17 @@ namespace LINQ
                 yield return transform(item);
             }
         }
+        static IEnumerable<T> Take<T>(this IEnumerable<T> collection, int count)
+        {
+            Console.WriteLine("our Take");
+            foreach (T item in collection)
+            {
+                if (count ==0)
+                    break;
+                yield return item;
+                count--;
+            }
+        }
         public static void run()
         {
             int[] arr = new[] { 4, 8, 1, 9 };
@@ -39,6 +51,15 @@ namespace LINQ
             var result3 =
                 Select(Where(arr, number => number < 5), number => number + 6);
 
+
+            //debug to see the beauty.
+            var result4 =
+               Take(Select(Where(arr,number => number < 5), number => number + 6),1);
+
+            //using Enumerable
+            var result5 =
+                Enumerable.Take(Select(Where(arr, number => number < 5), number => number + 6), 1);
+
             //so the exection order is from outer most to the inner most , but the outer most uses the inner 
             //most result first to perfrom ,so the where doesnot fullt evaluate and then the select
             //nooooooooooo the select perfrom on an endivaual item and then go to the where with that item 
@@ -49,13 +70,15 @@ namespace LINQ
             3-the item is the result from where 
             4-so where get started and loop over the collection wich the list we pass 
             5-and then spit a value (yield) after passing it to the predicate
-            6-the item get to the select now 
-            7-select apply the transformation ,and spit the value 
-            8-and the process continue 
+            6-note: if the item didnot pass the predicate check then it will go to and loop over another value 
+            because the yield inside the predicate condition.
+            7-the item get to the select now 
+            8-select apply the transformation ,and spit the value 
+            9-and the process continue 
                         its just a lazy evaluation pipline,and the laziness * is in each stage
             */
 
-            IEnumerator<int> iterator = result3.GetEnumerator();
+            IEnumerator<int> iterator = result4.GetEnumerator();
             while (iterator.MoveNext())
                 Console.WriteLine(iterator.Current);
 
