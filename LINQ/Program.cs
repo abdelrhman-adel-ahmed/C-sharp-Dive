@@ -43,8 +43,14 @@ namespace LINQ
             //Console.WriteLine("-------------------introduction_to_deferred_execution 2------------------");
             //Introduction_To_Deferred_Execution_2.run();
 
-            Console.WriteLine("-------------------Deferred_Execution___Assembly_Line------------------");
-            Deferred_Execution___Assembly_Line.run();
+            //Console.WriteLine("-------------------Deferred_Execution___Assembly_Line------------------");
+            //Deferred_Execution___Assembly_Line.run();
+
+
+            Console.WriteLine("-------------------Runtime_Created_Assembly_Lines------------------");
+            Runtime_Created_Assembly_Lines.run();
+
+            
 
 
             Console.ReadLine();
