@@ -8,8 +8,9 @@ namespace Containers
     {
         public static void run()
         {
-            int[] arr = new int[] { 13, 41, 3, 5, 31, 315, 8, 9, 1 };
-            arr[1] = 2;
+            object[] arr = new object[] { "Das", 41, 3, 5, 31, 315, 8, 9, 1,"dsa" };
+            arr[0] = 2;
+            //Array.Sort(arr);
             foreach (var item in arr)
             {
                 Console.WriteLine(item);
