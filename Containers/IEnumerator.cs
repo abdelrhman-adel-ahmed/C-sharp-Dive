@@ -15,33 +15,50 @@ namespace Containers_
                 Array.Resize(ref arr, arr.Length * 2);
             arr[count++] = item;
         }
-
+        
         public IEnumerator<T> GetEnumerator()
         {
-            for (int i = 0; i < count; i++)
-            {
-                yield return arr[i];
-            }
+           
+           return new MyIEnumerator(this);
+ 
         }
+        //as we said foreach uses IEnumerator to use movenext current
         class MyIEnumerator : IEnumerator<T>
         {
-            public T Current => throw new NotImplementedException();
+            //pointer to track where we at now in the list 
+            int index = -1;
+            List<T> thelist;
+            public MyIEnumerator(List<T> thelist)
+            {
+                this.thelist = thelist;
+            }
 
-            object IEnumerator.Current => throw new NotImplementedException();
+            public bool MoveNext()
+            {
+                Console.WriteLine("moved");
+                return ++index < thelist.count;
+            }
+
+            public T Current
+            {
+                get
+                {
+                    if (index < 0 || thelist.count <= index)
+                        return default(T);
+                    return thelist.arr[index];
+                }
+            }
+
+            object IEnumerator.Current => Current;
 
             public void Dispose()
             {
                 throw new NotImplementedException();
             }
 
-            public bool MoveNext()
-            {
-                throw new NotImplementedException();
-            }
-
             public void Reset()
             {
-                throw new NotImplementedException();
+                index = -1;
             }
         }
 
@@ -56,10 +73,20 @@ namespace Containers_
             mylist.Add(2);
             mylist.Add(3);
             mylist.Add(45);
-            foreach (var item in mylist)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in mylist)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //foreach syntax sugar
+            IEnumerator<int> iterator = mylist.GetEnumerator();
+            Console.WriteLine(iterator.Current);
+            iterator.MoveNext();
+            Console.WriteLine(iterator.Current);
+
+
+
+
 
         }
     }
