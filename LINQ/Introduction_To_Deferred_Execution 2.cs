@@ -61,8 +61,8 @@ namespace LINQ
                 Enumerable.Take(Select(Where(arr, number => number < 5), number => number + 6), 1);
 
             //so the exection order is from outer most to the inner most , but the outer most uses the inner 
-            //most result first to perfrom ,so the where doesnot fullt evaluate and then the select
-            //nooooooooooo the select perfrom on an endivaual item and then go to the where with that item 
+            //most result first to perfrom ,so the where doesnot fully evaluate and then the select
+            //noo the select perfrom on an individual item and then go to the where with that item 
             //and then we carry on 
             /* execution plan :
             1-outer most start (select)
