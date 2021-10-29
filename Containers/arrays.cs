@@ -4,6 +4,19 @@ using System.Text;
 
 namespace Containers
 {
+
+    class List<T>
+    {
+        T[] arr = new T[6];
+        int count;
+        public void Add(T item)
+        {
+            if (arr.Length == count)
+                Array.Resize(ref arr, arr.Length * 2);
+            arr[count++] = item;
+        }
+
+    }
     class arrays
     {
         public static void run()
