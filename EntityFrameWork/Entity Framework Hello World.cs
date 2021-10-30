@@ -7,10 +7,19 @@ using System.Threading.Tasks;
 
 namespace EntityFrameWork
 {
-
-    class Viedo
-    { 
+    // each class represet a relation (table) and the properties inside the class represend the (attributes )
+    
+    class PlayList
+    {
         public int ID { get; set; }
+        public string Title { get; set; }
+
+        //one to many relation with viedo , because we declare it (as list) 
+        public List<Video> PlayListViedo { get; set; }
+    }
+    class Video
+    { 
+       public int ID { get; set; }
        public string Title { get; set; }
        public string Description { get; set; }
     }
@@ -18,7 +27,7 @@ namespace EntityFrameWork
     class MeContext : DbContext
     {
         public MeContext() : base(@"Data Source=(local)\ABDELRAHMAN-ADE;Initial Catalog=FirstDB;Integrated Security=True") { }
-        public DbSet<Viedo> Viedos{get;set;}
+        public DbSet<Video> Viedos{get;set;}
       
     }
     class Entity_Framework_Hello_World
@@ -26,7 +35,7 @@ namespace EntityFrameWork
 
         public static void run()
         {
-            Viedo v1 = new Viedo
+            Video v1 = new Video
             {
                 Title = "hello entity",
                 Description = "ooooh"
