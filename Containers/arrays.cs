@@ -47,12 +47,21 @@ namespace Containers
             {
                 Console.WriteLine(item);
             }
-          
+
 
             /*foreach get converted to 
             IEnumerator<int> iterator = mylist.GetEnumerator();
-            while(iterator.MoveNext())
-                Console.WriteLine(iterator.Current);
+            try{
+                while(iterator.MoveNext())
+                {
+                    var item = iterator.Current;
+                    Console.WriteLine(item);
+                }
+            }
+            finally
+            {
+                iterator.Disopse();
+            }
             */
 
         }

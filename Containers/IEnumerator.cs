@@ -18,8 +18,9 @@ namespace Containers_
         
         public IEnumerator<T> GetEnumerator()
         {
-           
-           return new MyIEnumerator(this);
+            //in 99% we can just use yield return ,but if you want to write some logic inside the 
+            //IEnumerator you can override the behaviour and do so
+            return new MyIEnumerator(this);
  
         }
         //as we said foreach uses IEnumerator to use movenext current
@@ -48,12 +49,15 @@ namespace Containers_
                     return thelist.arr[index];
                 }
             }
-
+            //non generic IEnumerator
             object IEnumerator.Current => Current;
 
             public void Dispose()
             {
-                throw new NotImplementedException();
+                //throw new NotImplementedException();
+                //free reasoses !! always get called at the end
+                //may be you iterate over things in a set in db and want to close connection 
+                //after finsh ,so you can put the freeing logic here
             }
 
             public void Reset()
@@ -73,6 +77,9 @@ namespace Containers_
             mylist.Add(2);
             mylist.Add(3);
             mylist.Add(45);
+            //so foreach just call the get enumerator function and refurn ienumerator 
+            //then it use movenext and set the item to the current
+
             //foreach (var item in mylist)
             //{
             //    Console.WriteLine(item);
@@ -83,6 +90,8 @@ namespace Containers_
             Console.WriteLine(iterator.Current);
             iterator.MoveNext();
             Console.WriteLine(iterator.Current);
+
+           
 
 
 
