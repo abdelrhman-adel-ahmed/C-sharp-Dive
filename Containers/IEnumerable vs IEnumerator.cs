@@ -45,6 +45,14 @@ namespace Containers_Ienumerable
             {
                 Console.WriteLine(item);
             }
+
+            Console.WriteLine();
+
+            IEnumerable<int> ienm = mylist;
+            foreach (var item in ienm)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
