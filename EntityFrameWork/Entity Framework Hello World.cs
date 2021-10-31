@@ -22,6 +22,7 @@ namespace EntityFrameWork
        public int ID { get; set; }
        public string Title { get; set; }
        public string Description { get; set; }
+       public PlayList playlist { get; set; }
     }
 
     class MeContext : DbContext
@@ -48,6 +49,8 @@ namespace EntityFrameWork
             {
                 Console.WriteLine(video.Title);
             }
+            Video viedos = db.Videos.First();
+            Console.WriteLine(viedos.playlist.Title);
             return;
             //clear the tables
             db.Videos.RemoveRange(db.Videos);
