@@ -15,7 +15,7 @@ namespace EntityFrameWork
         public string Title { get; set; }
 
         //one to many relation with viedo , because we declare it (as list) 
-        public List<Video> PlayListViedo { get; set; }
+        public List<Video> PlayListVideo { get; set; }
     }
     class Video
     { 
@@ -26,9 +26,10 @@ namespace EntityFrameWork
 
     class MeContext : DbContext
     {
-        public MeContext() : base(@"Data Source=(local)\ABDELRAHMAN-ADE;Initial Catalog=FirstDB;Integrated Security=True") { }
+        public MeContext() : base(@"Data Source=.;Initial Catalog=FirstDB;Integrated Security=True") { }
         public DbSet<Video> Viedos{get;set;}
-      
+        public DbSet<PlayList> PlayList { get; set; }
+
     }
     class Entity_Framework_Hello_World
     {
@@ -42,6 +43,9 @@ namespace EntityFrameWork
             };
             var mycontext = new MeContext();
             mycontext.Viedos.Add(v1);
+            PlayList playlist = new PlayList();
+            playlist.Title = "first play list";
+            playlist.PlayListVideo.Add(v1);
             mycontext.SaveChanges();
             
         }

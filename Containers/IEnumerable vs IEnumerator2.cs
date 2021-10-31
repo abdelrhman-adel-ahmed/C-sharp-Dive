@@ -11,9 +11,11 @@ namespace Containers_diff
 
         public static void run()
         {
-            //why ienumerator remember and ienmerable doesnto ? despite they both use the yield . 
+            //why ienumerator remember and ienmerable doesnto ? despite they both use the yield (not true). 
             //i think because the foreach we use in the ienumberable , but we use the movenext pointer on 
             //the ienumerrator ,but the foreach under the hood is just movenext !?
+            //because the ienumeratr use yield ,but ienumberable construct foreach loop each time and when we do
+            //that we create a new ienumerator 
             List<int> Ages = new List<int>()
             {
                 10,

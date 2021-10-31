@@ -112,7 +112,7 @@ namespace Containers_
             // IEnumerator can remember the state IEnumerable cannot
             IEnumerable<int> ienm = Ages;
             IEnumerator<int> iterator = Ages.GetEnumerator();
-            IterateFrom10to30(ienm);
+            IterateFrom10to30(iterator);
 
         }
 

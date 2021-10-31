@@ -54,12 +54,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity Framework Hello World.cs" />
+    <Compile Include="Migrations\202110310707542_first.cs" />
+    <Compile Include="Migrations\202110310707542_first.designer.cs">
+      <DependentUpon>202110310707542_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110310742008_second.cs" />
+    <Compile Include="Migrations\202110310742008_second.designer.cs">
+      <DependentUpon>202110310742008_second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110310754092_second-modify.cs" />
+    <Compile Include="Migrations\202110310754092_second-modify.designer.cs">
+      <DependentUpon>202110310754092_second-modify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202110310707542_first.resx">
+      <DependentUpon>202110310707542_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110310742008_second.resx">
+      <DependentUpon>202110310742008_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110310754092_second-modify.resx">
+      <DependentUpon>202110310754092_second-modify.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
