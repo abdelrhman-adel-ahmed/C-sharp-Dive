@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity Framework Hello World.cs" />
+    <Compile Include="ManyToMany.cs" />
     <Compile Include="Migrations\202110310707542_first.cs" />
     <Compile Include="Migrations\202110310707542_first.designer.cs">
       <DependentUpon>202110310707542_first.cs</DependentUpon>

@@ -49,6 +49,7 @@ namespace EntityFrameWork
                 Console.WriteLine(video.Title);
             }
             return;
+            //clear the tables
             db.Videos.RemoveRange(db.Videos);
             db.PlayList.RemoveRange(db.PlayList);
             Video v1 = new Video
