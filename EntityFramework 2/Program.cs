@@ -14,6 +14,7 @@ namespace EntityFramework_2
             Console.WriteLine("------------------many_to_many------------------------");
             many_to_many.run();
             Console.WriteLine("finish");
+            Console.ReadLine();
         }
     }
 }

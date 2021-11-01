@@ -18,7 +18,6 @@ namespace EntityFramework_2
         public List<PlayList> MyPlayLists { get; set; }
 
 
-
     }
     class PlayList
     {
@@ -50,7 +49,10 @@ namespace EntityFramework_2
         public DbSet<Video> Videos { get; set; }
         public DbSet<PlayList> PlayList { get; set; }
 
+
+
     }
+
     class many_to_many
     {
         public static void run()
@@ -59,8 +61,8 @@ namespace EntityFramework_2
 
             //clear the tables
             
-            //db.PlayList.RemoveRange(db.PlayList);
-            //db.Videos.RemoveRange(db.Videos);
+            db.PlayList.RemoveRange(db.PlayList);
+            db.Videos.RemoveRange(db.Videos);
             Video v1 = new Video
             {
                 Title = "hello entity",
@@ -76,11 +78,15 @@ namespace EntityFramework_2
             db.Videos.Add(v1);
             db.Videos.Add(v2);
 
-            PlayList playlist1 = new PlayList();
-            playlist1.Title = "first play list";
+            PlayList playlist1 = new PlayList
+            {
+                Title = "first play list"
+            };
 
-            PlayList playlist2 = new PlayList();
-            playlist2.Title = "second play list";
+            PlayList playlist2 = new PlayList
+            {
+                Title = "second play list"
+            };
 
             playlist1.PlayListVideos = new List<Video> { v1 };
             playlist2.PlayListVideos = new List<Video> { v1 };
@@ -88,9 +94,15 @@ namespace EntityFramework_2
             db.PlayList.Add(playlist1);
             db.PlayList.Add(playlist2);
 
+          
             db.SaveChanges();
+            var items = db.PlayList.Include(p=>p.PlayListVideos).ToList();
+            foreach (var item in items)
+                Console.WriteLine(item.PlayListVideos.Single());
+            
         }
 
 
     }
 }
+

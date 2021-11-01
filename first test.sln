@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameWork", "EntityFr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework 2", "EntityFramework 2\EntityFramework 2.csproj", "{4B56DC44-5700-4769-AE8D-53EE2083EDBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressTrees", "ExpressTrees\ExpressTrees.csproj", "{E206D0A5-549E-4DFD-848C-96DA452C4DA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{4B56DC44-5700-4769-AE8D-53EE2083EDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B56DC44-5700-4769-AE8D-53EE2083EDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B56DC44-5700-4769-AE8D-53EE2083EDBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E206D0A5-549E-4DFD-848C-96DA452C4DA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E206D0A5-549E-4DFD-848C-96DA452C4DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E206D0A5-549E-4DFD-848C-96DA452C4DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E206D0A5-549E-4DFD-848C-96DA452C4DA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
