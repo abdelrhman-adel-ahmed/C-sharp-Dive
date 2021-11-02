@@ -43,13 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IInoviceRepository.cs" />
-    <Compile Include="IInvoiceService.cs" />
     <Compile Include="InoviceRepository.cs" />
+    <Compile Include="IInvoiceService.cs" />
+    <Compile Include="IIoviceRepository.cs" />
     <Compile Include="Invoice.cs" />
     <Compile Include="InvoiceListing.cs" />
     <Compile Include="InvoiceService.cs" />
     <Compile Include="InvoiceToInvoiceListingTranslator.cs" />
+    <Compile Include="ITranslate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

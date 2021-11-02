@@ -1,6 +1,6 @@
 ﻿namespace Dependency_injection_tools
 {
-    internal class Invoice
+    public class Invoice
     {
         int quantity;
         int price;

@@ -2,11 +2,13 @@
 
 namespace Dependency_injection_tools
 {
-    internal class InvoiceToInvoiceListingTranslator
+    public class InvoiceToInvoiceListingTranslator:ITranslate<Invoice,InvoiceListing>
     {
-        internal InvoiceListing From(Invoice invoice)
+        public InvoiceListing From(Invoice invoice)
         {
-            throw new NotImplementedException();
+            return new InvoiceListing();
         }
+
+       
     }
 }

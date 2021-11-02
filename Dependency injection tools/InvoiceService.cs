@@ -6,11 +6,19 @@ namespace Dependency_injection_tools
 {
     class InvoiceService : IInvoiceService
     {
-        private readonly InoviceRepository _invoiceRepository;
-        private readonly InvoiceToInvoiceListingTranslator _invoiceToInvoiceListingTranslator;
+        private readonly IInoviceRepository _invoiceRepository;
+        private readonly ITranslate<Invoice,InvoiceListing> _invoiceToInvoiceListingTranslator;
 
-        public InvoiceService(InoviceRepository invoiceRepository , 
-            InvoiceToInvoiceListingTranslator invoiceToInvoiceListingTranslator)
+        //poor man dependency injection
+        public InvoiceService():this(new InoviceRepository(),
+            new InvoiceToInvoiceListingTranslator())
+        {
+        
+        }
+
+
+        public InvoiceService(IInoviceRepository invoiceRepository ,
+            ITranslate<Invoice, InvoiceListing> invoiceToInvoiceListingTranslator)
         {
             _invoiceRepository = invoiceRepository;
         }
@@ -19,8 +27,9 @@ namespace Dependency_injection_tools
         {
            //DI constructor based
            //InoviceRepository invoiceRepository = new InoviceRepository();
-            //InvoiceToInvoiceListingTranslator invoiceToInvoiceListingTranslator =
-            //    new InvoiceToInvoiceListingTranslator();
+           //InvoiceToInvoiceListingTranslator invoiceToInvoiceListingTranslator =
+           //new InvoiceToInvoiceListingTranslator();
+
             IEnumerable<Invoice> listofInvoices = _invoiceRepository.FetchAll();
 
             foreach (var invoice in listofInvoices)
@@ -28,6 +37,8 @@ namespace Dependency_injection_tools
                 yield return _invoiceToInvoiceListingTranslator.From(invoice);
             } 
         }
+
+        
     }
 
 

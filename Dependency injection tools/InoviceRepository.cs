@@ -2,8 +2,15 @@
 
 namespace Dependency_injection_tools
 {
-    interface IInoviceRepository
+    internal class InoviceRepository: IInoviceRepository
     {
-         IEnumerable<Invoice> FetchAll();
+     
+        IEnumerable<Invoice> IInoviceRepository.FetchAll()
+        {
+            return new List<Invoice>
+            { new Invoice(2,1200),
+              new Invoice(3,2000),
+            };
+        }
     }
 }
