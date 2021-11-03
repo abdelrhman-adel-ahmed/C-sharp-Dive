@@ -16,15 +16,15 @@ namespace Dependency_injection_tools.our_own_DI_tool
 
     class ServiceConsumer
     {
-        Service1 s1;
-        public ServiceConsumer(Service1 s)
+        Service1 _service;
+        public ServiceConsumer(Service1 service)
         {
-            s1 = s;
+            _service = service;
         }
 
         public void print()
         {
-            s1.print();
+            _service.print();
         }
     }
 }

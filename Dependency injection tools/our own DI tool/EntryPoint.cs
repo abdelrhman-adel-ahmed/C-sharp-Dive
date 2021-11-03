@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dependency_injection_tools.our_own_DI_tool
 {
+  
     class EntryPoint
     {
 
@@ -23,6 +24,18 @@ namespace Dependency_injection_tools.our_own_DI_tool
 
             container.AddDependency(typeof(Service1));
             container.AddDependency<ServiceConsumer>();
+
+            var resolver = new DependencyResolver(container);
+            var service = resolver.GetService<Service1>();
+            service.print();
+  
+            var serviceconsumer = resolver.GetService<ServiceConsumer>();
+            serviceconsumer.print();
+
+            List<int> ss = new List<int>();
+            ss.Add(1);
+            Console.WriteLine(ss.Count);
+
         }
     }
 }
