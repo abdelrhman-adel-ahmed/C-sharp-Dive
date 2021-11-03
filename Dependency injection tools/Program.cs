@@ -9,14 +9,10 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Dependency_injection_tools.our_own_DI_tool;
+using Dependency_injection_tools.our_own_DI_tool_with_lifetime;
 
 namespace Dependency_injection_tools
 {
-    class test
-    {
-        void dd() { }
-    }
-
     class Program
     {
 
@@ -31,7 +27,10 @@ namespace Dependency_injection_tools
             //var type1 = typeof(test);
             //var type2 = typeof(test);
             //Console.WriteLine(type1);
-            EntryPoint.run();
+            Console.WriteLine("-------------------DI Tool without object LifTime-----------------");
+            EntryPoint1.run();
+            Console.WriteLine("-------------------DI Tool with object LifTime-----------------");
+            EntryPoint2.run();
             Console.ReadLine();
         }
     }

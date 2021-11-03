@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dependency_injection_tools.our_own_DI_tool
 {
-    class Service2
+    enum DependencyLifeTime
     {
-        public string message()
-        {
-            return "service2";
-        }
+        Singlton=0,
+        Transient=1,
     }
 }
