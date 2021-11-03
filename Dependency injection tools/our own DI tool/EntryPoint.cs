@@ -24,6 +24,7 @@ namespace Dependency_injection_tools.our_own_DI_tool
 
             container.AddDependency(typeof(Service1));
             container.AddDependency<ServiceConsumer>();
+            container.AddDependency<Service2>();
 
             var resolver = new DependencyResolver(container);
             var service = resolver.GetService<Service1>();
