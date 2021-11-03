@@ -61,6 +61,8 @@
     <Compile Include="InvoiceToInvoiceListingTranslator.cs" />
     <Compile Include="ITranslate.cs" />
     <Compile Include="our own DI tool\DependencyContainer.cs" />
+    <Compile Include="our own DI tool\DependencyResolver.cs" />
+    <Compile Include="our own DI tool\EntryPoint.cs" />
     <Compile Include="our own DI tool\Service1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

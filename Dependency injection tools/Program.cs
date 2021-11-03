@@ -28,8 +28,10 @@ namespace Dependency_injection_tools
             //    new InvoiceToInvoiceListingTranslator());
             //InvoiceService invoiceService = new InvoiceService();
             //WindsorContainer container = new WindsorContainer();
-            var s1 =(Service1) Activator.CreateInstance(typeof(Service1));
-            s1.print();
+            //var type1 = typeof(test);
+            //var type2 = typeof(test);
+            //Console.WriteLine(type1);
+            EntryPoint.run();
             Console.ReadLine();
         }
     }
