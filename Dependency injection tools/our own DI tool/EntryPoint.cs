@@ -32,9 +32,6 @@ namespace Dependency_injection_tools.our_own_DI_tool
             var serviceconsumer = resolver.GetService<ServiceConsumer>();
             serviceconsumer.print();
 
-            List<int> ss = new List<int>();
-            ss.Add(1);
-            Console.WriteLine(ss.Count);
 
         }
     }

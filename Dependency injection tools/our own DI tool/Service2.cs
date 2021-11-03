@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace Dependency_injection_tools.our_own_DI_tool
 {
-    class Service1
+    class Service2
     {
-        public void print()
+        public void message()
         {
-            Console.WriteLine("Service1");
+
         }
     }
-
-    
 }

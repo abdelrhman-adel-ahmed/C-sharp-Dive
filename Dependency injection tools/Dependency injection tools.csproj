@@ -64,6 +64,8 @@
     <Compile Include="our own DI tool\DependencyResolver.cs" />
     <Compile Include="our own DI tool\EntryPoint.cs" />
     <Compile Include="our own DI tool\Service1.cs" />
+    <Compile Include="our own DI tool\Service2.cs" />
+    <Compile Include="our own DI tool\ServiceConsumer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
