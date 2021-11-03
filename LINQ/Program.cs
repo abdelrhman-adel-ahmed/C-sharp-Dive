@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace LINQ
 {
+
+    interface test { }
 	class Program
 	{
 		static void Main(string[] args)
@@ -47,9 +49,9 @@ namespace LINQ
             //Deferred_Execution___Assembly_Line.run();
 
 
-            Console.WriteLine("-------------------Runtime_Created_Assembly_Lines------------------");
-            Runtime_Created_Assembly_Lines.run();
-
+            //Console.WriteLine("-------------------Runtime_Created_Assembly_Lines------------------");
+            //Runtime_Created_Assembly_Lines.run();
+            Console.WriteLine(default(Runtime_Created_Assembly_Lines));
             
 
 
