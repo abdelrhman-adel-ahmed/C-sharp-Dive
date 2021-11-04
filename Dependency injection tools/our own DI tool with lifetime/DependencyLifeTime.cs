@@ -8,7 +8,7 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
 {
     enum DependencyLifeTime
     {
-        Singlton=0,
+        Singleton = 0,
         Transient=1,
     }
 }

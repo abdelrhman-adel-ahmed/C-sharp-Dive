@@ -63,7 +63,7 @@
     <Compile Include="our own DI tool with lifetime\DependencyContainer.cs" />
     <Compile Include="our own DI tool with lifetime\DependencyLifeTime.cs" />
     <Compile Include="our own DI tool with lifetime\DependencyResolver.cs" />
-    <Compile Include="our own DI tool with lifetime\DependencyResolver2.cs" />
+    <Compile Include="our own DI tool with lifetime\Dpendency.cs" />
     <Compile Include="our own DI tool with lifetime\EntryPoint.cs" />
     <Compile Include="our own DI tool with lifetime\IService1.cs" />
     <Compile Include="our own DI tool with lifetime\Service1.cs" />

@@ -9,19 +9,19 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
     class DependencyContainer
     {
 
-        List<Type> _dependepncies = new List<Type>();
+        List<Dpendency> _dependepncies = new List<Dpendency>();
 
-        public void AddDependency(Type type)
+        public void AddTransientDependency<T>()
         {
-            _dependepncies.Add(type);
+            _dependepncies.Add(new Dpendency(typeof(T), DependencyLifeTime.Transient));
         }
-        public void AddDependency<T>()
+        public void AddSingletonDependency<T>()
         {
-            _dependepncies.Add(typeof(T));
+            _dependepncies.Add(new Dpendency(typeof(T), DependencyLifeTime.Singleton));
         }
-        public Type GetDependency(Type type)
+        public Dpendency GetDependency(Type type)
         {
-            return _dependepncies.First(x => x.Name == type.Name);
+            return _dependepncies.First(x => x.Type.Name == type.Name);
         }
 
     }

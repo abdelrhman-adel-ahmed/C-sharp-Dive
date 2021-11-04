@@ -17,9 +17,14 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
         //return an instance of the type we pass
         public T GetService<T>()
         {
-            var type = _container.GetDependency(typeof(T));
+            return (T) GetService(typeof(T));
+        }
+
+        public object GetService(Type type)
+        {
+            var dependency = _container.GetDependency(type);
             //if the type we want to intialize have some parameterized constructor
-            var construtor = type.GetConstructors().Single();
+            var construtor = dependency.Type.GetConstructors().Single();
             //we used toarray because tolist doesnot have length function ! <---
             var parameters = construtor.GetParameters().ToList();
             if (parameters.Count > 0)
@@ -27,15 +32,15 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
                 var parametersImplemenations = new object[parameters.Count];
                 for (int i = 0; i < parameters.Count; i++)
                 {
-                    parametersImplemenations[i] = Activator.CreateInstance(parameters[0].ParameterType);
+                    parametersImplemenations[i] = GetService(parameters[0].ParameterType);
                 }
-                return (T) Activator.CreateInstance(type, parametersImplemenations);
-            }              
-            else           
-            {              
-                return (T) Activator.CreateInstance(type);
+                return Activator.CreateInstance(dependency.Type, parametersImplemenations);
+            }
+            else
+            {
+                return Activator.CreateInstance(dependency.Type);
 
             }
         }
-    }
+    } 
 }

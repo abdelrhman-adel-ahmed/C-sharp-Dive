@@ -28,10 +28,11 @@ namespace Dependency_injection_tools
             //var type2 = typeof(test);
             //Console.WriteLine(type1);
             Console.WriteLine("-------------------DI Tool without object LifTime-----------------");
-            EntryPoint1.run();
-            Console.WriteLine("-------------------DI Tool with object LifTime-----------------");
             EntryPoint2.run();
+
+
             Console.ReadLine();
+
         }
     }
 }

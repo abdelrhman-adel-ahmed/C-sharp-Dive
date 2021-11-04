@@ -3,6 +3,7 @@ using System.IO;
 using genericss;
 using System.Collections;
 using System.Collections.Generic;
+
 namespace first_test
 {
     struct test {
@@ -14,11 +15,7 @@ namespace first_test
             this.age = age;
         }
     }
-    class ttt
-    {
-        public int x;
-        public int y;
-    }
+   
 
 
     class Program
