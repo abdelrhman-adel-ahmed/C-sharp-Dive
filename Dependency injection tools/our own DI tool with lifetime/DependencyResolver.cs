@@ -34,22 +34,30 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
                 {
                     parametersImplemenations[i] = GetService(parameters[0].ParameterType);
                 }
-                return Activator.CreateInstance(dependency.Type, parametersImplemenations);
+                // return Activator.CreateInstance(dependency.Type, parametersImplemenations);
+                return CreateImplementation(dependency, f => Activator.CreateInstance(f, parametersImplemenations));
             }
-            //if its implemented then no need to implement it again no matter what life time it is 
-            if(dependency.Implemented)
+            return CreateImplementation(dependency, f => Activator.CreateInstance(f));
+
+        }
+
+        public object CreateImplementation(Dpendency dependency, Func<Type, object> factory)
+        {
+            //if its Implemented then no need to implement it again, we set the implemented flag if the object lifetime is Singleton
+            if (dependency.Implemented)
             {
                 return dependency.Implementation;
             }
+
+            //var implementation = Activator.CreateInstance(dependency.Type);
+            var implementation = factory(dependency.Type);
+
             //if it not implemented and the life time is singleton then we need to store that object 
             if (dependency.lifeTime == DependencyLifeTime.Singleton)
             {
-                var implementation = Activator.CreateInstance(dependency.Type);
                 dependency.AddImplementation(implementation);
-                return implementation;
-
             }
-            return Activator.CreateInstance(dependency.Type);
+            return implementation;
         }
     }
 }

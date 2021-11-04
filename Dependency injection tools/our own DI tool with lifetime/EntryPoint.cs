@@ -14,7 +14,7 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
         {
             var container = new DependencyContainer();
 
-            container.AddTransientDependency<Service1>();
+            container.AddSingletonDependency<Service1>();
             container.AddTransientDependency<ServiceConsumer>();
             container.AddSingletonDependency<Service2>();
 
