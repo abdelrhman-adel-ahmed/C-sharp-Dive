@@ -8,16 +8,16 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
 {
     class Service2
     {
-        private static readonly Random random = new Random();
         int _rand;
+        static int count=0;
         public Service2()
         {
-            _rand = random.Next();
+            count++;
         }
         public string message()
         {
      
-            return "service2 " + _rand;
+            return "service2 " + count;
         }
     }
 }

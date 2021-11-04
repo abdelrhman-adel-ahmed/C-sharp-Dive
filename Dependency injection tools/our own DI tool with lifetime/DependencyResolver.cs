@@ -17,7 +17,7 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
         //return an instance of the type we pass
         public T GetService<T>()
         {
-            return (T) GetService(typeof(T));
+            return (T)GetService(typeof(T));
         }
 
         public object GetService(Type type)
@@ -36,11 +36,20 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
                 }
                 return Activator.CreateInstance(dependency.Type, parametersImplemenations);
             }
-            else
+            //if its implemented then no need to implement it again no matter what life time it is 
+            if(dependency.Implemented)
             {
-                return Activator.CreateInstance(dependency.Type);
+                return dependency.Implementation;
+            }
+            //if it not implemented and the life time is singleton then we need to store that object 
+            if (dependency.lifeTime == DependencyLifeTime.Singleton)
+            {
+                var implementation = Activator.CreateInstance(dependency.Type);
+                dependency.AddImplementation(implementation);
+                return implementation;
 
             }
+            return Activator.CreateInstance(dependency.Type);
         }
-    } 
+    }
 }
