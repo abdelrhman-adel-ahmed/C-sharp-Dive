@@ -10,9 +10,10 @@ namespace Design_Patterns.MVC
     {
         public static void run()
         {
-            var uri = new Uri("http://localhost/home/index");
+            var uri = new Uri("http://localhost/test/print");
             var container = new MVCContainer();
-            container.Resolve(uri);
+            var result = container.Resolve(uri);
+            Console.WriteLine(result); 
 
         }
     }
@@ -21,7 +22,12 @@ namespace Design_Patterns.MVC
     {
         public string Index()
         {
-            return "HomeController";
+            return "HomeController say hi";
+        }
+
+        public int GetId()
+        {
+            return 1;
         }
     }
 
@@ -29,7 +35,12 @@ namespace Design_Patterns.MVC
     {
         public string Index()
         {
-            return "TestController";
+            return "TestController say hi";
+        }
+
+        public string print()
+        {
+            return "TestController print action";
         }
     }
 }

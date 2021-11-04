@@ -21,9 +21,14 @@ namespace Design_Patterns.MVC
         {
             //get the controller from the url path
             var Controller = GetController(uri);
-            var action = GetAction(Controller, uri);
-            return action;
+            if(Controller ==null)
+                return "404 page not found";
 
+            var action = GetAction(Controller, uri);
+            if (action == null)
+                return "404 page not found";
+
+            return action.Invoke(Controller, null);
         }
 
         Controller GetController(Uri uri)
@@ -34,17 +39,19 @@ namespace Design_Patterns.MVC
             //and if any matches we return that controller 
             var controller = ControllerTypes.FirstOrDefault(x => path.StartsWith($"/{x.Name.Replace("Controller","")}",
                 StringComparison.InvariantCultureIgnoreCase));
-        
+            if (controller == null)
+                return null;
             return (Controller)Activator.CreateInstance(controller);
         }
         MethodInfo GetAction(Controller controller,Uri uri)
         {
-            var func_name = uri.AbsolutePath.Split('/').Last();
+            //better to use regex here
+            var ActionName = uri.AbsolutePath.Split('/').Last();
 
-            var actionFunc = controller.GetType().GetRuntimeMethods().FirstOrDefault(x=> func_name == x.Name.ToLower());
-            actionFunc.Invoke(Activator.CreateInstance(controller.GetType()), new object[0]);
-            Console.WriteLine(actionFunc.Invoke(Activator.CreateInstance(controller.GetType()),new object[0]));
-            return actionFunc;
+            //InvariantCultureIgnoreCase will ingnore the casign in x name and also in the ActionName
+            return controller.GetType().GetMethods().FirstOrDefault
+                (x => x.Name.Equals(ActionName,StringComparison.InvariantCultureIgnoreCase));
+
         }
     }
 }
