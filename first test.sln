@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressTrees", "ExpressTree
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dependency injection tools", "Dependency injection tools\Dependency injection tools.csproj", "{B7F51EF1-2872-4DB2-A773-4A622168AC1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Design Patterns", "Design Patterns\Design Patterns.csproj", "{2E39995D-E193-47DF-BD17-2764291700CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,10 @@ Global
 		{B7F51EF1-2872-4DB2-A773-4A622168AC1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7F51EF1-2872-4DB2-A773-4A622168AC1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7F51EF1-2872-4DB2-A773-4A622168AC1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E39995D-E193-47DF-BD17-2764291700CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E39995D-E193-47DF-BD17-2764291700CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E39995D-E193-47DF-BD17-2764291700CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E39995D-E193-47DF-BD17-2764291700CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
