@@ -27,8 +27,8 @@ namespace Design_Patterns.MVC
             var action = GetAction(Controller, uri);
             if (action == null)
                 return "404 page not found";
-
-            return action.Invoke(Controller, null);
+            var parameters = GetQueryString(Controller, uri);
+            return action.Invoke(Controller, parameters);
         }
 
         Controller GetController(Uri uri)
@@ -52,6 +52,11 @@ namespace Design_Patterns.MVC
             return controller.GetType().GetMethods().FirstOrDefault
                 (x => x.Name.Equals(ActionName,StringComparison.InvariantCultureIgnoreCase));
 
+        }
+
+        public object[] GetQueryString(Controller controller,Uri uri)
+        {
+            var querystring =
         }
     }
 }

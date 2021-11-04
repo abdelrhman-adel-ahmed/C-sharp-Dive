@@ -10,7 +10,7 @@ namespace Design_Patterns.MVC
     {
         public static void run()
         {
-            var uri = new Uri("http://localhost/test/print");
+            var uri = new Uri("http://localhost/test/print?name=ahmed");
             var container = new MVCContainer();
             var result = container.Resolve(uri);
             Console.WriteLine(result); 
