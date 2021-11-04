@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="MVC\EntryPoint.cs" />
     <Compile Include="MVC\FirstAttempt.cs" />
+    <Compile Include="MVC\MVCContainer.cs" />
     <Compile Include="MVC\TheProblem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

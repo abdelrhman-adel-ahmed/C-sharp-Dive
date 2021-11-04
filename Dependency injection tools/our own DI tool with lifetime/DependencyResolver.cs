@@ -17,6 +17,7 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
         //return an instance of the type we pass
         public T GetService<T>()
         {
+           
             return (T)GetService(typeof(T));
         }
 
@@ -32,6 +33,7 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
                 var parametersImplemenations = new object[parameters.Count];
                 for (int i = 0; i < parameters.Count; i++)
                 {
+                   
                     parametersImplemenations[i] = GetService(parameters[0].ParameterType);
                 }
                 // return Activator.CreateInstance(dependency.Type, parametersImplemenations);

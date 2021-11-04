@@ -10,9 +10,10 @@ namespace Design_Patterns.MVC
     {
         public static void run()
         {
-            var ControllerType = typeof(Controller);
-            ControllerType.Assembly.GetTypes().Where(type => !type.IsAbstract && ControllerType.IsAssignableFrom(type)).ToList()
-                .ForEach(type => Console.WriteLine(type));
+            var uri = new Uri("http://localhost/home/index");
+            var container = new MVCContainer();
+            container.Resolve(uri);
+
         }
     }
     abstract class Controller { }

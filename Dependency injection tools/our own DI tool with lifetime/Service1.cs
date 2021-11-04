@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
 {
-    class Service1
+    class Service1: IService1
     {
         static int x;
         Service2 _service2;
