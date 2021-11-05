@@ -21,6 +21,7 @@ namespace WebFormFirst
         {
             //since we send the value of the textbox when we post we can access that value
             //so server controls internally uses view state to pass the data around
+            Response.Write(sender + "<br/>");
             int count = Convert.ToInt32(TextBox1.Text) + 1;
             TextBox1.Text = count.ToString();
         }
