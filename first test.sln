@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dependency injection tools"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Design Patterns", "Design Patterns\Design Patterns.csproj", "{2E39995D-E193-47DF-BD17-2764291700CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormFirst", "WebFormFirst\WebFormFirst.csproj", "{E37FF35A-FE2C-41D0-8A5A-99FC3CF2003D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{2E39995D-E193-47DF-BD17-2764291700CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E39995D-E193-47DF-BD17-2764291700CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E39995D-E193-47DF-BD17-2764291700CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E37FF35A-FE2C-41D0-8A5A-99FC3CF2003D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E37FF35A-FE2C-41D0-8A5A-99FC3CF2003D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E37FF35A-FE2C-41D0-8A5A-99FC3CF2003D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E37FF35A-FE2C-41D0-8A5A-99FC3CF2003D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

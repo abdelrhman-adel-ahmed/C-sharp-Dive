@@ -56,7 +56,7 @@ namespace Design_Patterns.MVC
 
         public object[] GetQueryString(Controller controller,Uri uri)
         {
-            var querystring =
+            return null;
         }
     }
 }
