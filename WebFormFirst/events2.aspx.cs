@@ -11,6 +11,7 @@ namespace WebFormFirst
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Write("load first" + "<br/>");
 
         }
 
@@ -24,11 +25,11 @@ namespace WebFormFirst
 
             Response.Write(TextBox1.Text + "<br/>");
             int i = 0;
-            foreach (var item in Request.Params)
-            {
-                Response.Write(item + ":" + Request.Params[i] + "<br/>");
-                i++;
-            }
+            //foreach (var item in Request.Params)
+            //{
+            //    Response.Write(item + ":" + Request.Params[i] + "<br/>");
+            //    i++;
+            //}
 
         }
 
