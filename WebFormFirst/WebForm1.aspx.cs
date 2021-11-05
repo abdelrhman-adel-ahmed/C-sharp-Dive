@@ -23,7 +23,7 @@ namespace WebFormFirst
             Response.Write("total sessions " + Application["totalusersession"]);
             Response.Write("<br/>");
             typeof(WebForm1).Assembly.GetTypes().ToList().ForEach(t=>Response.Write(t+ "<br/>"));
-
+            
 
         }
 
@@ -48,6 +48,9 @@ namespace WebFormFirst
             //TextBox1.Text = counter.ToString();
         }
 
-     
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
