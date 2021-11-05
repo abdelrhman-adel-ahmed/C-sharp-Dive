@@ -12,7 +12,7 @@
         </div>
         <p>
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-            <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         </p>
     </form>
 </body>
