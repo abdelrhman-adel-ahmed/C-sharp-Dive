@@ -16,6 +16,10 @@ namespace WebFormFirst
             //TextBox1.Text = "0";
             if(Context.Request.HttpMethod != "POST")
                 TextBox1.Text = "0";
+            Response.Write("total application " + Application["totalapplications"]);
+            Response.Write("<br/>");
+            Response.Write("total sessions " + Application["totalusersession"]);
+
 
         }
 
