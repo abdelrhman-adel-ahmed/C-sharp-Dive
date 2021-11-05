@@ -19,6 +19,8 @@ namespace WebFormFirst
             Response.Write("total application " + Application["totalapplications"]);
             Response.Write("<br/>");
             Response.Write("total sessions " + Application["totalusersession"]);
+            Response.Write("<br/>");
+            typeof(WebForm1).Assembly.GetTypes().ToList().ForEach(t=>Response.Write(t+ "<br/>"));
 
 
         }
