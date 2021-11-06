@@ -42,11 +42,12 @@ namespace ADO
                 da.SelectCommand.Parameters.AddWithValue("@Gender", ddlGender.SelectedValue);
                 da.SelectCommand.Parameters.AddWithValue("@Salary", txtSalary.Text);
 
-                SqlParameter outParameter = new SqlParameter();
-
-                outParameter.ParameterName = "@EmployeeId";
-                outParameter.SqlDbType = SqlDbType.Int;
-                outParameter.Direction = ParameterDirection.Output;
+                SqlParameter outParameter = new SqlParameter
+                {
+                    ParameterName = "@EmployeeId",
+                    SqlDbType = SqlDbType.Int,
+                    Direction = ParameterDirection.Output
+                };
                 da.SelectCommand.Parameters.Add(outParameter);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
