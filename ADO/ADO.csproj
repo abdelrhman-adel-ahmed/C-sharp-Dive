@@ -113,6 +113,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="datareader.aspx" />
+    <Content Include="datareaderNextResult.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -187,6 +188,13 @@
     </Compile>
     <Compile Include="datareader.aspx.designer.cs">
       <DependentUpon>datareader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datareaderNextResult.aspx.cs">
+      <DependentUpon>datareaderNextResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datareaderNextResult.aspx.designer.cs">
+      <DependentUpon>datareaderNextResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
