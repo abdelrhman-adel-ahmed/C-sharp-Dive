@@ -125,6 +125,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="sqlinjection.aspx" />
+    <Content Include="storedProcedure.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -210,6 +211,13 @@
     </Compile>
     <Compile Include="sqlinjection.aspx.designer.cs">
       <DependentUpon>sqlinjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="storedProcedure.aspx.cs">
+      <DependentUpon>storedProcedure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="storedProcedure.aspx.designer.cs">
+      <DependentUpon>storedProcedure.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
