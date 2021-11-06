@@ -112,6 +112,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="dataadapter.aspx" />
     <Content Include="datareader.aspx" />
     <Content Include="datareaderNextResult.aspx" />
     <Content Include="Default.aspx" />
@@ -181,6 +182,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dataadapter.aspx.cs">
+      <DependentUpon>dataadapter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dataadapter.aspx.designer.cs">
+      <DependentUpon>dataadapter.aspx</DependentUpon>
     </Compile>
     <Compile Include="datareader.aspx.cs">
       <DependentUpon>datareader.aspx</DependentUpon>
