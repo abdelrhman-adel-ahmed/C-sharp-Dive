@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 using System.Data.SqlClient;
 
 namespace ADO
@@ -13,7 +14,9 @@ namespace ADO
         protected void Page_Load(object sender, EventArgs e)
         {
             //adding Connection Timeout solve the timeout problem
-            SqlConnection conn = new SqlConnection("Data Source=.;Integrated Security = SSPI; Initial Catalog = Northwind;Connection Timeout=30;");
+            //SqlConnection conn = new SqlConnection("Data Source=.;Integrated Security = SSPI; Initial Catalog = Northwind;Connection Timeout=30;");
+            string cs = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
+            SqlConnection conn = new SqlConnection(cs);
             try
             {
                 SqlCommand cmd = new SqlCommand("select top 5 customerid,companyname,contactname,contacttitle from customers", conn);
