@@ -33,11 +33,12 @@ namespace ADO
 
                 //empid output paramater that the procedure will reutrn 
                 SqlParameter outParameter = new SqlParameter();
+                
                 outParameter.ParameterName = "@EmployeeId";
                 outParameter.SqlDbType = System.Data.SqlDbType.Int;
                 outParameter.Direction = System.Data.ParameterDirection.Output;
                 cmd.Parameters.Add(outParameter);
-
+               
                 conn.Open();
                 cmd.ExecuteNonQuery();
 
