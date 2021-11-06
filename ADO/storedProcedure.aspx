@@ -15,7 +15,7 @@
             Employee Name
         </td>
         <td>
-            <asp:TextBox ID="txtEmployeeName" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtEmployeeName" runat="server" OnTextChanged="txtEmployeeName_TextChanged"></asp:TextBox>
         </td>
     </tr>        
     <tr>
