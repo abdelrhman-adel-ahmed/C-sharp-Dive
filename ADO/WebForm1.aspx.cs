@@ -15,7 +15,7 @@ namespace ADO
         {
             //adding Connection Timeout solve the timeout problem
             //SqlConnection conn = new SqlConnection("Data Source=.;Integrated Security = SSPI; Initial Catalog = Northwind;Connection Timeout=30;");
-            string cs = ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
+            string cs = ConfigurationManager.ConnectionStrings["northwind"].ConnectionString;
             SqlConnection conn = new SqlConnection(cs);
             try
             {
