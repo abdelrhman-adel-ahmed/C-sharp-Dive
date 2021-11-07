@@ -33,5 +33,16 @@ namespace WebFormFirst
             TextBox1.Text = Calendar1.SelectedDate.ToShortDateString();
             Calendar1.Visible = false;
         }
+
+        protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+        {
+            if (e.Day.IsOtherMonth)
+                e.Day.IsSelectable = false;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write(TextBox1.Text);
+        }
     }
 }

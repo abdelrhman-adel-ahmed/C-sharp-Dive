@@ -13,7 +13,7 @@
             <asp:ImageButton ID="ImageButton1" runat="server" Height="21px" ImageUrl="~/images/images.png" OnClick="ImageButton1_Click" Width="26px" />
             <br />
             <br />
-            <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" OnSelectionChanged="Calendar1_SelectionChanged1" Width="220px">
+            <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" OnDayRender="Calendar1_DayRender" OnSelectionChanged="Calendar1_SelectionChanged1" Width="220px">
                 <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
                 <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
                 <OtherMonthDayStyle ForeColor="#999999" />
@@ -25,7 +25,7 @@
             </asp:Calendar>
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Button" />
+            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
             <br />
             <br />
         </div>
