@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="usercontrol.aspx.cs" Inherits="WebFormFirst.usercontrol" %>
 
-<%@ Register Src="~/calenderControl.ascx" TagPrefix="uc1" TagName="calenderControl" %>
+<%@ Register Src="usercontrols/calenderControl.ascx" TagPrefix="uc1" TagName="calenderControl" %>
 
 
 <!DOCTYPE html>

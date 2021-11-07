@@ -106,7 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="calenderControl.ascx" />
+    <Content Include="usercontrols\calenderControl.ascx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -177,11 +177,11 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="calenderControl.ascx.cs">
+    <Compile Include="usercontrols\calenderControl.ascx.cs">
       <DependentUpon>calenderControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="calenderControl.ascx.designer.cs">
+    <Compile Include="usercontrols\calenderControl.ascx.designer.cs">
       <DependentUpon>calenderControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
