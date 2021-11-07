@@ -12,12 +12,18 @@ namespace WebFormFirst
     {
 
         public event EventHandler<CalenderVisabilityChangedEventArgs> CalenderVisibliyChanged;
+        public event EventHandler<CalenderValueChangedEventArgs> CalenderChanged;
         //public event CalenderVisibilityChangedEventHandler CalenderVisibliyChanged;
 
         protected virtual void OnCalenderVisibilityChanged(CalenderVisabilityChangedEventArgs e)
         {
             if(CalenderVisibliyChanged!=null)
                 CalenderVisibliyChanged(this,e);
+        }
+        protected virtual void OnCalenderChanged(CalenderValueChangedEventArgs e)
+        {
+            if (CalenderChanged != null)
+                CalenderChanged(this, e);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,8 +65,12 @@ namespace WebFormFirst
         {
             TextBox1.Text = Calendar1.SelectedDate.ToShortDateString();
             Calendar1.Visible = false;
+            //visability changed event
             CalenderVisabilityChangedEventArgs CalenderEventArgs = new CalenderVisabilityChangedEventArgs(false);
             OnCalenderVisibilityChanged(CalenderEventArgs);
+            //calender value changed event
+            CalenderValueChangedEventArgs calenderchangedEventArgs = new CalenderValueChangedEventArgs(Calendar1.SelectedDate);
+            OnCalenderChanged(calenderchangedEventArgs);
         }
 
         protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
