@@ -244,6 +244,7 @@
     <Compile Include="usercontrol.aspx.designer.cs">
       <DependentUpon>usercontrol.aspx</DependentUpon>
     </Compile>
+    <Compile Include="usercontrols\CalenderVisabilityChangedEventArgs.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
