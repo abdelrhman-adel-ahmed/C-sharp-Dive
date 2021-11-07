@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="usercontrol.aspx.cs" Inherits="WebFormFirst.usercontrol" %>
 
-<%@ Register Src="usercontrols/calenderControl.ascx" TagPrefix="uc1" TagName="calenderControl" %>
+<%--<%@ Register Src="usercontrols/calenderControl.ascx" TagPrefix="uc1" TagName="calenderControl" %>--%>
 
 
 <!DOCTYPE html>
@@ -13,6 +13,7 @@
     <form id="form1" runat="server">
         <div>
             Date of Birth: <uc1:calenderControl runat="server" id="calenderControl" />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Button" />
         </div>
     </form>
 </body>

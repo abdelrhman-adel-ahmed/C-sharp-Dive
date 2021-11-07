@@ -41,14 +41,21 @@ namespace WebFormFirst
                 e.Day.IsSelectable = false;
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+       protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        //add properties to access it in any webform that uses the calendercontrol
+        public string SelectedDate
         {
-            Response.Write(TextBox1.Text);
+            get
+            {
+                return TextBox1.Text;
+            }
+            set
+            {
+                TextBox1.Text = value;
+            }
         }
     }
 }
