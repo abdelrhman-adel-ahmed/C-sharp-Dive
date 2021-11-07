@@ -14,6 +14,8 @@
         <div>
             Date of Birth: <uc1:calenderControl runat="server" id="calenderControl" />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Button" />
+            <br />
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         </div>
     </form>
 </body>

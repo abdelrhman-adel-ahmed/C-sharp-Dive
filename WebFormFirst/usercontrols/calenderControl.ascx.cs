@@ -11,9 +11,14 @@ namespace WebFormFirst
     public partial class calenderControl : System.Web.UI.UserControl
     {
 
-        public EventHandler<CalenderVisabilityChangedEventArgs> CalenderVisibliyChanged;
-        //event CalenderVisibilityChangedEventHandler CalenderVisibliyChanged;
+        public event EventHandler<CalenderVisabilityChangedEventArgs> CalenderVisibliyChanged;
+        //public event CalenderVisibilityChangedEventHandler CalenderVisibliyChanged;
 
+        protected virtual void OnCalenderVisibilityChanged(CalenderVisabilityChangedEventArgs e)
+        {
+            if(CalenderVisibliyChanged!=null)
+                CalenderVisibliyChanged(this,e);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,8 +28,10 @@ namespace WebFormFirst
                 //event args object
                 CalenderVisabilityChangedEventArgs CalenderEventArgs = new CalenderVisabilityChangedEventArgs(false);
                 //make sure that we have subscribers
-                if (CalenderVisibliyChanged!=null)
-                    CalenderVisibliyChanged(this, CalenderEventArgs);
+                //if (CalenderVisibliyChanged!=null)
+                //    CalenderVisibliyChanged(this, CalenderEventArgs);
+                //or 
+                OnCalenderVisibilityChanged(CalenderEventArgs);
             }
         }
 
@@ -35,15 +42,25 @@ namespace WebFormFirst
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
             if (Calendar1.Visible)
+            {
                 Calendar1.Visible = false;
+                CalenderVisabilityChangedEventArgs CalenderEventArgs = new CalenderVisabilityChangedEventArgs(false);
+                OnCalenderVisibilityChanged(CalenderEventArgs);
+            }
             else
+            {
                 Calendar1.Visible = true;
+                CalenderVisabilityChangedEventArgs CalenderEventArgs = new CalenderVisabilityChangedEventArgs(true);
+                OnCalenderVisibilityChanged(CalenderEventArgs);
+            }
         }
 
         protected void Calendar1_SelectionChanged1(object sender, EventArgs e)
         {
             TextBox1.Text = Calendar1.SelectedDate.ToShortDateString();
             Calendar1.Visible = false;
+            CalenderVisabilityChangedEventArgs CalenderEventArgs = new CalenderVisabilityChangedEventArgs(false);
+            OnCalenderVisibilityChanged(CalenderEventArgs);
         }
 
         protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)

@@ -6,7 +6,12 @@ namespace WebFormFirst
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            calenderControl.CalenderVisibliyChanged += CalenderControl_CalenderVisibliyChanged;
+        }
 
+        private void CalenderControl_CalenderVisibliyChanged(object sender, CalenderVisabilityChangedEventArgs e)
+        {
+            TextBox1.Text = e.IsVisibility.ToString();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
