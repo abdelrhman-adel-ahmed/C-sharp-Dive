@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="calenderControl.ascx.cs" Inherits="WebFormFirst.calenderControl" %>
-<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+<asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
             <asp:ImageButton ID="ImageButton1" runat="server" Height="21px" ImageUrl="~/images/images.png" OnClick="ImageButton1_Click" Width="26px" />
             <br />
             <br />
