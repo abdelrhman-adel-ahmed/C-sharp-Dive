@@ -43,5 +43,10 @@ namespace WebFormFirst
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write(TextBox1.Text);
+        }
     }
 }
