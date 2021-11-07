@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WebFormFirst.usercontrols
+namespace WebFormFirst
 {
     public class CalenderVisabilityChangedEventArgs:EventArgs
     {
@@ -18,5 +18,4 @@ namespace WebFormFirst.usercontrols
         }
     }
 
-    public delegate void CalenderVisibilityChangedEventHandler(object sender, CalenderVisabilityChangedEventArgs e);
 }

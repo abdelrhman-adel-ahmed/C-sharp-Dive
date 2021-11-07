@@ -7,14 +7,25 @@ using System.Web.UI.WebControls;
 
 namespace WebFormFirst
 {
+    public delegate void CalenderVisibilityChangedEventHandler(object sender, CalenderVisabilityChangedEventArgs e);
     public partial class calenderControl : System.Web.UI.UserControl
     {
 
-        
+        public EventHandler<CalenderVisabilityChangedEventArgs> CalenderVisibliyChanged;
+        //event CalenderVisibilityChangedEventHandler CalenderVisibliyChanged;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
+            {
                 Calendar1.Visible = false;
+
+                //event args object
+                CalenderVisabilityChangedEventArgs CalenderEventArgs = new CalenderVisabilityChangedEventArgs(false);
+                //make sure that we have subscribers
+                if (CalenderVisibliyChanged!=null)
+                    CalenderVisibliyChanged(this, CalenderEventArgs);
+            }
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
@@ -57,5 +68,6 @@ namespace WebFormFirst
                 TextBox1.Text = value;
             }
         }
+
     }
 }
