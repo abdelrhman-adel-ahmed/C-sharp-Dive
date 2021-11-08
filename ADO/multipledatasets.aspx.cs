@@ -21,9 +21,15 @@ namespace ADO
                 da.SelectCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 DataSet ds = new DataSet();
                 da.Fill(ds);
-                GridView1.DataSource = ds.Tables[0];
+                //you can acces the tables inside the data set using the index , or using the name 
+                //by diffult the name os table then table1 ... ,
+                //you can give each table a name using tablename property
+                ds.Tables[0].TableName = "Employeetbl";
+                ds.Tables[1].TableName = "videostbl";
+
+                GridView1.DataSource = ds.Tables["Employeetbl"];
                 GridView1.DataBind();
-                GridView2.DataSource = ds.Tables[1]; ;
+                GridView2.DataSource = ds.Tables["videostbl"]; ;
                 GridView2.DataBind();
             }
 
