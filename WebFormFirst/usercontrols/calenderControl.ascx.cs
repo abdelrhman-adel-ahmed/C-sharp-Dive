@@ -7,10 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace WebFormFirst
 {
+    //delegate is a class so we can declare it outside a class !
     public delegate void CalenderVisibilityChangedEventHandler(object sender, CalenderVisabilityChangedEventArgs e);
+
     public partial class calenderControl : System.Web.UI.UserControl
     {
-
+        
         public event EventHandler<CalenderVisabilityChangedEventArgs> CalenderVisibliyChanged;
         public event EventHandler<CalenderValueChangedEventArgs> CalenderChanged;
         //public event CalenderVisibilityChangedEventHandler CalenderVisibliyChanged;
