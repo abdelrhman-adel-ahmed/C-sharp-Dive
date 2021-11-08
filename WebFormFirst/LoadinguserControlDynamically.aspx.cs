@@ -15,7 +15,9 @@ namespace WebFormFirst
             calendercontrol.ID = "cc1";
             //we need to add placeholder to make the page placed inside the form not outside the form
             // Panel1.Controls.Add(LoadControl("~/usercontrols/calenderControl.ascx"));
-            Panel1.Controls.Add(calendercontrol);
+
+            //add the control to the panel so we can load it 
+             Panel1.Controls.Add(calendercontrol);
 
             calendercontrol.CalenderVisibliyChanged += Calendercontrol_CalenderVisibliyChanged;
             calendercontrol.Load += Calendercontrol_Unload;
