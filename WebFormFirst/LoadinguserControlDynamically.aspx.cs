@@ -17,7 +17,20 @@ namespace WebFormFirst
             // Panel1.Controls.Add(LoadControl("~/usercontrols/calenderControl.ascx"));
             Panel1.Controls.Add(calendercontrol);
 
+            calendercontrol.CalenderVisibliyChanged += Calendercontrol_CalenderVisibliyChanged;
+            calendercontrol.Load += Calendercontrol_Unload;
 
+
+        }
+
+        private void Calendercontrol_Unload(object sender, EventArgs e)
+        {
+            Response.Write("calender control loaded" + "<br/>");
+        }
+
+        private void Calendercontrol_CalenderVisibliyChanged(object sender, CalenderVisabilityChangedEventArgs e)
+        {
+            Response.Write(e.IsVisibility.ToString()+ "<br/>");
         }
     }
 }
