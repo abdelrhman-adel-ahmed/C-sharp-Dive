@@ -13,5 +13,20 @@ namespace WebFormFirst
         {
 
         }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(DropDownList1.SelectedValue =="DDL")
+            {
+                //create dropdownlist control and then 
+                DropDownList DDL1 = new DropDownList();
+                DDL1.ID = "DDL1";
+                DDL1.Items.Add("cairo");
+                DDL1.Items.Add("minia");
+                DDL1.Items.Add("zrbo");
+                DDL1.Items.Add("elno");
+                PlaceHolder1.Controls.Add(DDL1);
+            }
+        }
     }
 }
