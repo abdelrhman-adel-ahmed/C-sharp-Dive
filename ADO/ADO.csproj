@@ -113,6 +113,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="dataadapter.aspx" />
+    <Content Include="dataadapter2.aspx" />
     <Content Include="datareader.aspx" />
     <Content Include="datareaderNextResult.aspx" />
     <Content Include="Default.aspx" />
@@ -127,6 +128,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="multipledatasets.aspx" />
     <Content Include="sqlinjection.aspx" />
     <Content Include="storedProcedure.aspx" />
     <Content Include="WebForm1.aspx" />
@@ -190,6 +192,13 @@
     <Compile Include="dataadapter.aspx.designer.cs">
       <DependentUpon>dataadapter.aspx</DependentUpon>
     </Compile>
+    <Compile Include="dataadapter2.aspx.cs">
+      <DependentUpon>dataadapter2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dataadapter2.aspx.designer.cs">
+      <DependentUpon>dataadapter2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="datareader.aspx.cs">
       <DependentUpon>datareader.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -213,6 +222,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="multipledatasets.aspx.cs">
+      <DependentUpon>multipledatasets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="multipledatasets.aspx.designer.cs">
+      <DependentUpon>multipledatasets.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
