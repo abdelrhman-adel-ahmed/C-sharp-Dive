@@ -11,7 +11,8 @@ namespace WebFormFirst
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           this.Controls.Add(LoadControl("~/usercontrols/calenderControl.ascx"));
+            //we need to add placeholder to make the page placed inside the form not outside the form
+            Panel1.Controls.Add(LoadControl("~/usercontrols/calenderControl.ascx"));
 
         }
     }

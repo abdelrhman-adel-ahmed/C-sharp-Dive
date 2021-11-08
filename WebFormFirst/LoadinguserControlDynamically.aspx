@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoadinguserControlDynamically.aspx.cs" Inherits="WebFormFirst.LoadinguserControlDynamically" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Trace="true" CodeBehind="LoadinguserControlDynamically.aspx.cs" Inherits="WebFormFirst.LoadinguserControlDynamically" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
+
         </div>
+        <asp:Panel ID="Panel1" runat="server"> </asp:Panel>
     </form>
 </body>
 </html>
