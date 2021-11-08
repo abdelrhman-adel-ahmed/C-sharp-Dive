@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="LoadinguserControlDynamically.aspx" />
     <Content Include="usercontrols\calenderControl.ascx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -177,6 +178,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="LoadinguserControlDynamically.aspx.cs">
+      <DependentUpon>LoadinguserControlDynamically.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoadinguserControlDynamically.aspx.designer.cs">
+      <DependentUpon>LoadinguserControlDynamically.aspx</DependentUpon>
+    </Compile>
     <Compile Include="usercontrols\calenderControl.ascx.cs">
       <DependentUpon>calenderControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
