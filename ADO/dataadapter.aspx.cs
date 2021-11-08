@@ -49,7 +49,7 @@ namespace ADO
                     Direction = ParameterDirection.Output
                 };
                 da.SelectCommand.Parameters.Add(outParameter);
-                DataSet ds = new DataSet();
+                DataSet ds = new DataSet(); 
                 da.Fill(ds);
 
                 string EmpId = outParameter.Value.ToString();
