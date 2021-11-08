@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
 
 namespace ADO
 {
@@ -11,6 +14,18 @@ namespace ADO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string cs = ConfigurationManager.ConnectionStrings["firstdb"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("spgetempandvideos", cs);
+                da.SelectCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                GridView1.DataSource = ds.Tables[0];
+                GridView1.DataBind();
+                GridView2.DataSource = ds.Tables[1]; ;
+                GridView2.DataBind();
+            }
 
         }
     }
