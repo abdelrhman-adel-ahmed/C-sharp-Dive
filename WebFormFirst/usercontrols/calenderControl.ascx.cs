@@ -17,6 +17,8 @@ namespace WebFormFirst
         public event EventHandler<CalenderValueChangedEventArgs> CalenderChanged;
         //public event CalenderVisibilityChangedEventHandler CalenderVisibliyChanged;
 
+
+        //why the function that invoke the invocation list is protected and virtual ?!!! 
         protected virtual void OnCalenderVisibilityChanged(CalenderVisabilityChangedEventArgs e)
         {
             if(CalenderVisibliyChanged!=null)
