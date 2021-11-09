@@ -23,8 +23,9 @@
         <asp:Panel ID="Panel1" runat="server">
         </asp:Panel>
         <br />
+        <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Button" />
+        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
     </form>
 </body>
 </html>
