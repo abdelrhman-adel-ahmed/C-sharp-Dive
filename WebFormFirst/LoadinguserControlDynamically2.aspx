@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Trace="" CodeBehind="LoadinguserControlDynamically2.aspx.cs" Inherits="WebFormFirst.LoadinguserControlDynamically2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoadinguserControlDynamically2.aspx.cs" Inherits="WebFormFirst.LoadinguserControlDynamically2" %>
 
 <!DOCTYPE html>
 
