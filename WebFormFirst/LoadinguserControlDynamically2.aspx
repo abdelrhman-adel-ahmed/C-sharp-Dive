@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoadinguserControlDynamically2.aspx.cs" Inherits="WebFormFirst.LoadinguserControlDynamically2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Trace="" CodeBehind="LoadinguserControlDynamically2.aspx.cs" Inherits="WebFormFirst.LoadinguserControlDynamically2" %>
 
 <!DOCTYPE html>
 
@@ -19,6 +19,9 @@
         <br />
         <br />
         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+        <br />
+        <asp:Panel ID="Panel1" runat="server">
+        </asp:Panel>
         <br />
         <br />
         <asp:Button ID="Button1" runat="server" Text="Button" />
