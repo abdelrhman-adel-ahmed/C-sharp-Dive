@@ -20,8 +20,6 @@
         <br />
         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
         <br />
-        <asp:Panel ID="Panel1" runat="server">
-        </asp:Panel>
         <br />
         <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
         <br />

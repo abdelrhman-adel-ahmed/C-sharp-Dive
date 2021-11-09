@@ -9,6 +9,10 @@ namespace WebFormFirst
 {
     public partial class LoadinguserControlDynamically2 : System.Web.UI.Page
     {
+        TextBox textPlaceHolder1 = new TextBox();
+        TextBox textPlaceHolder2 = new TextBox();
+        DropDownList DDL1 = new DropDownList();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //problem with this approach that we save unnecessary data in the viewstate so we have additional 
@@ -18,39 +22,47 @@ namespace WebFormFirst
             //how we can solve that ?!!
 
             //create dropdownlist control and then 
-            DropDownList DDL1 = new DropDownList();
             DDL1.AutoPostBack = true;
             DDL1.ID = "DDL1";
             DDL1.Items.Add("cairo");
             DDL1.Items.Add("minia");
             DDL1.Items.Add("zrbo");
             DDL1.Items.Add("elno");
-            TextBox text2 = new TextBox();
+
+            DDL1.SelectedIndexChanged += DDL1_SelectedIndexChanged;
             PlaceHolder1.Controls.Add(DDL1);
-            PlaceHolder1.Controls.Add(text2);
-            text2.Visible = false;
+            //the error of returning null when we try to find the textbox controler inside the the placeholder
+            //because we find usign the id and we wasnot set the id property to anything !! :)
+            textPlaceHolder1.ID = "textbox1";
+            PlaceHolder1.Controls.Add(textPlaceHolder1);
+            textPlaceHolder1.Visible = false;
             DDL1.Visible = false;
 
 
-            TextBox text1 = new TextBox();
-            text1.Text = DropDownList1.SelectedValue;
-            Panel1.Controls.Add(text1);
-            PlaceHolder2.Controls.Add(text1);
-            text1.Visible = true;
+            textPlaceHolder2.Text = DropDownList1.SelectedValue;
+            textPlaceHolder2.ID = "textbox2";
+            PlaceHolder2.Controls.Add(textPlaceHolder2);
+            textPlaceHolder2.Visible = false;
 
             if (DropDownList1.SelectedValue == "DDL")
             {
-                text2.Text= DDL1.SelectedValue;
-                text2.Visible = true;
+                textPlaceHolder1.Text= DDL1.SelectedValue;
+                textPlaceHolder1.Visible = true;
                 DDL1.Visible = true;
 
             }
             else if (DropDownList1.SelectedValue == "TB")
             {
-                text1.Visible = true;
+                textPlaceHolder2.Visible = true;
             }
         }
-            protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void DDL1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textPlaceHolder1.Text = DDL1.SelectedValue;
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
             {
                 //problem if we put the code here that any other post back the custom controls will not be 
                 //rendered beause it only render when the select changed event happen
@@ -65,7 +77,8 @@ namespace WebFormFirst
             }
             else if(DropDownList1.SelectedValue == "TB")
             {
-                TextBox t =PlaceHolder2.FindControl("text1") as TextBox;
+                TextBox t =(TextBox)PlaceHolder2.FindControl("textbox2");
+                
                 Response.Write(t.Text);
             }
         }
