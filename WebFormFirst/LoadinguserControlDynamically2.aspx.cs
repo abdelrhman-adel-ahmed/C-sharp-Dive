@@ -73,6 +73,7 @@ namespace WebFormFirst
             if(DropDownList1.SelectedValue=="DDL")
             {
                 DropDownList d =(DropDownList) PlaceHolder1.FindControl("DDL1");
+                textPlaceHolder1.Text = ((DropDownList)PlaceHolder1.FindControl("DDL1")).SelectedValue;
                 Response.Write(d.SelectedValue);
             }
             else if(DropDownList1.SelectedValue == "TB")
