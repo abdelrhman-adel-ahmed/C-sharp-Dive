@@ -42,6 +42,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormFirst", "WebFormFirs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO", "ADO\ADO.csproj", "{02B38CDF-02D0-4484-99B6-47D2FF5CFA13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomeServerControl", "CustomeServerControl\CustomeServerControl.csproj", "{42494FA6-2AB4-4DD6-B130-22B6E627DCC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomeServerControls", "CustomeServerControls\CustomeServerControls.csproj", "{7FBD60F2-D656-489B-AF21-140CDE965E7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -116,6 +120,14 @@ Global
 		{02B38CDF-02D0-4484-99B6-47D2FF5CFA13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02B38CDF-02D0-4484-99B6-47D2FF5CFA13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02B38CDF-02D0-4484-99B6-47D2FF5CFA13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42494FA6-2AB4-4DD6-B130-22B6E627DCC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42494FA6-2AB4-4DD6-B130-22B6E627DCC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42494FA6-2AB4-4DD6-B130-22B6E627DCC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42494FA6-2AB4-4DD6-B130-22B6E627DCC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FBD60F2-D656-489B-AF21-140CDE965E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBD60F2-D656-489B-AF21-140CDE965E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBD60F2-D656-489B-AF21-140CDE965E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBD60F2-D656-489B-AF21-140CDE965E7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
