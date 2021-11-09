@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyInversion.cs" />
     <Compile Include="MVC\EntryPoint.cs" />
     <Compile Include="MVC\FirstAttempt.cs" />
     <Compile Include="MVC\MVCContainer.cs" />

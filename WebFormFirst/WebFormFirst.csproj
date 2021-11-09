@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Caching.aspx" />
     <Content Include="LoadinguserControlDynamically.aspx" />
     <Content Include="LoadinguserControlDynamically2.aspx" />
     <Content Include="usercontrols\calenderControl.ascx" />
@@ -184,6 +185,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Caching.aspx.cs">
+      <DependentUpon>Caching.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Caching.aspx.designer.cs">
+      <DependentUpon>Caching.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoadinguserControlDynamically.aspx.cs">
       <DependentUpon>LoadinguserControlDynamically.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

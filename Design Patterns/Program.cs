@@ -10,8 +10,10 @@ namespace Design_Patterns
     {
         static void Main(string[] args)
         {
-            EntryPoint.Start();
+            //EntryPoint.Start();
 
+            //Console.ReadLine();
+            entrypoint.run();
             Console.ReadLine();
         }
     }
