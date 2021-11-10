@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="cachingDataSets.aspx.cs" Inherits="ADO.cachingDataSets" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Trace="true" CodeBehind="cachingDataSets.aspx.cs" Inherits="ADO.cachingDataSets" %>
 
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
             <asp:Button ID="ClearCach" runat="server" OnClick="ClearCach_Click" Text="ClearCach" />
             <br />
             <br />
-            <asp:Label ID="lblMessage" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lblMessage" runat="server" Text="Data"></asp:Label>
             <br />
             <asp:GridView ID="GridView1" runat="server">
             </asp:GridView>
