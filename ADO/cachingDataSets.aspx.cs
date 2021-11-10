@@ -28,7 +28,7 @@ namespace ADO
 
         protected void ClearCach_Click(object sender, EventArgs e)
         {
-
+            Response.Write("ahmed");
         }
     }
 }
