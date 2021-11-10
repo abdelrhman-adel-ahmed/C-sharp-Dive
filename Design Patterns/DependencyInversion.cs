@@ -45,7 +45,7 @@ namespace Design_Patterns
 
         }
     }
-    public class entrypoint
+    public class Entrypoint1
     {
        public  static void run()
         {

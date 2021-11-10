@@ -13,7 +13,7 @@ namespace Design_Patterns
             //EntryPoint.Start();
 
             //Console.ReadLine();
-            entrypoint.run();
+            Entrypoint1.run();
             Console.ReadLine();
         }
     }
