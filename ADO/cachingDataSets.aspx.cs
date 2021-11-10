@@ -10,7 +10,6 @@ namespace ADO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblMessage.Visible = false;
         }
 
         protected void LoadData_Click(object sender, EventArgs e)
@@ -23,7 +22,7 @@ namespace ADO
                 da.Fill(ds);
                 GridView1.DataSource = ds;
                 GridView1.DataBind();
-                lblMessage.Visible = true;
+                Label1.Text = DateTime.Now.ToString();
             }
         }
 
