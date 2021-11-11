@@ -113,6 +113,7 @@
     <Content Include="Caching.aspx" />
     <Content Include="CachingMultipleResponsesForSingleWebform.aspx" />
     <Content Include="ControlCachingInCode.aspx" />
+    <Content Include="fragmentCaching.aspx" />
     <Content Include="LoadinguserControlDynamically.aspx" />
     <Content Include="LoadinguserControlDynamically2.aspx" />
     <Content Include="usercontrols\calenderControl.ascx" />
@@ -207,6 +208,13 @@
     </Compile>
     <Compile Include="ControlCachingInCode.aspx.designer.cs">
       <DependentUpon>ControlCachingInCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="fragmentCaching.aspx.cs">
+      <DependentUpon>fragmentCaching.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fragmentCaching.aspx.designer.cs">
+      <DependentUpon>fragmentCaching.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoadinguserControlDynamically.aspx.cs">
       <DependentUpon>LoadinguserControlDynamically.aspx</DependentUpon>
