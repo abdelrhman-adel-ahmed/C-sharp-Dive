@@ -21,17 +21,21 @@ namespace WebFormFirst
             //Response.Cache.GetType().GetProperties().ToList().ForEach(x => Response.Write(x.Name + "<br/>"));
 
             //get all methods of the Cache object
-            Response.Cache.GetType().GetMethods().ToList().ForEach(x => Response.Write(x.Name + "<br/>"));
+            //Response.Cache.GetType().GetMethods().ToList().ForEach(x => Response.Write(x.Name + "<br/>"));
 
-            Label1.Text = DateTime.Now.ToString();
 
             //<%@ OutputCache Duration="30" VaryByParam="DropDownList1" Location="Server"%>
             //OutputCache but using the Cache proprties and methods 
             Response.Cache.SetExpires(DateTime.Now.AddSeconds(30));
-            Response.Cache.VaryByParams["None"] = true;
+            Response.Cache.VaryByParams["none"] = true;
             Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
+            //we had to add this to make the code work
+            Response.Cache.SetValidUntilExpires(true);
 
-         
+            Label1.Text = DateTime.Now.ToString();
+
+
+
         }
     }
 }
