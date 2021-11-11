@@ -11,7 +11,7 @@ namespace WebFormFirst
 {
 
 
-    public partial class Caching
+    public partial class CachingMultipleResponsesForSingleWebform
     {
 
         /// <summary>
@@ -24,22 +24,13 @@ namespace WebFormFirst
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// LoadData control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button LoadData;
-
-        /// <summary>
-        /// ClearCach control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ClearCach;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
         /// GridView1 control.

@@ -14,30 +14,25 @@ namespace WebFormFirst
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+    
+        }
+        protected void LoadData_Click(object sender, EventArgs e)
+        {
             string cs = ConfigurationManager.ConnectionStrings["firstdb"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(cs))
             {
-                SqlCommand command = new SqlCommand("spgetempandvideos", conn);
-                SqlDataAdapter da = new SqlDataAdapter(command);
-                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter("select * from tblemployees", conn);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
-                foreach (DataTable table in ds.Tables)
-                {
-                    var coloume_names = table.Columns;
-                    int i =0;
-                    foreach (DataRow row in table.Rows)
-                    {
-                        var data = row.ItemArray;
-                        foreach (var item in data)
-                        {
-                            Response.Write(item + " ");
-                        }
-                        Response.Write("<br/>");
-                    }
-                }
-
+                GridView1.DataSource = ds;
+                GridView1.DataBind();
+                Label1.Text = DateTime.Now.ToString();
             }
+        }
+
+        protected void ClearCach_Click(object sender, EventArgs e)
+        {
+            Response.Write("ahmed");
         }
     }
 }
