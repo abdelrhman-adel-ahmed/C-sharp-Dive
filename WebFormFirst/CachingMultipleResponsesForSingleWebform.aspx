@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CachingMultipleResponsesForSingleWebform.aspx.cs" Inherits="WebFormFirst.CachingMultipleResponsesForSingleWebform" %>
-<%@ OutputCache Duration="30" VaryByParam="DropDownList1" Location="Any"%>
+<%@ OutputCache Duration="60" VaryByParam="DropDownList1" Location="Any"%>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">

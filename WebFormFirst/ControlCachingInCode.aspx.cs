@@ -23,21 +23,15 @@ namespace WebFormFirst
             //get all methods of the Cache object
             Response.Cache.GetType().GetMethods().ToList().ForEach(x => Response.Write(x.Name + "<br/>"));
 
+            Label1.Text = DateTime.Now.ToString();
+
             //<%@ OutputCache Duration="30" VaryByParam="DropDownList1" Location="Server"%>
             //OutputCache but using the Cache proprties and methods 
             Response.Cache.SetExpires(DateTime.Now.AddSeconds(30));
             Response.Cache.VaryByParams["None"] = true;
-            Response.Cache.SetCacheability(HttpCacheability.Server);
+            Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
 
-            string cs = ConfigurationManager.ConnectionStrings["firstdb"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(cs))
-            {
-                SqlDataAdapter da = new SqlDataAdapter("select * from videos", conn);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-            }
+         
         }
     }
 }
