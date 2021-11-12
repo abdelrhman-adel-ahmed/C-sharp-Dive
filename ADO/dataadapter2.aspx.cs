@@ -21,7 +21,7 @@ namespace ADO
                 da.Fill(ds);
                 GridView1.DataSource = ds.Tables[0];
                 GridView1.DataBind();
-                GridView2.DataSource = ds.Tables[1]; ;
+                GridView2.DataSource = ds.Tables[1];
                 GridView2.DataBind();
 
             }

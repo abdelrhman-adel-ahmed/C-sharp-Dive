@@ -3,6 +3,7 @@
 </asp:GridView>
 
 Server Time :<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+<br />
 Client Time :<script>
                  document.write(Date());
              </script>
