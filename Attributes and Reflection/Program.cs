@@ -18,8 +18,8 @@ namespace Attributes_and_Reflection
             //Console.WriteLine("----------------instantiatingTypes----------------");
             //instantiatingTypes.run();
 
-            //Console.WriteLine("----------------ReflectingMembers----------------");
-            //ReflectingMembers.run();
+            Console.WriteLine("----------------ReflectingMembers----------------");
+            ReflectingMembers.run();
 
             //Console.WriteLine("----------------InvokeUsingReflection----------------");
             //InvokeUsingReflection.run();
@@ -33,8 +33,8 @@ namespace Attributes_and_Reflection
             //Console.WriteLine("----------------Attributes Example----------------");
             //attribute_example.run();
 
-            Console.WriteLine("----------------PlayerListAttributConstain----------------");
-            PlayerListAttributConstain.run();
+            //Console.WriteLine("----------------PlayerListAttributConstain----------------");
+            //PlayerListAttributConstain.run();
 
         }
 

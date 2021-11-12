@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sessionstate.aspx.cs" Inherits="WebFormFirst.sessionstate" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" trace="true" CodeBehind="sessionstate.aspx.cs" Inherits="WebFormFirst.sessionstate" %>
 
 <!DOCTYPE html>
 
