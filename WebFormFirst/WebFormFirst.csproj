@@ -140,6 +140,7 @@
     <Content Include="images\images.png" />
     <Content Include="sessionstate.aspx" />
     <Content Include="usercontrol.aspx" />
+    <Content Include="usercontrols\FragmentCach.ascx" />
     <Content Include="UsingCustomServerControls.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
@@ -299,6 +300,13 @@
     </Compile>
     <Compile Include="usercontrols\CalenderValueChangedEventArgs.cs" />
     <Compile Include="usercontrols\CalenderVisabilityChangedEventArgs.cs" />
+    <Compile Include="usercontrols\FragmentCach.ascx.cs">
+      <DependentUpon>FragmentCach.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrols\FragmentCach.ascx.designer.cs">
+      <DependentUpon>FragmentCach.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UsingCustomServerControls.aspx.cs">
       <DependentUpon>UsingCustomServerControls.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
