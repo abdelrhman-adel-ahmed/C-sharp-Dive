@@ -40,19 +40,19 @@ namespace ADO
 
                     List<DataTable> dtList = new List<DataTable>();
                     DataTable t = new DataTable();
+                    //we dont need to use nextresult data load function advance it implicilty
                     t.Load(dr);
                     dtList.Add(t);
-                    while (dr.NextResult())
-                    {
-                        DataTable table = new DataTable();
-                        table.Load(dr);
-                        dtList.Add(table);
-                    }
-                    
+
+                    DataTable t2 = new DataTable();
+                    t2.Load(dr);
+                    dtList.Add(t2);
+
+
                     ds.Tables.Add(dtList[0]);
                     ds.Tables.Add(dtList[1]);
 
-                    GridView1.DataSource = ds.Tables[0];
+                    GridView1.DataSource = ds.Tables[1];
                     GridView1.DataBind();
                     Label1.Text = "retrive data from db at "+ DateTime.Now.ToString();
                     Cache["tblemployees"] = ds;
