@@ -17,7 +17,7 @@
                     <td>
 
                         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                        <asp:Button ID="Button1" runat="server" Text="Button" />
+                        <asp:Button ID="Button1" runat="server" Text="Load Data" OnClick="Button1_Click" />
 
                     </td>
                 </tr>
@@ -35,7 +35,7 @@
                     <td>
                         <asp:DropDownList ID="DropDownList1" runat="server">
                             <asp:ListItem>Select Gender</asp:ListItem>
-                            <asp:ListItem>,Male</asp:ListItem>
+                            <asp:ListItem>Male</asp:ListItem>
                             <asp:ListItem>Female</asp:ListItem>
                         </asp:DropDownList>
 
