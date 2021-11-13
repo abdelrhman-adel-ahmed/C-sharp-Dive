@@ -48,7 +48,7 @@ namespace WebFormFirst
                 //we can use add or insert function that provide extra capabilities
                 // Cache.Insert("videos", ds);
 
-                CacheItemRemovedCallback onremove = new CacheItemRemovedCallback(videosGetremoved);
+                CacheItemRemovedCallback onremove = videosGetremoved;
                 Cache.Add("videos", ds,null,Cache.NoAbsoluteExpiration,Cache.NoSlidingExpiration,CacheItemPriority.Normal, onremove);
 
                 GridView1.DataSource = ds;
@@ -63,6 +63,8 @@ namespace WebFormFirst
 
         private void videosGetremoved(string key, object value, CacheItemRemovedReason reason)
         {
+            Response.Write("dsda");
+            Response.Write(key.ToString());
             Label1.Text = key;
         }
 
