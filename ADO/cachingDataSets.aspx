@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Trace="false" CodeBehind="cachingDataSets.aspx.cs" Inherits="ADO.cachingDataSets" %>
-<%@ OutputCache Duration="30" VaryByParam="None" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
