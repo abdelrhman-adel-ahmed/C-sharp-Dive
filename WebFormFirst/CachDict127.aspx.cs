@@ -34,7 +34,6 @@ namespace WebFormFirst
         {
             DateTime Start = DateTime.Now;
             StringBuilder message = new StringBuilder();
-
             if(Cache["videos"] != null)
             {
                 DataSet ds = (DataSet)Cache["videos"];
@@ -45,10 +44,10 @@ namespace WebFormFirst
             else
             {
                 DataSet ds = GetVideos();
-                Cache["videos"] = ds;
+               // Cache["videos"] = ds;
                 //we can use add or insert function that provide extra capabilities
-                Cache.Insert("videos", ds);
-                Cache.Add("videos", ds,null,Cache.NoAbsoluteExpiration,Cache.NoSlidingExpiration,CacheItemPriority.Normal,null);
+               // Cache.Insert("videos", ds);
+                Cache.Add("videos", ds,null,Cache.NoAbsoluteExpiration,Cache.NoSlidingExpiration,CacheItemPriority.Normal,videosGetremoved);
 
                 GridView1.DataSource = ds;
                 GridView1.DataBind();
@@ -58,6 +57,16 @@ namespace WebFormFirst
             double totalsecond = (End - Start).TotalSeconds;
             message.Append(totalsecond + " Seconds to load");
             Label1.Text = message.ToString();
+        }
+
+        private void videosGetremoved(string key, object value, CacheItemRemovedReason reason)
+        {
+            Label1.Text = key;
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Cache.Remove("videos");
         }
     }
 }
