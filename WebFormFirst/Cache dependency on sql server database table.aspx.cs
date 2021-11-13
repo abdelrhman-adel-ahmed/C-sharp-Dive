@@ -44,14 +44,16 @@ namespace WebFormFirst
 
                     DataSet ds = new DataSet();
                     da.Fill(ds);
+                    //when i test it out ,it work without these two lines !!
                     SqlCacheDependencyAdmin.EnableNotifications(cs);
                     SqlCacheDependencyAdmin.EnableTableForNotifications(cs, "videos");
+
                     SqlCacheDependency sqlCacheDependency = new SqlCacheDependency("firstdb", "videos");
                     GridView1.DataSource = ds;
                     GridView1.DataBind();
 
                     Cache.Insert("videos", ds, sqlCacheDependency, DateTime.Now.AddSeconds(20), Cache.NoSlidingExpiration,
-                        CacheItemPriority.Default, null);
+                        CacheItemPriority.Default,null);
                     Label1.Text = "data retrived from db at " + DateTime.Now.ToString();
                 }
             }
