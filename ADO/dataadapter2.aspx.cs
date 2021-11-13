@@ -14,17 +14,18 @@ namespace ADO
         protected void Page_Load(object sender, EventArgs e)
         {
             string cs = ConfigurationManager.ConnectionStrings["firstdb"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(cs))
-            {
-                SqlDataAdapter da = new SqlDataAdapter("select * from videos;select * from tblemployees", cs);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                GridView1.DataSource = ds.Tables[0];
-                GridView1.DataBind();
-                GridView2.DataSource = ds.Tables[1];
-                GridView2.DataBind();
+            SqlConnection conn = new SqlConnection(cs);
+            conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter("select * from videos;select * from tblemployees", cs);
+            conn.Close();
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            GridView1.DataSource = ds.Tables[0];
+            GridView1.DataBind();
+            GridView2.DataSource = ds.Tables[1];
+            GridView2.DataBind();
 
-            }
+            
         }
     }
 }
