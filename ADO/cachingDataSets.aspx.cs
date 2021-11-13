@@ -54,13 +54,16 @@ namespace ADO
 
                     GridView1.DataSource = ds.Tables[1];
                     GridView1.DataBind();
+
                     Label1.Text = "retrive data from db at "+ DateTime.Now.ToString();
+                    //cach the first table that in ds which is emp table not the one the shows at first (video table)
                     Cache["tblemployees"] = ds;
 
                     SqlCacheDependencyAdmin.EnableNotifications(cs);
                     SqlCacheDependencyAdmin.EnableTableForNotifications(cs, "tblemployees");
 
                     SqlCacheDependency sqlCacheDependency = new SqlCacheDependency("firstdb", "tblemployees");
+
                     CacheItemRemovedCallback cacheItemRemoved = new CacheItemRemovedCallback(cachItemRemoved);
                     CacheItemUpdateCallback cacheItemUpdateCallback = new CacheItemUpdateCallback(cachItemUpdate);
                     Cache.Insert("tblemployees", ds, sqlCacheDependency);
