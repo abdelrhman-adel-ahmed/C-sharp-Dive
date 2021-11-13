@@ -28,7 +28,7 @@ namespace WebFormFirst
             //OutputCache but using the Cache proprties and methods 
             Response.Cache.SetExpires(DateTime.Now.AddSeconds(30));
             Response.Cache.VaryByParams["none"] = true;
-            Response.Cache.SetCacheability(HttpCacheability.ServerAndPrivate);
+            Response.Cache.SetCacheability(HttpCacheability.Public);
             //we had to add this to make the code work
             Response.Cache.SetValidUntilExpires(true);
 

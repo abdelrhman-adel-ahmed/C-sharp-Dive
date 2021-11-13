@@ -14,7 +14,6 @@ namespace WebFormFirst
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-    
         }
         protected void LoadData_Click(object sender, EventArgs e)
         {

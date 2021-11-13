@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace WebFormFirst.usercontrols
 {
@@ -20,6 +21,7 @@ namespace WebFormFirst.usercontrols
             using (SqlConnection conn = new SqlConnection(cs))
             {
                 SqlDataAdapter da = new SqlDataAdapter("select * from videos", cs);
+                System.Threading.Thread.Sleep(5000);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 GridView1.DataSource = ds;

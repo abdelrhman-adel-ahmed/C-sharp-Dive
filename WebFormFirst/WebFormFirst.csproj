@@ -110,7 +110,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="CachDict127.aspx" />
     <Content Include="Caching.aspx" />
+    <Content Include="Caching22.aspx" />
     <Content Include="CachingMultipleResponsesForSingleWebform.aspx" />
     <Content Include="ControlCachingInCode.aspx" />
     <Content Include="fragmentCaching.aspx" />
@@ -189,12 +191,26 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CachDict127.aspx.cs">
+      <DependentUpon>CachDict127.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CachDict127.aspx.designer.cs">
+      <DependentUpon>CachDict127.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Caching.aspx.cs">
       <DependentUpon>Caching.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Caching.aspx.designer.cs">
       <DependentUpon>Caching.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Caching22.aspx.cs">
+      <DependentUpon>Caching22.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Caching22.aspx.designer.cs">
+      <DependentUpon>Caching22.aspx</DependentUpon>
     </Compile>
     <Compile Include="CachingMultipleResponsesForSingleWebform.aspx.cs">
       <DependentUpon>CachingMultipleResponsesForSingleWebform.aspx</DependentUpon>

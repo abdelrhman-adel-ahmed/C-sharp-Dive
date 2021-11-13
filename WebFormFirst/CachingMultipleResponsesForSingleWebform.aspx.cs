@@ -12,28 +12,12 @@ namespace WebFormFirst
 {
     public partial class CachingMultipleResponsesForSingleWebform : System.Web.UI.Page
     {
-        protected void Page_PreInit(object sender, EventArgs e)
-        {
-            Response.Write("Page_PreInit" + "<br/>");
-        }
-        protected void Page_Init(object sender, EventArgs e)
-        {
-            Response.Write("Page_Init" + "<br/>");
-
-        }
-        protected void Page_InitComplete(object sender, EventArgs e)
-        {
-            Response.Write("Page_InitComplete" + "<br/>");
-
-        }
-        protected void Page_PreLoad(object sender, EventArgs e)
-        {
-            Response.Write("Page_PreLoad" + "<br/>");
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            if(!IsPostBack)
+            Response.Write(Response.Cache.IsModified());
+          
+
+            if (!IsPostBack)
             {
                 GetVideoByTitle("All");
             }
