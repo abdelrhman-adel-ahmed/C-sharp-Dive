@@ -9,16 +9,16 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="Button1" runat="server" Text="Load Countires & Cach" OnClick="Button1_Click" />
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Get Countries from cach" />
+            <asp:Button ID="Button1" runat="server" Text="Load Countires & Cach" OnClick="btn_InitCach" />
+            <asp:Button ID="Button2" runat="server" OnClick="btn_LoadFromCach" Text="Get Countries from cach" />
             <br />
             <br />
             <asp:GridView ID="GridView1" runat="server">
             </asp:GridView>
             <br />
             <br />
-            <asp:Button ID="Button3" runat="server" Text="Remove Cached Item" OnClick="Button3_Click" />
-            <asp:Button ID="Button4" runat="server" Text="Get Cache Status" OnClick="Button4_Click" />
+            <asp:Button ID="Button3" runat="server" Text="Remove Cached Item" OnClick="btn_removeCach" />
+            <asp:Button ID="Button4" runat="server" Text="Get Cache Status" OnClick="btn_GetCachStatus" />
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>

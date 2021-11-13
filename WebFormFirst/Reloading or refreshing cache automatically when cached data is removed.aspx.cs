@@ -16,7 +16,20 @@ namespace WebFormFirst
 
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void btn_InitCach(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            ds.ReadXml(Server.MapPath("~/App_Data/countries.xml"));
+            CacheItemRemovedCallback OnCacheItemRemovedCallback = new CacheItemRemovedCallback(Countires_Removed);
+            Cache.Insert("countries", ds, new CacheDependency(Server.MapPath("~/App_Data/countries.xml")), DateTime.Now.AddSeconds(20)
+                , Cache.NoSlidingExpiration, CacheItemPriority.Default, OnCacheItemRemovedCallback);
+
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
+            Label1.Text = ds.Tables[0].Rows.Count.ToString() + " rows retreived from xml";
+        }
+
+        protected void btn_LoadFromCach(object sender, EventArgs e)
         {
             if(Cache["countries"] !=null)
             {
@@ -31,31 +44,18 @@ namespace WebFormFirst
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            DataSet ds = new DataSet();
-            ds.ReadXml(Server.MapPath("~/App_Data/countries.xml"));
-            CacheItemRemovedCallback OnCacheItemRemovedCallback = new CacheItemRemovedCallback(Countires_Removed);
-            Cache.Insert("countries", ds, new CacheDependency(Server.MapPath("~/App_Data/countries.xml")), DateTime.Now.AddSeconds(20)
-                , Cache.NoSlidingExpiration, CacheItemPriority.Default, OnCacheItemRemovedCallback);
-
-            GridView1.DataSource = ds;
-            GridView1.DataBind();
-            Label1.Text = ds.Tables[0].Rows.Count.ToString()+ " rows retreived from xml";
-        }
-
         private void Countires_Removed(string key, object value, CacheItemRemovedReason reason)
         {
             string data = $"cach item {key} is no longer in the cach resason {reason.ToString()}";
             Cache["countriesStatus"] = data;
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void btn_removeCach(object sender, EventArgs e)
         {
             Cache.Remove("countries");
         }
 
-        protected void Button4_Click(object sender, EventArgs e)
+        protected void btn_GetCachStatus(object sender, EventArgs e)
         {
             if(Cache["countries"] !=null)
             {
