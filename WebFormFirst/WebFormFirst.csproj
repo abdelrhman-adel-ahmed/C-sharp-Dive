@@ -120,6 +120,7 @@
     <Content Include="fragmentCaching.aspx" />
     <Content Include="LoadinguserControlDynamically.aspx" />
     <Content Include="LoadinguserControlDynamically2.aspx" />
+    <Content Include="Reloading or refreshing cache automatically when cached data is removed.aspx" />
     <Content Include="usercontrols\calenderControl.ascx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -255,6 +256,13 @@
     </Compile>
     <Compile Include="LoadinguserControlDynamically2.aspx.designer.cs">
       <DependentUpon>LoadinguserControlDynamically2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reloading or refreshing cache automatically when cached data is removed.aspx.cs">
+      <DependentUpon>Reloading or refreshing cache automatically when cached data is removed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reloading or refreshing cache automatically when cached data is removed.aspx.designer.cs">
+      <DependentUpon>Reloading or refreshing cache automatically when cached data is removed.aspx</DependentUpon>
     </Compile>
     <Compile Include="usercontrols\calenderControl.ascx.cs">
       <DependentUpon>calenderControl.ascx</DependentUpon>

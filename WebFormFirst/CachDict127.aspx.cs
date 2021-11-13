@@ -44,10 +44,12 @@ namespace WebFormFirst
             else
             {
                 DataSet ds = GetVideos();
-               // Cache["videos"] = ds;
+                // Cache["videos"] = ds;
                 //we can use add or insert function that provide extra capabilities
-               // Cache.Insert("videos", ds);
-                Cache.Add("videos", ds,null,Cache.NoAbsoluteExpiration,Cache.NoSlidingExpiration,CacheItemPriority.Normal,videosGetremoved);
+                // Cache.Insert("videos", ds);
+
+                CacheItemRemovedCallback onremove = new CacheItemRemovedCallback(videosGetremoved);
+                Cache.Add("videos", ds,null,Cache.NoAbsoluteExpiration,Cache.NoSlidingExpiration,CacheItemPriority.Normal, onremove);
 
                 GridView1.DataSource = ds;
                 GridView1.DataBind();
