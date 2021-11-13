@@ -63,9 +63,12 @@ namespace WebFormFirst
 
         private void videosGetremoved(string key, object value, CacheItemRemovedReason reason)
         {
-            Response.Write("dsda");
-            Response.Write(key.ToString());
-            Label1.Text = key;
+            string status= key + reason.ToString();
+            Cache["status"] = status;
+            //setting the label not working !!!!! also the response.write is not working
+            Label1.Text = Cache["status"].ToString();
+            Response.Write(Label1.Text);
+
         }
 
         protected void Button2_Click(object sender, EventArgs e)
