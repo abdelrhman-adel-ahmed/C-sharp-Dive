@@ -6,6 +6,7 @@ using System.Data;
 using System.Configuration;
 using System.Web.Caching;
 using System.Collections.Generic;
+using System.Web;
 
 namespace ADO
 {
@@ -67,6 +68,7 @@ namespace ADO
                     CacheItemRemovedCallback cacheItemRemoved = new CacheItemRemovedCallback(cachItemRemoved);
                     CacheItemUpdateCallback cacheItemUpdateCallback = new CacheItemUpdateCallback(cachItemUpdate);
                     Cache.Insert("tblemployees", ds, sqlCacheDependency);
+                    Response.Write(HttpRuntime.Cache["tblemployees"]);
                 }
             }
         }
