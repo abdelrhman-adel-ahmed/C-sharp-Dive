@@ -110,7 +110,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Data\countries.xml" />
     <Content Include="CachAddArgument128.aspx" />
+    <Content Include="CachDependencyOnFiles.aspx" />
     <Content Include="CachDict127.aspx" />
     <Content Include="Caching.aspx" />
     <Content Include="CachingMultipleResponsesForSingleWebform.aspx" />
@@ -197,6 +199,13 @@
     </Compile>
     <Compile Include="CachAddArgument128.aspx.designer.cs">
       <DependentUpon>CachAddArgument128.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CachDependencyOnFiles.aspx.cs">
+      <DependentUpon>CachDependencyOnFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CachDependencyOnFiles.aspx.designer.cs">
+      <DependentUpon>CachDependencyOnFiles.aspx</DependentUpon>
     </Compile>
     <Compile Include="CachDict127.aspx.cs">
       <DependentUpon>CachDict127.aspx</DependentUpon>
@@ -352,9 +361,7 @@
       <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
