@@ -114,6 +114,7 @@
     <Content Include="CachAddArgument128.aspx" />
     <Content Include="CachDependencyOnFiles.aspx" />
     <Content Include="CachDict127.aspx" />
+    <Content Include="Cache dependency on sql server database table.aspx" />
     <Content Include="Caching.aspx" />
     <Content Include="CachingMultipleResponsesForSingleWebform.aspx" />
     <Content Include="ControlCachingInCode.aspx" />
@@ -214,6 +215,13 @@
     </Compile>
     <Compile Include="CachDict127.aspx.designer.cs">
       <DependentUpon>CachDict127.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cache dependency on sql server database table.aspx.cs">
+      <DependentUpon>Cache dependency on sql server database table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cache dependency on sql server database table.aspx.designer.cs">
+      <DependentUpon>Cache dependency on sql server database table.aspx</DependentUpon>
     </Compile>
     <Compile Include="Caching.aspx.cs">
       <DependentUpon>Caching.aspx</DependentUpon>
