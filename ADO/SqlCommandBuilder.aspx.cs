@@ -52,9 +52,11 @@ namespace ADO
 
             SqlCommandBuilder builder = new SqlCommandBuilder(da);
 
+
             SqlCommand command = builder.GetUpdateCommand();
             Response.Write(command.CommandText + "<br/>");
-            
+            Response.Write(builder.GetInsertCommand().CommandText + "<br/>");
+
             DataSet ds = (DataSet)ViewState["dataset"];
 
             if(ds.Tables["student"].Rows.Count > 0)
