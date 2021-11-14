@@ -120,6 +120,7 @@ namespace ADO
                     da.Update(ds, "student");
                     Cache.Insert("dataset", ds, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration);
                     Response.Write(builder.GetUpdateCommand().CommandText+"</br>");
+                    lblStatus.Text = "table get updated in db";
                 }
             }
         }
