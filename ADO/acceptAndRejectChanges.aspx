@@ -12,6 +12,7 @@
             <asp:Button ID="btnGetDataFromDb" runat="server" Text="btnGetDataFromDb" OnClick="btnGetDataFromDb_Click" />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
             <asp:Button ID="Button2" runat="server" Text="RejectChangesIfAny" OnClick="Button2_Click" />
+            <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="AcceptChangesIfAny" />
             <br />
             <asp:GridView ID="gvStudents" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowCancelingEdit="gvStudents_RowCancelingEdit" OnRowEditing="gvStudents_RowEditing" OnRowUpdating="gvStudents_RowUpdating" OnRowDeleting="gvStudents_RowDeleting">
                 <Columns>
@@ -28,7 +29,7 @@
             <br />
             <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
             <br />
-           
+
         </div>
     </form>
   

@@ -148,7 +148,7 @@ namespace ADO
 
 
 
-                    //---------------------we assoicate two commands delete and update
+                    //---------------------we associate two commands delete and update
                     //the associated command will get executed depend on the change happen in the dataset--------
                     string deletequery = "delete from tblStudents where Id =@Id";
 
@@ -220,6 +220,16 @@ namespace ADO
                 lblStatus.Text = "no changes to undo";
                 lblStatus.ForeColor = System.Drawing.Color.Red;
             }
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            DataSet ds = (DataSet)Cache["dataset"];
+            //it will not work !! see later !
+            ds.AcceptChanges();
+            GetDataFromCach();
+            lblStatus.Text = "changes made";    
+            lblStatus.ForeColor = System.Drawing.Color.Red;
         }
     }
 
