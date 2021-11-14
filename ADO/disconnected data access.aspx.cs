@@ -78,5 +78,21 @@ namespace ADO
             gvStudents.EditIndex = -1;
             GetDataFromCach();
         }
+
+        protected void gvStudents_RowUpdated(object sender, GridViewUpdatedEventArgs e)
+        {
+            DataSet ds = (DataSet) Cache["dataset"];
+            //thats why we let the data set know that the id colume as primary key in the dataset 
+            //because find method take 
+            DataRow row = ds.Tables["student"].Rows.Find(e.Keys["ID"]);
+            row["Name"] = e.NewValues["Name"];
+            row["Gender"] = e.NewValues["Gender"];
+            row["Totalmarks"] = e.NewValues["Totalmarks"];
+            //overwrite the cach, instead we can create sql dependecy
+            Cache.Insert("dataset", ds, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration);
+
+            gvStudents.EditIndex = -1;
+
+        }
     }
 }
