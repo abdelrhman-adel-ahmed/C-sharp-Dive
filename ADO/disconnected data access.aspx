@@ -11,7 +11,7 @@
         <div>
             <asp:Button ID="btnGetDataFromDb" runat="server" Text="btnGetDataFromDb" OnClick="btnGetDataFromDb_Click" />
             <br />
-            <asp:GridView ID="gvStudents" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowCancelingEdit="gvStudents_RowCancelingEdit" OnRowEditing="gvStudents_RowEditing" OnRowUpdated="gvStudents_RowUpdated">
+            <asp:GridView ID="gvStudents" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnRowCancelingEdit="gvStudents_RowCancelingEdit" OnRowEditing="gvStudents_RowEditing" OnRowUpdating="gvStudents_RowUpdating">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                     <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
@@ -21,7 +21,7 @@
                 </Columns>
             </asp:GridView>
             <br />
-            <asp:Button ID="btnUpdateTable" runat="server" Text="btnUpdateTable" />
+            <asp:Button ID="btnUpdateTable" runat="server" Text="btnUpdateTable" OnClick="btnUpdateTable_Click" />
             <br />
             <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
             <br />
