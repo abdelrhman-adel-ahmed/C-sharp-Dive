@@ -11,7 +11,7 @@ namespace ADO
 {
 
 
-    public partial class SqlCommandBuilder
+    public partial class SqlCommandBuilderr
     {
 
         /// <summary>

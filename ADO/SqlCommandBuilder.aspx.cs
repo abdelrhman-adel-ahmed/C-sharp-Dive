@@ -10,7 +10,7 @@ using System.Configuration;
 
 namespace ADO
 {
-    public partial class SqlCommandBuilder : System.Web.UI.Page
+    public partial class SqlCommandBuilderr : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,7 +26,9 @@ namespace ADO
             DataSet ds = new DataSet();
             da.Fill(ds, "student");
 
+            //we store the query and the dataset to use them later in the update
             ViewState["sql_query"] = query;
+            ViewState["dataset"] = ds;
 
             if (ds.Tables["student"].Rows.Count > 0)
             {
@@ -44,7 +46,31 @@ namespace ADO
         }
         protected void Button2_Click(object sender, EventArgs e)
         {
+            string cs = ConfigurationManager.ConnectionStrings["firstdb"].ConnectionString;
+            SqlConnection conn = new SqlConnection(cs);
+            SqlDataAdapter da = new SqlDataAdapter((string)ViewState["sql_query"], conn);
 
+            SqlCommandBuilder builder = new SqlCommandBuilder(da);
+
+            SqlCommand command = builder.GetUpdateCommand();
+            Response.Write(command.CommandText + "<br/>");
+            
+            DataSet ds = (DataSet)ViewState["dataset"];
+
+            if(ds.Tables["student"].Rows.Count > 0)
+            {
+                DataRow dr= ds.Tables["student"].Rows[0];
+                dr["name"] = TextBox3.Text;
+                dr["gender"] = DropDownList1.SelectedValue;
+                dr["totalmarks"] = TextBox6.Text;
+            }
+            else
+            {
+                Label1.Text = "no data to update";
+            }
+            int numRowUpdated=da.Update(ds, "student");
+            if (numRowUpdated > 0)
+                Label1.Text = $"num of row updated {numRowUpdated}";
 
         }
     }

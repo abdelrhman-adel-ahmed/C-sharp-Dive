@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SqlCommandBuilder.aspx.cs" Inherits="ADO.SqlCommandBuilder" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SqlCommandBuilder.aspx.cs" Inherits="ADO.SqlCommandBuilderr" %>
 
 <!DOCTYPE html>
 
