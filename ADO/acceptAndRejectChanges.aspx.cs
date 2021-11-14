@@ -203,6 +203,24 @@ namespace ADO
                     Response.Write(row["ID"].ToString() + " - " + row.RowState + "</br>");
             }
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            DataSet ds = (DataSet)Cache["dataset"];
+            if(ds.HasChanges())
+            {
+                ds.RejectChanges();       
+                //update the Cach ,because we undo the changes
+                GetDataFromCach();
+                lblStatus.Text = "there was changes made to the dataset it will get undo";
+                lblStatus.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                lblStatus.Text = "no changes to undo";
+                lblStatus.ForeColor = System.Drawing.Color.Red;
+            }
+        }
     }
 
 
