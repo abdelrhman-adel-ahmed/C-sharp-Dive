@@ -47,7 +47,7 @@ namespace ADO
                 ds.Tables["student"].PrimaryKey = new DataColumn[]
                                             {ds.Tables["student"].Columns["ID"]};
 
-                Cache.Insert("dataset", ds,null,DateTime.Now.AddSeconds(18),Cache.NoSlidingExpiration);
+                Cache.Insert("dataset", ds,null,Cache.NoAbsoluteExpiration,Cache.NoSlidingExpiration);
 
                 gvStudents.DataSource = ds;
                 gvStudents.DataBind();
@@ -64,6 +64,19 @@ namespace ADO
             gvStudents.DataBind();
             lblStatus.Text = "data loaded from cach";
 
+        }
+
+        protected void gvStudents_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gvStudents.EditIndex = e.NewEditIndex;
+            Response.Write(gvStudents.EditIndex + "</br>");
+            GetDataFromCach();
+        }
+
+        protected void gvStudents_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gvStudents.EditIndex = -1;
+            GetDataFromCach();
         }
     }
 }
