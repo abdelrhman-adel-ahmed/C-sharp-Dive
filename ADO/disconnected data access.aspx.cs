@@ -102,23 +102,84 @@ namespace ADO
 
         protected void btnUpdateTable_Click(object sender, EventArgs e)
         {
-            if(Cache["dataset"] !=null)
+            //UpdateUsingSqlCommmandBuilder();
+            UpdateUsingSqlCommand();
+        }
+        private void UpdateUsingSqlCommmandBuilder()
+        {
+            if (Cache["dataset"] != null)
             {
                 string cs = ConfigurationManager.ConnectionStrings["firstdb"].ConnectionString;
-                using (SqlConnection conn= new SqlConnection(cs))
+                using (SqlConnection conn = new SqlConnection(cs))
                 {
                     SqlDataAdapter da = new SqlDataAdapter("select * from tblStudents", conn);
-                    //SqlCommandBuilder builder = new SqlCommandBuilder(da);
+                    SqlCommandBuilder builder = new SqlCommandBuilder(da);
                     DataSet ds = (DataSet)Cache["dataset"];
-                    string updateQuery = "update tblStudents set Name=@Name , Gender = @Gender,TotalMarks=@TotalMarks " +
-                        "where Id = @Id";
-                    SqlCommand commmand = new SqlCommand(updateQuery, conn);
 
-                    da.Update(ds,"student");
-                    //Cache.Insert("dataset", ds, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration);
-                    //Response.Write(builder.GetUpdateCommand().CommandText+"</br>");
+                    //we will use sqlcommand instead of sqlcommnadbuilder
+                    da.Update(ds, "student");
+                    Cache.Insert("dataset", ds, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration);
+                    Response.Write(builder.GetUpdateCommand().CommandText+"</br>");
                 }
             }
+        }
+        private void UpdateUsingSqlCommand()
+        {
+            if (Cache["dataset"] != null)
+            {
+                string cs = ConfigurationManager.ConnectionStrings["firstdb"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(cs))
+                {
+                    SqlDataAdapter da = new SqlDataAdapter("select * from tblStudents", conn);
+                    DataSet ds = (DataSet)Cache["dataset"];
+
+                    string updateQuery = "update tblStudents set Name=@Name , Gender = @Gender,TotalMarks=@TotalMarks " +
+                        "where Id = @Id";
+
+                    SqlCommand UpdateCommmand = new SqlCommand(updateQuery, conn);
+
+                    Mapping(ref UpdateCommmand);
+
+
+                    //associate the dataadapter updatecommand with the update command we created 
+                    da.UpdateCommand = UpdateCommmand;
+
+
+
+                    //---------------------we assoicate two commands delete and update
+                    //the associated command will get executed depend on the change happen in the dataset--------
+                    string deletequery = "delete from tblStudents where Id =@Id";
+
+                    SqlCommand deletecommand = new SqlCommand(deletequery, conn);
+
+                    deletecommand.Parameters.Add("@Id", SqlDbType.Int, 0, "Id");
+
+
+                    da.DeleteCommand = deletecommand;
+
+                    da.Update(ds, "student");
+
+                    lblStatus.Text = "table get updated in db";
+                }
+            }
+        }
+
+        private void Mapping(ref SqlCommand sqlcommand )
+        {
+
+            sqlcommand.Parameters.Add("@Name", SqlDbType.NVarChar, 50, "Name");
+            sqlcommand.Parameters.Add("@Gender", SqlDbType.NVarChar, 20, "Gender");
+            sqlcommand.Parameters.Add("@TotalMarks", SqlDbType.Int, 0, "TotalMarks");
+            sqlcommand.Parameters.Add("@Id", SqlDbType.Int, 0, "Id");
+        }
+
+        protected void gvStudents_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            DataSet ds = (DataSet)Cache["dataset"];
+            DataRow row = ds.Tables["student"].Rows.Find(e.Keys["ID"]);
+
+            row.Delete();
+            GetDataFromCach();
         }
     }
 }
