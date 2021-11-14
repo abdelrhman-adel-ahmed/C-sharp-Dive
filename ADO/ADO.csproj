@@ -118,6 +118,7 @@
     <Content Include="datareader.aspx" />
     <Content Include="datareaderNextResult.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="disconnected data access.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -228,6 +229,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="disconnected data access.aspx.cs">
+      <DependentUpon>disconnected data access.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="disconnected data access.aspx.designer.cs">
+      <DependentUpon>disconnected data access.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
