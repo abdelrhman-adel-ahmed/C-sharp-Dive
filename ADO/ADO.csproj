@@ -107,6 +107,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="acceptAndRejectChanges.aspx" />
+    <Content Include="App_Data\countries.xml" />
     <Content Include="cachingDataSets.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -131,6 +132,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="loadXmlDataIntoSqlTableUsingSqlbulkcopy.aspx" />
     <Content Include="multipledatasets.aspx" />
     <Content Include="SqlCommandBuilder.aspx" />
     <Content Include="sqlinjection.aspx" />
@@ -250,6 +252,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="loadXmlDataIntoSqlTableUsingSqlbulkcopy.aspx.cs">
+      <DependentUpon>loadXmlDataIntoSqlTableUsingSqlbulkcopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loadXmlDataIntoSqlTableUsingSqlbulkcopy.aspx.designer.cs">
+      <DependentUpon>loadXmlDataIntoSqlTableUsingSqlbulkcopy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="multipledatasets.aspx.cs">
       <DependentUpon>multipledatasets.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -335,9 +344,7 @@
       <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
