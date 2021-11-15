@@ -24,7 +24,8 @@ namespace ADO
             {
                 DataSet ds = new DataSet();
                 ds.ReadXml(Server.MapPath("~/App_Data/employee.xml"));
-
+                //the ds cotain two tables now Department and Employee ,the names comes from the schema of the xml
+                DataTable DtDept= ds.Tables["Department"];
 
 
             }
