@@ -24,7 +24,7 @@ namespace ADO {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class StudentDataSet : global::System.Data.DataSet {
         
-        private tblStudentsDataTable tabletblStudents;
+        private StudentsDataTable tableStudents;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace ADO {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["tblStudents"] != null)) {
-                    base.Tables.Add(new tblStudentsDataTable(ds.Tables["tblStudents"]));
+                if ((ds.Tables["Students"] != null)) {
+                    base.Tables.Add(new StudentsDataTable(ds.Tables["Students"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ADO {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tblStudentsDataTable tblStudents {
+        public StudentsDataTable Students {
             get {
-                return this.tabletblStudents;
+                return this.tableStudents;
             }
         }
         
@@ -152,8 +152,8 @@ namespace ADO {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["tblStudents"] != null)) {
-                    base.Tables.Add(new tblStudentsDataTable(ds.Tables["tblStudents"]));
+                if ((ds.Tables["Students"] != null)) {
+                    base.Tables.Add(new StudentsDataTable(ds.Tables["Students"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ADO {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tabletblStudents = ((tblStudentsDataTable)(base.Tables["tblStudents"]));
+            this.tableStudents = ((StudentsDataTable)(base.Tables["Students"]));
             if ((initTable == true)) {
-                if ((this.tabletblStudents != null)) {
-                    this.tabletblStudents.InitVars();
+                if ((this.tableStudents != null)) {
+                    this.tableStudents.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace ADO {
             this.Namespace = "http://tempuri.org/StudentDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabletblStudents = new tblStudentsDataTable();
-            base.Tables.Add(this.tabletblStudents);
+            this.tableStudents = new StudentsDataTable();
+            base.Tables.Add(this.tableStudents);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializetblStudents() {
+        private bool ShouldSerializeStudents() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace ADO {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void tblStudentsRowChangeEventHandler(object sender, tblStudentsRowChangeEvent e);
+        public delegate void StudentsRowChangeEventHandler(object sender, StudentsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tblStudentsDataTable : global::System.Data.TypedTableBase<tblStudentsRow> {
+        public partial class StudentsDataTable : global::System.Data.TypedTableBase<StudentsRow> {
             
             private global::System.Data.DataColumn columnID;
             
@@ -289,8 +289,8 @@ namespace ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tblStudentsDataTable() {
-                this.TableName = "tblStudents";
+            public StudentsDataTable() {
+                this.TableName = "Students";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +298,7 @@ namespace ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal tblStudentsDataTable(global::System.Data.DataTable table) {
+            internal StudentsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,7 +315,7 @@ namespace ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected tblStudentsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected StudentsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -363,55 +363,55 @@ namespace ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tblStudentsRow this[int index] {
+            public StudentsRow this[int index] {
                 get {
-                    return ((tblStudentsRow)(this.Rows[index]));
+                    return ((StudentsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event tblStudentsRowChangeEventHandler tblStudentsRowChanging;
+            public event StudentsRowChangeEventHandler StudentsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event tblStudentsRowChangeEventHandler tblStudentsRowChanged;
+            public event StudentsRowChangeEventHandler StudentsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event tblStudentsRowChangeEventHandler tblStudentsRowDeleting;
+            public event StudentsRowChangeEventHandler StudentsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event tblStudentsRowChangeEventHandler tblStudentsRowDeleted;
+            public event StudentsRowChangeEventHandler StudentsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddtblStudentsRow(tblStudentsRow row) {
+            public void AddStudentsRow(StudentsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tblStudentsRow AddtblStudentsRow(string Name, string Gender, int TotalMarks) {
-                tblStudentsRow rowtblStudentsRow = ((tblStudentsRow)(this.NewRow()));
+            public StudentsRow AddStudentsRow(string Name, string Gender, int TotalMarks) {
+                StudentsRow rowStudentsRow = ((StudentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
                         Gender,
                         TotalMarks};
-                rowtblStudentsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtblStudentsRow);
-                return rowtblStudentsRow;
+                rowStudentsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowStudentsRow);
+                return rowStudentsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tblStudentsRow FindByID(int ID) {
-                return ((tblStudentsRow)(this.Rows.Find(new object[] {
+            public StudentsRow FindByID(int ID) {
+                return ((StudentsRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                tblStudentsDataTable cln = ((tblStudentsDataTable)(base.Clone()));
+                StudentsDataTable cln = ((StudentsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -419,7 +419,7 @@ namespace ADO {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new tblStudentsDataTable();
+                return new StudentsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -456,28 +456,28 @@ namespace ADO {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tblStudentsRow NewtblStudentsRow() {
-                return ((tblStudentsRow)(this.NewRow()));
+            public StudentsRow NewStudentsRow() {
+                return ((StudentsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tblStudentsRow(builder);
+                return new StudentsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(tblStudentsRow);
+                return typeof(StudentsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.tblStudentsRowChanged != null)) {
-                    this.tblStudentsRowChanged(this, new tblStudentsRowChangeEvent(((tblStudentsRow)(e.Row)), e.Action));
+                if ((this.StudentsRowChanged != null)) {
+                    this.StudentsRowChanged(this, new StudentsRowChangeEvent(((StudentsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -485,8 +485,8 @@ namespace ADO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.tblStudentsRowChanging != null)) {
-                    this.tblStudentsRowChanging(this, new tblStudentsRowChangeEvent(((tblStudentsRow)(e.Row)), e.Action));
+                if ((this.StudentsRowChanging != null)) {
+                    this.StudentsRowChanging(this, new StudentsRowChangeEvent(((StudentsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -494,8 +494,8 @@ namespace ADO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.tblStudentsRowDeleted != null)) {
-                    this.tblStudentsRowDeleted(this, new tblStudentsRowChangeEvent(((tblStudentsRow)(e.Row)), e.Action));
+                if ((this.StudentsRowDeleted != null)) {
+                    this.StudentsRowDeleted(this, new StudentsRowChangeEvent(((StudentsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -503,14 +503,14 @@ namespace ADO {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.tblStudentsRowDeleting != null)) {
-                    this.tblStudentsRowDeleting(this, new tblStudentsRowChangeEvent(((tblStudentsRow)(e.Row)), e.Action));
+                if ((this.StudentsRowDeleting != null)) {
+                    this.StudentsRowDeleting(this, new StudentsRowChangeEvent(((StudentsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovetblStudentsRow(tblStudentsRow row) {
+            public void RemoveStudentsRow(StudentsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -537,7 +537,7 @@ namespace ADO {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tblStudentsDataTable";
+                attribute2.FixedValue = "StudentsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -581,25 +581,25 @@ namespace ADO {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class tblStudentsRow : global::System.Data.DataRow {
+        public partial class StudentsRow : global::System.Data.DataRow {
             
-            private tblStudentsDataTable tabletblStudents;
+            private StudentsDataTable tableStudents;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal tblStudentsRow(global::System.Data.DataRowBuilder rb) : 
+            internal StudentsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabletblStudents = ((tblStudentsDataTable)(this.Table));
+                this.tableStudents = ((StudentsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID {
                 get {
-                    return ((int)(this[this.tabletblStudents.IDColumn]));
+                    return ((int)(this[this.tableStudents.IDColumn]));
                 }
                 set {
-                    this[this.tabletblStudents.IDColumn] = value;
+                    this[this.tableStudents.IDColumn] = value;
                 }
             }
             
@@ -608,14 +608,14 @@ namespace ADO {
             public string Name {
                 get {
                     try {
-                        return ((string)(this[this.tabletblStudents.NameColumn]));
+                        return ((string)(this[this.tableStudents.NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'tblStudents\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'Students\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblStudents.NameColumn] = value;
+                    this[this.tableStudents.NameColumn] = value;
                 }
             }
             
@@ -624,14 +624,14 @@ namespace ADO {
             public string Gender {
                 get {
                     try {
-                        return ((string)(this[this.tabletblStudents.GenderColumn]));
+                        return ((string)(this[this.tableStudents.GenderColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Gender\' in table \'tblStudents\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Gender\' in table \'Students\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblStudents.GenderColumn] = value;
+                    this[this.tableStudents.GenderColumn] = value;
                 }
             }
             
@@ -640,51 +640,51 @@ namespace ADO {
             public int TotalMarks {
                 get {
                     try {
-                        return ((int)(this[this.tabletblStudents.TotalMarksColumn]));
+                        return ((int)(this[this.tableStudents.TotalMarksColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TotalMarks\' in table \'tblStudents\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalMarks\' in table \'Students\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletblStudents.TotalMarksColumn] = value;
+                    this[this.tableStudents.TotalMarksColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNameNull() {
-                return this.IsNull(this.tabletblStudents.NameColumn);
+                return this.IsNull(this.tableStudents.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNameNull() {
-                this[this.tabletblStudents.NameColumn] = global::System.Convert.DBNull;
+                this[this.tableStudents.NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsGenderNull() {
-                return this.IsNull(this.tabletblStudents.GenderColumn);
+                return this.IsNull(this.tableStudents.GenderColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetGenderNull() {
-                this[this.tabletblStudents.GenderColumn] = global::System.Convert.DBNull;
+                this[this.tableStudents.GenderColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTotalMarksNull() {
-                return this.IsNull(this.tabletblStudents.TotalMarksColumn);
+                return this.IsNull(this.tableStudents.TotalMarksColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTotalMarksNull() {
-                this[this.tabletblStudents.TotalMarksColumn] = global::System.Convert.DBNull;
+                this[this.tableStudents.TotalMarksColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -692,22 +692,22 @@ namespace ADO {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class tblStudentsRowChangeEvent : global::System.EventArgs {
+        public class StudentsRowChangeEvent : global::System.EventArgs {
             
-            private tblStudentsRow eventRow;
+            private StudentsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tblStudentsRowChangeEvent(tblStudentsRow row, global::System.Data.DataRowAction action) {
+            public StudentsRowChangeEvent(StudentsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tblStudentsRow Row {
+            public StudentsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -735,7 +735,7 @@ namespace ADO.StudentDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tblStudentsTableAdapter : global::System.ComponentModel.Component {
+    public partial class StudentsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -749,7 +749,7 @@ namespace ADO.StudentDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public tblStudentsTableAdapter() {
+        public StudentsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -846,7 +846,7 @@ namespace ADO.StudentDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tblStudents";
+            tableMapping.DataSetTable = "Students";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("Gender", "Gender");
@@ -897,7 +897,7 @@ namespace ADO.StudentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(StudentDataSet.tblStudentsDataTable dataTable) {
+        public virtual int Fill(StudentDataSet.StudentsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -910,9 +910,9 @@ namespace ADO.StudentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual StudentDataSet.tblStudentsDataTable GetData() {
+        public virtual StudentDataSet.StudentsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            StudentDataSet.tblStudentsDataTable dataTable = new StudentDataSet.tblStudentsDataTable();
+            StudentDataSet.StudentsDataTable dataTable = new StudentDataSet.StudentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -920,7 +920,7 @@ namespace ADO.StudentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(StudentDataSet.tblStudentsDataTable dataTable) {
+        public virtual int Update(StudentDataSet.StudentsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -928,7 +928,7 @@ namespace ADO.StudentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(StudentDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "tblStudents");
+            return this.Adapter.Update(dataSet, "Students");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1060,7 +1060,7 @@ namespace ADO.StudentDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private tblStudentsTableAdapter _tblStudentsTableAdapter;
+        private StudentsTableAdapter _studentsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1082,12 +1082,12 @@ namespace ADO.StudentDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public tblStudentsTableAdapter tblStudentsTableAdapter {
+        public StudentsTableAdapter StudentsTableAdapter {
             get {
-                return this._tblStudentsTableAdapter;
+                return this._studentsTableAdapter;
             }
             set {
-                this._tblStudentsTableAdapter = value;
+                this._studentsTableAdapter = value;
             }
         }
         
@@ -1110,9 +1110,9 @@ namespace ADO.StudentDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._tblStudentsTableAdapter != null) 
-                            && (this._tblStudentsTableAdapter.Connection != null))) {
-                    return this._tblStudentsTableAdapter.Connection;
+                if (((this._studentsTableAdapter != null) 
+                            && (this._studentsTableAdapter.Connection != null))) {
+                    return this._studentsTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1127,7 +1127,7 @@ namespace ADO.StudentDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._tblStudentsTableAdapter != null)) {
+                if ((this._studentsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1141,12 +1141,12 @@ namespace ADO.StudentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(StudentDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tblStudentsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tblStudents.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._studentsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Students.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tblStudentsTableAdapter.Update(updatedRows));
+                    result = (result + this._studentsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1160,11 +1160,11 @@ namespace ADO.StudentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(StudentDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tblStudentsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tblStudents.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._studentsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Students.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tblStudentsTableAdapter.Update(addedRows));
+                    result = (result + this._studentsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1178,11 +1178,11 @@ namespace ADO.StudentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(StudentDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._tblStudentsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblStudents.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._studentsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Students.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tblStudentsTableAdapter.Update(deletedRows));
+                    result = (result + this._studentsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1225,8 +1225,8 @@ namespace ADO.StudentDataSetTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._tblStudentsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tblStudentsTableAdapter.Connection) == false))) {
+            if (((this._studentsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._studentsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1262,13 +1262,13 @@ namespace ADO.StudentDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._tblStudentsTableAdapter != null)) {
-                    revertConnections.Add(this._tblStudentsTableAdapter, this._tblStudentsTableAdapter.Connection);
-                    this._tblStudentsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tblStudentsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tblStudentsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tblStudentsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tblStudentsTableAdapter.Adapter);
+                if ((this._studentsTableAdapter != null)) {
+                    revertConnections.Add(this._studentsTableAdapter, this._studentsTableAdapter.Connection);
+                    this._studentsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._studentsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._studentsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._studentsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._studentsTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1329,9 +1329,9 @@ namespace ADO.StudentDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._tblStudentsTableAdapter != null)) {
-                    this._tblStudentsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblStudentsTableAdapter]));
-                    this._tblStudentsTableAdapter.Transaction = null;
+                if ((this._studentsTableAdapter != null)) {
+                    this._studentsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._studentsTableAdapter]));
+                    this._studentsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
