@@ -48,6 +48,7 @@
     <Compile Include="MVC\FirstAttempt.cs" />
     <Compile Include="MVC\MVCContainer.cs" />
     <Compile Include="MVC\TheProblem.cs" />
+    <Compile Include="NoteStore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

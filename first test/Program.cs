@@ -490,9 +490,28 @@ namespace first_test
             product<classone>();
             //product<classtwo>(); //error, type that passed to the func must be parameterless constructor 
 
-      
-         
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            dict.Add("a", 1);
+            dict.Add("b", 2);
+            dict.Add("c", 3);
+            Dictionary<string, int>.KeyCollection.Enumerator i = dict.Keys.GetEnumerator();
+            while(i.MoveNext())
+            {
+                Console.WriteLine(i.Current);
+            }
+            List<String> ValidSates = new List<string>{
+            "Completed",
+            "active",
+            "others"
+                    };
+            string x = "dd";
+            if (ValidSates.Contains(x))
+                Console.WriteLine($"dsa {x}");
+
+
+
         }
+
         //constrain that t is classone or inherete from class one ,and it has parameterless constructor
         static T product<T>() where T :  new()
         {
