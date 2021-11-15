@@ -135,6 +135,7 @@
     <Content Include="SqlCommandBuilder.aspx" />
     <Content Include="sqlinjection.aspx" />
     <Content Include="storedProcedure.aspx" />
+    <Content Include="typeVSuntypedDS.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -290,6 +291,13 @@
     </Compile>
     <Compile Include="storedProcedure.aspx.designer.cs">
       <DependentUpon>storedProcedure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="typeVSuntypedDS.aspx.cs">
+      <DependentUpon>typeVSuntypedDS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="typeVSuntypedDS.aspx.designer.cs">
+      <DependentUpon>typeVSuntypedDS.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
