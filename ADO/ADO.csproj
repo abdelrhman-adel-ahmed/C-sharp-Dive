@@ -108,6 +108,7 @@
     <Content Include="About.aspx" />
     <Content Include="acceptAndRejectChanges.aspx" />
     <Content Include="App_Data\countries.xml" />
+    <Content Include="App_Data\employee.xml" />
     <Content Include="cachingDataSets.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
