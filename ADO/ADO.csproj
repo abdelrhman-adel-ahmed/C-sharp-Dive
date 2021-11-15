@@ -135,6 +135,7 @@
     <Content Include="SqlCommandBuilder.aspx" />
     <Content Include="sqlinjection.aspx" />
     <Content Include="storedProcedure.aspx" />
+    <Content Include="typedDs.aspx" />
     <Content Include="untypedDS.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
@@ -293,6 +294,18 @@
       <DependentUpon>storedProcedure.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student.cs" />
+    <Compile Include="StudentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="typedDs.aspx.cs">
+      <DependentUpon>typedDs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="typedDs.aspx.designer.cs">
+      <DependentUpon>typedDs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="untypedDS.aspx.cs">
       <DependentUpon>untypedDS.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -329,6 +342,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="StudentDataSet.xsc">
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="StudentDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="StudentDataSet.xss">
+      <DependentUpon>StudentDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
