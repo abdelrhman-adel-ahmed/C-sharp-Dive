@@ -21,7 +21,30 @@ namespace ADO
                 SqlDataAdapter da = new SqlDataAdapter(SelectQuery, conn);
                 DataSet ds = new DataSet();
                 da.Fill(ds,"students");
-                GridView1.DataSource=
+                List<Student> StudentList = new List<Student>();
+                foreach (DataRow row in ds.Tables["students"].Rows)
+                {
+                    Student st = new Student
+                    {
+                        ID = Convert.ToInt32(row["Id"]),
+                        Name = row["Name"].ToString(),
+                        Gender = row["Gender"].ToString(),
+                        TotalMarks = (int)row["TotalMarks"]
+                    };
+                    StudentList.Add(st);
+                }
+                GridView1.DataSource = StudentList;
+                GridView1.DataBind();
+                //or we can use linq 
+                GridView1.DataSource= from row in ds.Tables["students"].AsEnumerable()
+                                      select new Student
+                                      {
+                                          ID = Convert.ToInt32(row["Id"]),
+                                          Name = row["Name"].ToString(),
+                                          Gender = row["Gender"].ToString(),
+                                          TotalMarks = (int)row["TotalMarks"]
+                                      };
+                GridView1.DataBind();
             }
         }
     }
