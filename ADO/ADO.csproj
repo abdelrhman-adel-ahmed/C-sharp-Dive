@@ -116,6 +116,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="copyDataFromOnTableToAnotherUsingSqlbulkCopy.aspx" />
     <Content Include="dataadapter.aspx" />
     <Content Include="dataadapter2.aspx" />
     <Content Include="datareader.aspx" />
@@ -207,6 +208,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="copyDataFromOnTableToAnotherUsingSqlbulkCopy.aspx.cs">
+      <DependentUpon>copyDataFromOnTableToAnotherUsingSqlbulkCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="copyDataFromOnTableToAnotherUsingSqlbulkCopy.aspx.designer.cs">
+      <DependentUpon>copyDataFromOnTableToAnotherUsingSqlbulkCopy.aspx</DependentUpon>
     </Compile>
     <Compile Include="dataadapter.aspx.cs">
       <DependentUpon>dataadapter.aspx</DependentUpon>
