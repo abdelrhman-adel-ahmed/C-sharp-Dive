@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="typeVSuntypedDS.aspx.cs" Inherits="ADO.typeVSuntypedDS" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="untypedDS.aspx.cs" Inherits="ADO.typeVSuntypedDS" %>
 
 <!DOCTYPE html>
 

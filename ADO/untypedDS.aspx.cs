@@ -58,6 +58,9 @@ namespace ADO
             //filter the rows on Name column
             else
             {
+                //here we using untyped dataset meaning that we specife the object that the data take ,any
+                //Misspelled on the naming of the columns we map will result in an error
+                // e.x id = row["id1"];
                 GridView1.DataSource = from row in ds.Tables["students"].AsEnumerable()
                                        where row["Name"].ToString().ToLower().StartsWith(TextBox1.Text.ToLower().Trim())
                                        select new Student
