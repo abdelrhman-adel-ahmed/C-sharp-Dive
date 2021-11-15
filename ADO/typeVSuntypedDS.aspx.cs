@@ -59,7 +59,7 @@ namespace ADO
             else
             {
                 GridView1.DataSource = from row in ds.Tables["students"].AsEnumerable()
-                                       where row["Name"].ToString().ToLower().Trim() == TextBox1.Text.ToLower()
+                                       where row["Name"].ToString().ToLower().StartsWith(TextBox1.Text.ToLower().Trim())
                                        select new Student
                                        {
                                            ID = Convert.ToInt32(row["Id"]),
