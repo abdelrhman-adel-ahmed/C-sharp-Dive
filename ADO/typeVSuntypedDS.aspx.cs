@@ -26,31 +26,21 @@ namespace ADO
 
                     Session["dataset"] = ds;
 
-                    List<Student> StudentList = new List<Student>();
-                    foreach (DataRow row in ds.Tables["students"].Rows)
-                    {
-                        Student st = new Student
-                        {
-                            ID = Convert.ToInt32(row["Id"]),
-                            Name = row["Name"].ToString(),
-                            Gender = row["Gender"].ToString(),
-                            TotalMarks = (int)row["TotalMarks"]
-                        };
-                        StudentList.Add(st);
-                    }
+                    List<Student> StudentList = GetStudentList();
                     GridView1.DataSource = StudentList;
                     GridView1.DataBind();
 
+
                     //or we can use linq 
-                    GridView1.DataSource = from row in ds.Tables["students"].AsEnumerable()
-                                           select new Student
-                                           {
-                                               ID = Convert.ToInt32(row["Id"]),
-                                               Name = row["Name"].ToString(),
-                                               Gender = row["Gender"].ToString(),
-                                               TotalMarks = (int)row["TotalMarks"]
-                                           };
-                    GridView1.DataBind();
+                    //GridView1.DataSource = from row in ds.Tables["students"].AsEnumerable()
+                    //                       select new Student
+                    //                       {
+                    //                           ID = Convert.ToInt32(row["Id"]),
+                    //                           Name = row["Name"].ToString(),
+                    //                           Gender = row["Gender"].ToString(),
+                    //                           TotalMarks = (int)row["TotalMarks"]
+                    //                       };
+                    //GridView1.DataBind();
                 }
             }
         }
@@ -61,8 +51,47 @@ namespace ADO
             //if the textbox is empty 
             if(string.IsNullOrEmpty(TextBox1.Text))
             {
+                List<Student> StudentList = GetStudentList();
+                GridView1.DataSource = StudentList;
+                GridView1.DataBind();
+            }
+            //filter the rows on Name column
+            else
+            {
+                GridView1.DataSource = from row in ds.Tables["students"].AsEnumerable()
+                                       where row["Name"].ToString().ToLower().Trim() == TextBox1.Text.ToLower()
+                                       select new Student
+                                       {
+                                           ID = Convert.ToInt32(row["Id"]),
+                                           Name = row["Name"].ToString(),
+                                           Gender = row["Gender"].ToString(),
+                                           TotalMarks = (int)row["TotalMarks"]
+                                       };
+                GridView1.DataBind();
                 
             }
+        
+        }
+
+
+        private List<Student> GetStudentList()
+        {
+            List<Student> StudentList = new List<Student>();
+
+            DataSet ds = (DataSet)Session["dataset"];
+
+            foreach (DataRow row in ds.Tables["students"].Rows)
+            {
+                Student st = new Student
+                {
+                    ID = Convert.ToInt32(row["Id"]),
+                    Name = row["Name"].ToString(),
+                    Gender = row["Gender"].ToString(),
+                    TotalMarks = (int)row["TotalMarks"]
+                };
+                StudentList.Add(st);
+            }
+            return StudentList;
         }
     }
 }

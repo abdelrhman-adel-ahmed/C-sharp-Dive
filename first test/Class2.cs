@@ -4,7 +4,5 @@ using System.Text;
 
 namespace first_test
 {
-    class Class2:cons
-    {
-    }
+   
 }

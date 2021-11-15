@@ -489,6 +489,8 @@ namespace first_test
             Console.WriteLine("--------------generics constrains-------------");
             product<classone>();
             //product<classtwo>(); //error, type that passed to the func must be parameterless constructor 
+
+      
          
         }
         //constrain that t is classone or inherete from class one ,and it has parameterless constructor
