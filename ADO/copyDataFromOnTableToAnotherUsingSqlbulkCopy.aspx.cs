@@ -19,46 +19,42 @@ namespace ADO
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string SoruceCs = ConfigurationManager.ConnectionStrings["sourcedb"].ConnectionString;
+            string SourceCs = ConfigurationManager.ConnectionStrings["sourcedb"].ConnectionString;
             string DestinationCs = ConfigurationManager.ConnectionStrings["destinationdb"].ConnectionString;
-
-            using (SqlConnection SourceConnection = new SqlConnection(SoruceCs))
+            using (SqlConnection SourceConnection = new SqlConnection(SourceCs))
             {
-
-                SqlCommand command = new SqlCommand("select * from departments", SourceConnection);
+                SqlCommand command = new SqlCommand("select * from Employees",SourceConnection);
                 SourceConnection.Open();
+
                 using (SqlDataReader dr = command.ExecuteReader())
                 {
-                    using (SqlConnection DestinationConn = new SqlConnection(DestinationCs))
+                    using (SqlConnection DestinationConnection = new SqlConnection(DestinationCs))
                     {
-
-                        using (SqlBulkCopy bc = new SqlBulkCopy(DestinationConn))
+                        using (SqlBulkCopy bc = new SqlBulkCopy(DestinationConnection))
                         {
-
-                            bc.DestinationTableName = "Departments";
-                            DestinationConn.Open();
-                            //scince the column names in the source and destination is the same so we dont need to map them
-                            bc.WriteToServer(dr);
-
-                        }
-                    }
-                }
-                command = new SqlCommand("select * from Employees", SourceConnection);
-                using (SqlDataReader dr = command.ExecuteReader())
-                {
-                    using (SqlConnection DestinationConn = new SqlConnection(DestinationCs))
-                    {
-
-                        using (SqlBulkCopy bc = new SqlBulkCopy(DestinationConn))
-                        {
-
                             bc.DestinationTableName = "Employees";
-                            DestinationConn.Open();
+                            DestinationConnection.Open();
+                            bc.WriteToServer(dr);
+                        }   
+                    }
+                }
+                command = new SqlCommand("select * from Departments", SourceConnection);
+                using (SqlDataReader dr = command.ExecuteReader())
+                {
+                    using (SqlConnection DestinationConnection = new SqlConnection(DestinationCs))
+                    {
+                        using (SqlBulkCopy bc = new SqlBulkCopy(DestinationConnection))
+                        {
+                            bc.DestinationTableName = "Departments";
+                            DestinationConnection.Open();
                             bc.WriteToServer(dr);
                         }
                     }
                 }
+
             }
+
+
         }
     }
 }
