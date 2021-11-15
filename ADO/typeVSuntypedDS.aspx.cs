@@ -20,9 +20,8 @@ namespace ADO
                 string SelectQuery = "select * from tblStudents";
                 SqlDataAdapter da = new SqlDataAdapter(SelectQuery, conn);
                 DataSet ds = new DataSet();
-                da.Fill(ds);
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
+                da.Fill(ds,"students");
+                GridView1.DataSource=
             }
         }
     }

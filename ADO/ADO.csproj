@@ -292,6 +292,7 @@
     <Compile Include="storedProcedure.aspx.designer.cs">
       <DependentUpon>storedProcedure.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Student.cs" />
     <Compile Include="typeVSuntypedDS.aspx.cs">
       <DependentUpon>typeVSuntypedDS.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
