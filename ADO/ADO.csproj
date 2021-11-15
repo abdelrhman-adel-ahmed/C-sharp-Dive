@@ -136,6 +136,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="loadXmlDataIntoSqlTableUsingSqlbulkcopy.aspx" />
     <Content Include="multipledatasets.aspx" />
+    <Content Include="sqlbulkcopynotifyafter.aspx" />
     <Content Include="SqlCommandBuilder.aspx" />
     <Content Include="sqlinjection.aspx" />
     <Content Include="storedProcedure.aspx" />
@@ -289,6 +290,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sqlbulkcopynotifyafter.aspx.cs">
+      <DependentUpon>sqlbulkcopynotifyafter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sqlbulkcopynotifyafter.aspx.designer.cs">
+      <DependentUpon>sqlbulkcopynotifyafter.aspx</DependentUpon>
     </Compile>
     <Compile Include="SqlCommandBuilder.aspx.cs">
       <DependentUpon>SqlCommandBuilder.aspx</DependentUpon>
