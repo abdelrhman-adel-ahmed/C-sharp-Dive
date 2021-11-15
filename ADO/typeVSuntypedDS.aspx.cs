@@ -14,37 +14,54 @@ namespace ADO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string cs = ConfigurationManager.ConnectionStrings["firstdb"].ConnectionString;
-            using (SqlConnection conn = new SqlConnection(cs))
+            if (!IsPostBack)
             {
-                string SelectQuery = "select * from tblStudents";
-                SqlDataAdapter da = new SqlDataAdapter(SelectQuery, conn);
-                DataSet ds = new DataSet();
-                da.Fill(ds,"students");
-                List<Student> StudentList = new List<Student>();
-                foreach (DataRow row in ds.Tables["students"].Rows)
+                string cs = ConfigurationManager.ConnectionStrings["firstdb"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(cs))
                 {
-                    Student st = new Student
+                    string SelectQuery = "select * from tblStudents";
+                    SqlDataAdapter da = new SqlDataAdapter(SelectQuery, conn);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "students");
+
+                    Session["dataset"] = ds;
+
+                    List<Student> StudentList = new List<Student>();
+                    foreach (DataRow row in ds.Tables["students"].Rows)
                     {
-                        ID = Convert.ToInt32(row["Id"]),
-                        Name = row["Name"].ToString(),
-                        Gender = row["Gender"].ToString(),
-                        TotalMarks = (int)row["TotalMarks"]
-                    };
-                    StudentList.Add(st);
+                        Student st = new Student
+                        {
+                            ID = Convert.ToInt32(row["Id"]),
+                            Name = row["Name"].ToString(),
+                            Gender = row["Gender"].ToString(),
+                            TotalMarks = (int)row["TotalMarks"]
+                        };
+                        StudentList.Add(st);
+                    }
+                    GridView1.DataSource = StudentList;
+                    GridView1.DataBind();
+
+                    //or we can use linq 
+                    GridView1.DataSource = from row in ds.Tables["students"].AsEnumerable()
+                                           select new Student
+                                           {
+                                               ID = Convert.ToInt32(row["Id"]),
+                                               Name = row["Name"].ToString(),
+                                               Gender = row["Gender"].ToString(),
+                                               TotalMarks = (int)row["TotalMarks"]
+                                           };
+                    GridView1.DataBind();
                 }
-                GridView1.DataSource = StudentList;
-                GridView1.DataBind();
-                //or we can use linq 
-                GridView1.DataSource= from row in ds.Tables["students"].AsEnumerable()
-                                      select new Student
-                                      {
-                                          ID = Convert.ToInt32(row["Id"]),
-                                          Name = row["Name"].ToString(),
-                                          Gender = row["Gender"].ToString(),
-                                          TotalMarks = (int)row["TotalMarks"]
-                                      };
-                GridView1.DataBind();
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            DataSet ds = (DataSet)Session["dataset"];
+            //if the textbox is empty 
+            if(string.IsNullOrEmpty(TextBox1.Text))
+            {
+                
             }
         }
     }
