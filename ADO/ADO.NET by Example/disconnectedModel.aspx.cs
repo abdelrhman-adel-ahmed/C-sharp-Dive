@@ -26,11 +26,16 @@ namespace ADO.ADO.NET_by_Example
             SqlCommandBuilder builder = new SqlCommandBuilder(da);
             DataSet ds = new DataSet();
             da.Fill(ds,"employees");
-           //ds.Tables["employees"].Constraints.Add("Empno_pk", ds.Tables["employees"].Columns["Id"], true);
+            ds.Tables["employees"].Constraints.Add("Empno_pk", ds.Tables["employees"].Columns["Id"], true);
             DataRow row = ds.Tables["employees"].NewRow();
+
             row["Name"] = TextBox1.Text;
             row["Gender"] = TextBox2.Text;
             row["Departmentid"] = TextBox3.Text;
+            foreach (var item in row.ItemArray)
+            {
+                Response.Write(item + "</br>");
+            }
             int num =da.Update(ds, "employees");
             Response.Write(num + "</br" + builder.GetUpdateCommand().CommandText);
 
