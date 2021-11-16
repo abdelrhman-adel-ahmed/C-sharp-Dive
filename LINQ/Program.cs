@@ -37,13 +37,13 @@ namespace LINQ
             //Compiler_Translation_of_a_Larger_Example.run();
 
 
-            Console.WriteLine("-------------------Introduction_To_Deferred_Execution------------------");
-            Introduction_To_Deferred_Execution.run();
+            //Console.WriteLine("-------------------Introduction_To_Deferred_Execution------------------");
+            //Introduction_To_Deferred_Execution.run();
 
 
 
-            //Console.WriteLine("-------------------introduction_to_deferred_execution 2------------------");
-            //Introduction_To_Deferred_Execution_2.run();
+            Console.WriteLine("-------------------introduction_to_deferred_execution 2------------------");
+            Introduction_To_Deferred_Execution_2.run();
 
             //Console.WriteLine("-------------------Deferred_Execution___Assembly_Line------------------");
             //Deferred_Execution___Assembly_Line.run();
