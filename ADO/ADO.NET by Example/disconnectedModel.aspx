@@ -9,6 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
+             <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            <asp:Label ID="Label5" runat="server" Text="PrimaryKey"></asp:Label>
+            <br />
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <asp:Label ID="Label1" runat="server" Text="Name"></asp:Label>
             <br />

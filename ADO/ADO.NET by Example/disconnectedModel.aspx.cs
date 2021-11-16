@@ -26,13 +26,13 @@ namespace ADO.ADO.NET_by_Example
             SqlCommandBuilder builder = new SqlCommandBuilder(da);
             DataSet ds = new DataSet();
             da.Fill(ds,"employees");
-            //ds.Tables["employees"].Constraints.Add("Empno_pk", ds.Tables["employees"].Columns["Id"], true);
+            ds.Tables["employees"].Constraints.Add("ID_PK", ds.Tables["employees"].Columns["ID"], true);
             DataRow row = ds.Tables["employees"].NewRow();
-
+            row["ID"] = TextBox5.Text;
             row["Name"] = TextBox1.Text;
             row["Gender"] = TextBox2.Text;
             row["DepartmentId"] = TextBox3.Text;
-            ds.Tables["student"].Rows.Add(row);
+            ds.Tables["employees"].Rows.Add(row);
             int num =da.Update(ds, "employees");
             Response.Write(num + "</br" + builder.GetUpdateCommand().CommandText);
 
