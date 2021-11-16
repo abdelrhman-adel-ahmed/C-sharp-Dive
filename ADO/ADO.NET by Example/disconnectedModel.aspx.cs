@@ -31,8 +31,8 @@ namespace ADO.ADO.NET_by_Example
             row["Name"] = TextBox1.Text;
             row["Gender"] = TextBox2.Text;
             row["Departmentid"] = TextBox3.Text;
-            da.Update(ds, "employees");
-
+            int num =da.Update(ds, "employees");
+            Response.Write(num + "</br" + builder.GetUpdateCommand().CommandText);
 
         }
     }
