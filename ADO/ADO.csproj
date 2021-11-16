@@ -107,6 +107,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="acceptAndRejectChanges.aspx" />
+    <Content Include="ADO.NET by Example\disconnectedModel.aspx" />
     <Content Include="App_Data\countries.xml" />
     <Content Include="App_Data\employee.xml" />
     <Content Include="cachingDataSets.aspx" />
@@ -186,6 +187,13 @@
     </Compile>
     <Compile Include="acceptAndRejectChanges.aspx.designer.cs">
       <DependentUpon>acceptAndRejectChanges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADO.NET by Example\disconnectedModel.aspx.cs">
+      <DependentUpon>disconnectedModel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADO.NET by Example\disconnectedModel.aspx.designer.cs">
+      <DependentUpon>disconnectedModel.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
