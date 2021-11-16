@@ -37,8 +37,8 @@ namespace LINQ
             //Compiler_Translation_of_a_Larger_Example.run();
 
 
-            //Console.WriteLine("-------------------Introduction_To_Deferred_Execution------------------");
-            //Introduction_To_Deferred_Execution.run();
+            Console.WriteLine("-------------------Introduction_To_Deferred_Execution------------------");
+            Introduction_To_Deferred_Execution.run();
 
 
 
@@ -51,8 +51,8 @@ namespace LINQ
 
             //Console.WriteLine("-------------------Runtime_Created_Assembly_Lines------------------");
             //Runtime_Created_Assembly_Lines.run();
-            Console.WriteLine(default(Runtime_Created_Assembly_Lines));
-            
+            //Console.WriteLine(default(Runtime_Created_Assembly_Lines));
+
 
 
             Console.ReadLine();

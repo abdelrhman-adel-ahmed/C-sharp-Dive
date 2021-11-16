@@ -19,6 +19,7 @@ namespace LINQ
         {
             int[] arr =  { 3, 31, 5, 6, 7, 1, 3 };
             IEnumerable<int> result = arr;
+            
 
             //runtime linq shit
             if (RandomBool)
