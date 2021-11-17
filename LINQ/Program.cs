@@ -60,10 +60,13 @@ namespace LINQ
             //Projection.run();
 
 
-            Console.WriteLine("-------------------orderby------------------");
-            orderby.run();
+            //Console.WriteLine("-------------------orderby------------------");
+            //orderby.run();
 
-            
+            Console.WriteLine("-------------------Random_Ordering------------------");
+            Random_Ordering.run();
+
+
             //Console.WriteLine(default(Runtime_Created_Assembly_Lines));
 
 
