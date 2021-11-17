@@ -8,6 +8,14 @@ namespace LINQ
 {
     class Projection
     {
-        stativc o
+       public static void run()
+        {
+            IEnumerable<Customer> Customers=Db.GetCustomerList();
+
+            var result = from c in Customers
+                         //anonymous types ... 
+                         select new { c.CompanyName, c.ContactName };
+
+        }
     }
 }
