@@ -58,6 +58,7 @@
     <Compile Include="LINQ Degenerate Select Clauses.cs" />
     <Compile Include="Linq1.cs" />
     <Compile Include="Northwind_Database.cs" />
+    <Compile Include="orderby.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Projection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

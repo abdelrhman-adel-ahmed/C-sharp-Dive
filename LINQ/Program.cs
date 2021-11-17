@@ -56,13 +56,17 @@ namespace LINQ
             //Northwind_Database.run();
 
 
-            Console.WriteLine("-------------------Projection------------------");
-            Projection.run();
+            //Console.WriteLine("-------------------Projection------------------");
+            //Projection.run();
 
 
-            //Console.WriteLine(default(Runtime_Created_Assembly_Lines));
+            Console.WriteLine("-------------------orderby------------------");
+            orderby.run();
 
             
+            //Console.WriteLine(default(Runtime_Created_Assembly_Lines));
+
+
 
             Console.ReadLine();
 		}
