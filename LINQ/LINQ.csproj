@@ -57,6 +57,7 @@
     <Compile Include="Introduction_To_Deferred_Execution 2.cs" />
     <Compile Include="LINQ Degenerate Select Clauses.cs" />
     <Compile Include="Linq1.cs" />
+    <Compile Include="Northwind_Database.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Runtime Created Assembly Lines.cs" />
