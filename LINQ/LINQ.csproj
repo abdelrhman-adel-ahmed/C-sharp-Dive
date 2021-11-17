@@ -59,6 +59,7 @@
     <Compile Include="Linq1.cs" />
     <Compile Include="Northwind_Database.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Projection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Runtime Created Assembly Lines.cs" />
     <Compile Include="ThisInCsharp.cs" />

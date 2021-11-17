@@ -15,7 +15,7 @@ namespace LINQ
         public static void run()
         {
             IEnumerable<Customer> customers = Db.GetCustomerList();
-            foreach(var Customer in customers)
+            foreach(var Customer in customers.Take(5))
             {
                 Console.WriteLine(Customer.ContactName);
                 Console.WriteLine(Customer.CompanyName);
