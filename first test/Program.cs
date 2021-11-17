@@ -3,6 +3,8 @@ using System.IO;
 using genericss;
 using System.Collections;
 using System.Collections.Generic;
+using first_test.Test_LDM;
+using System.Reflection;
 
 namespace first_test
 {
@@ -459,10 +461,10 @@ namespace first_test
             //Console.WriteLine(str);
 
             //Console.WriteLine("-------------costructor----------------");
-            pair<string, int> p1 = new pair<string, int> { first = "ahmed", second = 1 };
-            Console.WriteLine(p1);
-            Cow c = new Cow("a");
-            Console.WriteLine(c);
+            //pair<string, int> p1 = new pair<string, int> { first = "ahmed", second = 1 };
+            //Console.WriteLine(p1);
+            //Cow c = new Cow("a");
+            //Console.WriteLine(c);
 
             //List<string> l1 = new List<string>();
             //l1.Add("ahmed");
@@ -471,43 +473,49 @@ namespace first_test
             //l1.Add("dsad");
             //List<string> l2 = l1;
             //l2.Display();
-            p(1);
-            p("string");
-            Node<string> n = new Node<string>();
-            n.Insert("a");
-            n.Insert("ab");
-            n.Insert("ac");
-            n.Insert("ad");
-            n.Display();
-            n.Delete("ac");
-            n.Display();
-            List<coww> l1 = new List<coww>();
+            //p(1);
+            //p("string");
+            //Node<string> n = new Node<string>();
+            //n.Insert("a");
+            //n.Insert("ab");
+            //n.Insert("ac");
+            //n.Insert("ad");
+            //n.Display();
+            //n.Delete("ac");
+            //n.Display();
+            //List<coww> l1 = new List<coww>();
 
-            Console.WriteLine("-----------generic open close types-------------");
-            openclose<openclose<string>> s = new openclose<openclose<string>>();
+            //Console.WriteLine("-----------generic open close types-------------");
+            //openclose<openclose<string>> s = new openclose<openclose<string>>();
 
-            Console.WriteLine("--------------generics constrains-------------");
-            product<classone>();
-            //product<classtwo>(); //error, type that passed to the func must be parameterless constructor 
+            //Console.WriteLine("--------------generics constrains-------------");
+            //product<classone>();
+            ////product<classtwo>(); //error, type that passed to the func must be parameterless constructor 
 
-            Dictionary<string, int> dict = new Dictionary<string, int>();
-            dict.Add("a", 1);
-            dict.Add("b", 2);
-            dict.Add("c", 3);
-            Dictionary<string, int>.KeyCollection.Enumerator i = dict.Keys.GetEnumerator();
-            while(i.MoveNext())
+            //Dictionary<string, int> dict = new Dictionary<string, int>();
+            //dict.Add("a", 1);
+            //dict.Add("b", 2);
+            //dict.Add("c", 3);
+            //Dictionary<string, int>.KeyCollection.Enumerator i = dict.Keys.GetEnumerator();
+            //while(i.MoveNext())
+            //{
+            //    Console.WriteLine(i.Current);
+            //}
+            //List<String> ValidSates = new List<string>{
+            //"Completed",
+            //"active",
+            //"others"
+            //        };
+            //string x = "dd";
+            //if (ValidSates.Contains(x))
+            //    Console.WriteLine($"dsa {x}");
+
+
+           var listOFproperties = typeof(TestCach).GetProperties();
+            foreach (PropertyInfo item in listOFproperties)
             {
-                Console.WriteLine(i.Current);
+               var value= item.GetGetMethod().Invoke(null,null);
             }
-            List<String> ValidSates = new List<string>{
-            "Completed",
-            "active",
-            "others"
-                    };
-            string x = "dd";
-            if (ValidSates.Contains(x))
-                Console.WriteLine($"dsa {x}");
-
 
 
         }
