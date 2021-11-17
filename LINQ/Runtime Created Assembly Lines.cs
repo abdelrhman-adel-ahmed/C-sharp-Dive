@@ -8,7 +8,7 @@ namespace LINQ
 {
     class Runtime_Created_Assembly_Lines
     {
-        static Random rand =new Random();
+        static Random rand = new Random(Guid.NewGuid().GetHashCode());
         static bool RandomBool
         {
             get { return rand.Next() % 2 == 0; }
