@@ -25,9 +25,9 @@ namespace LINQ
 
             //desugared the lambda expression !!
 
-            var result3 = Enumerable.Select(Customers, c => new { c.CompanyName, c.ContactName });
+            var result3 = Enumerable.Select(Customers, xxxx);
 
-            foreach (var item in result2)
+            foreach (var item in result3)
             {
                 Console.WriteLine(item.CompanyName);
                 Console.WriteLine(item.ContactName);
@@ -35,17 +35,23 @@ namespace LINQ
 
             }
         }
-    }
 
-    class ttttt
-    {
-        public string CompanyName { get; private set; }
-        public string ContactName { get; private set; }
-        public ttttt(string companyname, string contactname)
+        static ttttt xxxx(Customer c)
         {
-            companyname = companyname;
-            ContactName = contactname;
+            return new ttttt ( c.CompanyName, c.ContactName );
         }
+        class ttttt
+        {
+            public string CompanyName { get; private set; }
+            public string ContactName { get; private set; }
+            public ttttt(string companyname, string contactname)
+            {
+                CompanyName = companyname;
+                ContactName = contactname;
+            }
 
+        }
     }
+
+    
 }
