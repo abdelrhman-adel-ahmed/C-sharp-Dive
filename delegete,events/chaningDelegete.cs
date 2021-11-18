@@ -11,7 +11,7 @@ namespace delegete_events
 
         public static void run()
         {
-            mydelegate d = foo;
+            mydelegate d = foo; // behind the scenes ==> mydelegate d = new mydelegate(d);
             d += goo;
             d += sue;
             d();
