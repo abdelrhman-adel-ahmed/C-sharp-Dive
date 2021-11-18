@@ -17,6 +17,8 @@ namespace ExpressTrees
             {
             return i>5;
             } ==== > this code when transelated to msil .net can understand it just  a function
+
+            Surprise not always the compiler converty the lamdda experssion to a funcrion
              */
             Func<int, bool> test = i => i > 5;
             Console.WriteLine(test(4));
