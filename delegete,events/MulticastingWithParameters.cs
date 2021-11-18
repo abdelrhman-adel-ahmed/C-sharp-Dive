@@ -13,6 +13,9 @@ namespace delegete_events
             mydelegate dd = new mydelegate(x);
             dd += y;
 
+            //last function in the invocation list
+            Console.WriteLine(dd(2)); 
+
             foreach (var item in dd.GetInvocationList())
             {
                 //what if we want to send diffrent arg to each func that subscribed to the delegate
