@@ -14,7 +14,7 @@ namespace delegete_events
             foreach (int number in result)
                 Console.WriteLine(number);
         }
-        //diffrence between the two is just instead if 5 we put 10 , so instead of copy and past
+        //diffrence between the two functions is just instead if 5 we put 10 , so instead of copy and past
         //we can pass also value to the IEnumerable (IEnumerable<int> numbers,int value)
         //but what if the expression change from < to >
         static IEnumerable<int> getallnumberlessthanfive(IEnumerable<int> numbers)
@@ -83,7 +83,7 @@ namespace delegete_events
         {
             int[] arr = new[] { 1, 2, 5, 7, 8, 9, 10, 3124, 312, 314, 6, 7, 80 };
 
-            IEnumerable<int> result = runnumberthroughcalc((number) => (number < 5), arr);
+            IEnumerable<int> result = runnumberthroughcalc(number => (number < 5), arr);
             // (number) is the argument and before => and after the arrow is the body of the method 
             //in misl level il level compiler convert this like we declare it above ,
 
