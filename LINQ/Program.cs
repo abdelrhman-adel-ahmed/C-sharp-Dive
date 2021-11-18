@@ -73,16 +73,6 @@ namespace LINQ
           
             Console.ReadLine();
 		}
-        static T void x<T>()
-        {
-            return y("", (string)=> {
-                return new String { };
-            });
-        }
-
-        void y(string zz)
-        {
-
-        }
+      
     }
 }
