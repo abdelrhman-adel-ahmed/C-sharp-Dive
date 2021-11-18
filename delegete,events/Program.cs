@@ -27,6 +27,9 @@ namespace delegete_events
             Console.WriteLine("---------------multicastdelegate vs delegate-------------");
             multicastdelegate_vs_delegate.run();
 
+            Console.WriteLine("---------------MulticastingWithParameters-------------");
+            MulticastingWithParameters.run();
+            
             //Console.WriteLine("---------------generic delegate,func, action -------------");
             //generic_delegate_func_action.run();
 
