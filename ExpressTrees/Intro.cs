@@ -16,9 +16,9 @@ namespace ExpressTrees
             static bool ssdasdas(int i)
             {
             return i>5;
-            } ==== > this code when transelated to msil .net can understand it just  a function
+            } ==== > this code when transelated to msil .net can understand it just a function
 
-            Surprise not always the compiler converty the lamdda experssion to a funcrion
+            Surprise not always the compiler convert the lambda experssion to a function !! 
              */
             Func<int, bool> test = i => i > 5;
             Console.WriteLine(test(4));
