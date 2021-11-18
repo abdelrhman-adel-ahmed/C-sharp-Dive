@@ -40,6 +40,7 @@ namespace LINQ
         {
             return new ttttt ( c.CompanyName, c.ContactName );
         }
+        //anonymous type class
         class ttttt
         {
             public string CompanyName { get; private set; }

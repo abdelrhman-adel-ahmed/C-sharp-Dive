@@ -10,6 +10,8 @@ namespace LINQ
     {
         public static void run()
         {
+            var customers = Db.GetCustomerList();
+            var result =
 
         }
     }

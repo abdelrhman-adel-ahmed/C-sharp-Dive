@@ -70,8 +70,19 @@ namespace LINQ
             //Console.WriteLine(default(Runtime_Created_Assembly_Lines));
 
 
-
+          
             Console.ReadLine();
 		}
-	}
+        static T void x<T>()
+        {
+            return y("", (string)=> {
+                return new String { };
+            });
+        }
+
+        void y(string zz)
+        {
+
+        }
+    }
 }
