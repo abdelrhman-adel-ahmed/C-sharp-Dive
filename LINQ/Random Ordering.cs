@@ -11,7 +11,11 @@ namespace LINQ
         public static void run()
         {
             var customers = Db.GetCustomerList();
-            var result =
+            var result1 = customers.OrderBy(c => c.ContactName);
+            foreach (var item in result1)
+            {
+                Console.WriteLine(item);
+            }
 
         }
     }
