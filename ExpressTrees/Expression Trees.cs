@@ -21,7 +21,7 @@ namespace ExpressTrees
             Expression<Func<int, bool>> test = ssdasdas;
 
             */
-            Expression< Func<int,bool> > test= i => i > 5;
+            Expression<Func<int,bool> > test= i => i > 5;
 
         }
     }
