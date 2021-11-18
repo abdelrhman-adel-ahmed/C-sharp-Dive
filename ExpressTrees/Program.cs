@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ExpressTrees
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
 
-            //Console.WriteLine("-------------Intro--------------------");
-            //Intro.run();
+            Console.WriteLine("-------------Intro--------------------");
+            Intro.run();
 
             Console.WriteLine("-------------Expression_Trees--------------------");
             Expression_Trees.run();
