@@ -10,6 +10,7 @@ namespace delegete_events
         public static void  run()
         {
             mydelegate d;
+
             d = returnten;
             d += returnfive;
             int value = d();
