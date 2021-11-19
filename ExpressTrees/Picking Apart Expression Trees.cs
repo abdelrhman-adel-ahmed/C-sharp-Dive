@@ -16,6 +16,7 @@ namespace ExpressTrees
             //constant is factory method that create and return ConstantExpression object
             //Expression class is full of factory methods
             ConstantExpression constExp = Expression.Constant(5, typeof(int));
+            //NodeType is ExpressionType which is just enum with all experssion that avilable in c#
             Console.WriteLine(constExp.NodeType);
             Console.WriteLine(constExp.Type);
             Console.WriteLine(constExp.Value);
