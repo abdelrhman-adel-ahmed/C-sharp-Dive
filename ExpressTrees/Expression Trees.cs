@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +23,30 @@ namespace ExpressTrees
             Expression<Func<int, bool>> test = ssdasdas;
 
             */
-            Expression<Func<int,bool> > test= i => i > 5;
+
+            /*             what compiler generate for experession
+             
+          ParameterExpression left = Expression.Parameter(typeof(int), "i");
+          ParameterExpression[] parameters = new ParameterExpression[] { left };
+          Expression<Func<int, bool>> expression = 
+            Expression.Lambda<Func<int, bool>>
+                    (Expression.GreaterThan(left, Expression.Constant(5, typeof(int))), parameters);
+            */
+         
+
+            Expression<Func<int,bool> > exp= i => i > 5;
+            Console.WriteLine(exp.Body);
+            Console.WriteLine(exp.Body.GetType());
+            Console.WriteLine(exp.Body.GetType().GetType());
+            //logical binary expression inherte from binary expression
+            BinaryExpression bin = (BinaryExpression) exp.Body;
+            Console.WriteLine(bin.Left);
+            Console.WriteLine(bin.NodeType);
+
+            Console.WriteLine(bin.Right);
+
+
+
 
         }
     }
