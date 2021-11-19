@@ -17,6 +17,8 @@ namespace ExpressTrees
             ConstantExpression constExp = Expression.Constant(5, typeof(int));
             Console.WriteLine(constExp.NodeType);
             Console.WriteLine(constExp.Type);
+            Console.WriteLine(constExp.Value);
+            // expression : is somthing that reutrn in place of it self a value 
 
         }
     }

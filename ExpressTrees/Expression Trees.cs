@@ -53,7 +53,6 @@ namespace ExpressTrees
             Console.WriteLine(bin.NodeType);
 
             Console.WriteLine(bin.Right);
-            Expression.GreaterThan
 
 
 
