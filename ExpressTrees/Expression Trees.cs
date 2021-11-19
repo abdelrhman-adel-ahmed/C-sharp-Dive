@@ -24,17 +24,23 @@ namespace ExpressTrees
 
             */
 
-            /*             what compiler generate for experession
-             
-          ParameterExpression left = Expression.Parameter(typeof(int), "i");
-          ParameterExpression[] parameters = new ParameterExpression[] { left };
-          Expression<Func<int, bool>> expression = 
-            Expression.Lambda<Func<int, bool>>
-                    (Expression.GreaterThan(left, Expression.Constant(5, typeof(int))), parameters);
-            */
+    
+            
          
 
             Expression<Func<int,bool> > exp= i => i > 5;
+
+
+            //----------------what compiler generates for experession----------------------
+            ParameterExpression left = Expression.Parameter(typeof(int), "i");
+            ParameterExpression[] parameters = new ParameterExpression[] { left };
+            Expression<Func<int, bool>> expression =
+              Expression.Lambda<Func<int, bool>>
+                      (Expression.GreaterThan
+                                  (left, Expression.Constant
+                                              (5, typeof(int))), parameters);
+
+            //-------------------------------------------------
             Console.WriteLine(exp.Body);
             Console.WriteLine(exp.Body.GetType());
             Console.WriteLine(exp.Body.GetType().GetType());
