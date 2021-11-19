@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using EmployeeDataAceess;
 using System.Data.Entity;
+using System.Configuration;
 
 namespace FirstWebApi.Controllers
 {
@@ -13,6 +14,7 @@ namespace FirstWebApi.Controllers
     {
         public IEnumerable<Employee> Get()
         {
+            string cs = ConfigurationManager.ConnectionStrings["firstdbEntities"].ConnectionString;
             firstdbEntities obj = new firstdbEntities();
             return obj.Employees.ToList();
         }
