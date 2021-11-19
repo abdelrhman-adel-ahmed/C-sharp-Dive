@@ -15,7 +15,9 @@ namespace ExpressTrees
             //Func<int, bool> del = i => i > 5;
             //constant is factory method that create and return ConstantExpression object
             //Expression class is full of factory methods
+            
             ConstantExpression constExp = Expression.Constant(5, typeof(int));
+            Console.WriteLine("-----constExp------");
             //NodeType is ExpressionType which is just enum with all experssion that avilable in c#
             Console.WriteLine(constExp.NodeType);
             Console.WriteLine(constExp.Type);
@@ -27,11 +29,17 @@ namespace ExpressTrees
              * in place of it self.
              */
             // then i , i is paramater is experssion that accept int 
-            ParameterExpression iparam = Expression.Parameter(typeof(int), "i");
-            Console.WriteLine(iparam.NodeType);
-            Console.WriteLine(iparam.Type);
-            Console.WriteLine(iparam.Name);
+            ParameterExpression iparamExp = Expression.Parameter(typeof(int), "i");
+            Console.WriteLine("-----iparamExp------");
+            Console.WriteLine(iparamExp.NodeType);
+            Console.WriteLine(iparamExp.Type);
+            Console.WriteLine(iparamExp.Name);
 
+            //then > 
+            BinaryExpression binExp = Expression.GreaterThan(iparamExp, constExp);
+            Console.WriteLine("-----binExp------");
+            Console.WriteLine(binExp.NodeType);
+            Console.WriteLine(binExp.Method);
         }
     }
 }
