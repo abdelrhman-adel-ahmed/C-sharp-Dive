@@ -14,6 +14,7 @@ namespace ExpressTrees
         {
             //Func<int, bool> del = i => i > 5;
             //constant is factory method that create and return ConstantExpression object
+            //Expression class is full of factory methods
             ConstantExpression constExp = Expression.Constant(5, typeof(int));
             Console.WriteLine(constExp.NodeType);
             Console.WriteLine(constExp.Type);
@@ -24,7 +25,11 @@ namespace ExpressTrees
              * it replace 5 with 5 ! , > is (operator) binary experssion it take two expression and return bool
              * in place of it self.
              */
-
+            // then i , i is paramater is experssion that accept int 
+            ParameterExpression iparam = Expression.Parameter(typeof(int), "i");
+            Console.WriteLine(iparam.NodeType);
+            Console.WriteLine(iparam.Type);
+            Console.WriteLine(iparam.Name);
 
         }
     }
