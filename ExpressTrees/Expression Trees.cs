@@ -13,7 +13,8 @@ namespace ExpressTrees
 
         public static void run()
         {
-            /*expression cannot refer directly to methods 
+            /*expression object cannot refer directly to methods and it not convert the lambda to method !!
+             * it convert it to punsh of objects
              * static bool ssdasdas(int i)
             {
             return i>5;
