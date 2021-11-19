@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building Queries at Runtime.cs" />
     <Compile Include="Expression Trees.cs" />
     <Compile Include="IEnumerable vs IQueryable.cs" />
     <Compile Include="Intro.cs" />

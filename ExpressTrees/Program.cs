@@ -25,10 +25,13 @@ namespace ExpressTrees
             //IEnumerable_vs_IQueryable.run();
 
 
-            Console.WriteLine("--------------Why_Expression_Trees_Are_Cool__Entity_Framework_--------------------");
-            Why_Expression_Trees_Are_Cool__Entity_Framework_.run();
-            
+            //Console.WriteLine("--------------Why_Expression_Trees_Are_Cool__Entity_Framework_--------------------");
+            //Why_Expression_Trees_Are_Cool__Entity_Framework_.run();
 
+
+            Console.WriteLine("--------------Building_Queries_at_Runtime--------------------");
+            Building_Queries_at_Runtime.run();
+            
             Console.ReadLine();
         }
     }

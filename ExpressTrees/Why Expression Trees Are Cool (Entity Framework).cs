@@ -59,7 +59,7 @@ namespace ExpressTrees
             note: here we convert the exp to function so we longer put the group by in the query we retrived all
             the data and then group by here in the code . so thats the diffrence between ienumerable and iquerable
             is the first we have actual function ,the second we have some object that we can reason about to build
-            our query
+            our query at runTime
             ////////////////////////////////////////////////////////////////////////////////////////////////
             */
             foreach (var item in customers)
