@@ -19,6 +19,7 @@ namespace ExpressTrees
             {
                 Console.WriteLine(item.ContactName);
                 Console.WriteLine(item.CompanyName);
+                Console.WriteLine();
             }
         }
 
