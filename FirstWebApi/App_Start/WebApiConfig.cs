@@ -19,6 +19,12 @@ namespace FirstWebApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional}
             );
+
+            //foramtter custom configrations 
+            config.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = 
+                new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
+
         }
     }
 }
