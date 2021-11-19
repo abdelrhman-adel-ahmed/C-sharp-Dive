@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace ExpressTrees
 {
@@ -16,7 +17,7 @@ namespace ExpressTrees
             var zrbo = new MeContext();
             foreach (var item in zrbo.Customers)
             {
-                Console.WriteLine(item.ContractName);
+                Console.WriteLine(item.ContactName);
                 Console.WriteLine(item.CompanyName);
             }
         }
@@ -33,10 +34,11 @@ namespace ExpressTrees
 
     class Customers
     {
+        [Key]
         public string CustomerID { get; set; }
         public string CompanyName { get; set; }
 
-        public string ContractName { get; set; }
+        public string ContactName { get; set; }
         public string City { get; set; }
 
     }
