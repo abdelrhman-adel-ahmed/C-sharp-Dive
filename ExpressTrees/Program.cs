@@ -29,8 +29,13 @@ namespace ExpressTrees
             //Why_Expression_Trees_Are_Cool__Entity_Framework_.run();
 
 
-            Console.WriteLine("--------------Building_Queries_at_Runtime--------------------");
-            Building_Queries_at_Runtime.run();
+            //Console.WriteLine("--------------Building_Queries_at_Runtime--------------------");
+            //Building_Queries_at_Runtime.run();
+
+
+            Console.WriteLine("--------------Generic_vs_Non_Generic_Expression--------------------");
+            Generic_vs_Non_Generic_Expression.run();
+
             
             Console.ReadLine();
         }

@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Building Queries at Runtime.cs" />
     <Compile Include="Expression Trees.cs" />
+    <Compile Include="Generic vs Non Generic Expression.cs" />
     <Compile Include="IEnumerable vs IQueryable.cs" />
     <Compile Include="Intro.cs" />
     <Compile Include="Picking Apart Expression Trees.cs" />
