@@ -21,8 +21,8 @@ namespace ExpressTrees
             //              expression : is somthing that reutrn in place of it self a value 
             /*
              * i > 5 we have 3 exp here i: it take a value and replace it self with it ,5 is a experssion 
-             * it replace 5 with 5 ! , > is operator experssion it take two expression and return bool in place
-             * of it self.
+             * it replace 5 with 5 ! , > is (operator) binary experssion it take two expression and return bool
+             * in place of it self.
              */
 
 
