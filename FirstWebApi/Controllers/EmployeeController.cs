@@ -23,6 +23,14 @@ namespace FirstWebApi.Controllers
             firstdbEntities obj = new firstdbEntities();
             return obj.Employees.FirstOrDefault(e => e.ID == id);
         }
+        public string Delete(int id)
+        {
+            firstdbEntities obj = new firstdbEntities();
+            Employee emp = obj.Employees.FirstOrDefault(e => e.ID == id);
+            obj.Employees.Remove(emp);
+            obj.SaveChanges();
+            return $"employee {emp.Name} got deleted";
+        }
     }
 
 }
