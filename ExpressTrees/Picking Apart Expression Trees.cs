@@ -9,6 +9,11 @@ namespace ExpressTrees
 {
     class Picking_Apart_Expression_Trees
     {
+        /*
+                    >
+                 i     5
+                
+         */
 
        public static void run()
         {
@@ -22,6 +27,7 @@ namespace ExpressTrees
             Console.WriteLine(constExp.NodeType);
             Console.WriteLine(constExp.Type);
             Console.WriteLine(constExp.Value);
+
             //              expression : is somthing that reutrn in place of it self a value 
             /*
              * i > 5 we have 3 exp here i: it take a value and replace it self with it ,5 is a experssion 
@@ -39,7 +45,8 @@ namespace ExpressTrees
             BinaryExpression binExp = Expression.GreaterThan(iparamExp, constExp);
             Console.WriteLine("-----binExp------");
             Console.WriteLine(binExp.NodeType);
-            Console.WriteLine(binExp.Method);
+            Console.WriteLine(binExp.Type);
+
         }
     }
 }
