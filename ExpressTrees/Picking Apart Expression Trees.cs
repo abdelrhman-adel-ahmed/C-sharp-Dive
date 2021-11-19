@@ -47,6 +47,12 @@ namespace ExpressTrees
             Console.WriteLine(binExp.NodeType);
             Console.WriteLine(binExp.Type);
 
+            //create lambda expression 
+            Console.WriteLine("------final step-----");
+            Expression<Func<int,bool>> Exp= Expression.Lambda<Func<int, bool>>(binExp,iparamExp);
+            Func<int,bool> del= Exp.Compile();
+            Console.WriteLine(del(2));
+
         }
     }
 }
