@@ -23,26 +23,69 @@ namespace ExpressTrees
             //will invistigate and see what we want to do , oh you want to get the customer from the table and
             //order by the city, so it translate that to a query that get sent to the dataBase ,so thats why 
             //we have experssion that is just an object (metadata) that we can investigate about
-            foreach (var item in zrbo.Customers.OrderBy(i=>i.City))
-            {
-                Console.WriteLine(item.ContactName);
-                Console.WriteLine(item.City);
+            //  foreach (var item in zrbo.Customers.OrderBy(i=>i.City))
+            //  {
+            //      Console.WriteLine(item.ContactName);
+            //      Console.WriteLine(item.City);
+            //
+            //      Console.WriteLine();
+            //  }
 
-                Console.WriteLine();
-            }
 
+
+            //what compiler doo
 
             ParameterExpression paramExp = Expression.Parameter(typeof(Customers), "i");
-            //what compiler convert
+            
             Expression<Func<Customers, string>> exp = Expression.Lambda<Func<Customers, String>>
-                (Expression.Property(paramExp, typeof(Customers).GetProperty("City").GetGetMethod()), null);
+                (Expression.Property(paramExp,(MethodInfo)typeof(Customers).GetProperty("City").GetGetMethod()), paramExp);
+
+            //  or
+
+            //foreach (var item in Queryable.OrderBy(zrbo.Customers, exp))
+            //{
+            //    Console.WriteLine(item.ContactName);
+            //    Console.WriteLine(item.City);
+
+            //     Console.WriteLine();         
+            //}
+
             
             Func<Customers,string> del= exp.Compile();
-            
+
+            List<Customers> customers = zrbo.Customers.ToList();
+            /*
+            ////////////////////////////////////////////////////////////////////////////////////////////////
+            note: here we convert the exp to function so we longer put the group by in the query we retrived all
+            the data and then group by here in the code . so thats the diffrence between ienumerable and iquerable
+            is the first we have actual function ,the second we have some object that we can reason about to build
+            our query
+            ////////////////////////////////////////////////////////////////////////////////////////////////
+            */
+            foreach (var item in customers)
+            {
+                Console.WriteLine(item.ContactName);
+                Console.WriteLine(del(item));
+
+                Console.WriteLine();
+
+            }
+            //or 
+            //foreach (var item in zrbo.Customers.AsEnumerable().OrderBy(i=>i.City))
+            //{
+            //    Console.WriteLine(item.ContactName);
+            //    Console.WriteLine(item.City);
+
+            //    Console.WriteLine();
+            //}
+
+             
+
+
+
+            }
 
         }
-
-    }
 
     class MeContext:DbContext
     {
