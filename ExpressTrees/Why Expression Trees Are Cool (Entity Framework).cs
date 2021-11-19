@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace ExpressTrees
 {
@@ -14,11 +15,16 @@ namespace ExpressTrees
 
         public static void run()
         {
+            
             var zrbo = new MeContext();
-            foreach (var item in zrbo.Customers)
+            //dbset implement IQueryable so this is lambda expression so this is just objects that the dbcontext
+            //will invistigate and see what we want to do , oh you want to get the customer from the table and
+            //order by the city, so it translate that to a query that get sent to the dataBase 
+            foreach (var item in zrbo.Customers.OrderBy(i=>i.City))
             {
                 Console.WriteLine(item.ContactName);
-                Console.WriteLine(item.CompanyName);
+                Console.WriteLine(item.City);
+
                 Console.WriteLine();
             }
         }
