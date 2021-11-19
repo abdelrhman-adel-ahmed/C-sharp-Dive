@@ -35,6 +35,9 @@ namespace ExpressTrees
             ParameterExpression left = Expression.Parameter(typeof(int), "i");
             ParameterExpression[] parameters = new ParameterExpression[] { left };
             Expression<Func<int, bool>> expression =
+                //first we want to make lambda expression , first arg is the body of type expression
+                //which take the first arg (node type)wich is graterthan func that take two args left and right
+                //,second args is the parameters[] which we send to the lambda here its the i 
               Expression.Lambda<Func<int, bool>>
                       (Expression.GreaterThan
                                   (left, Expression.Constant
@@ -50,6 +53,7 @@ namespace ExpressTrees
             Console.WriteLine(bin.NodeType);
 
             Console.WriteLine(bin.Right);
+            Expression.GreaterThan
 
 
 
