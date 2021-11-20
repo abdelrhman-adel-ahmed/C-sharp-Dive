@@ -33,7 +33,7 @@ namespace FirstWebApi.Controllers
                 case "alex":
                     return Request.CreateResponse(HttpStatusCode.OK, db.test1.Where(x => x.city.ToLower() == "alex").ToList());
                 default:
-                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Note valid querystring");
+                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Not valid value");
             }
         }
         [HttpPost]
@@ -72,10 +72,11 @@ namespace FirstWebApi.Controllers
 
         }
 
-        public HttpResponseMessage Put(int id , [FromBody]test1 test)
+        public HttpResponseMessage Put([FromBody]test1 test)
         {
             firstdbEntities2 tests = new firstdbEntities2();
-            var tt = tests.test1.FirstOrDefault(x => x.id == id);
+           
+            var tt = tests.test1.FirstOrDefault(x => x.id == test.id);
             if(tt == null)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.NotFound,"test cannot be found");

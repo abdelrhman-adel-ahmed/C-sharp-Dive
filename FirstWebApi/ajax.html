@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var ulTest = $('#ultest');
+
+            $('#btn').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    // Make sure to change the port number to
+                    // where you have the employee service
+                    // running on your local machine
+                    url: 'api/test',
+                    dataType: 'json',
+                    success: function (data) {
+                        ulTest.empty();
+                        $.each(data, function (index, val) {
+                            var fulldata = val.name + ' ' + val.age;
+                            ulTest.append('<li>' + fulldata + '</li>')
+                        });
+                    }
+                });
+            });
+
+            $('#btnClear').click(function () {
+                ulTest.empty();
+            });
+        });
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" value="Get All Employees" />
+    <input id="btnClear" type="button" value="Clear" />
+    <ul id="ultest"></ul>
+</body>
+</html>

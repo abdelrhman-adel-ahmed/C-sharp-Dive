@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="accessWebApi.html" />
     <Content Include="App_Data\countries.xml" />
     <Content Include="CachAddArgument128.aspx" />
     <Content Include="CachDependencyOnFiles.aspx" />

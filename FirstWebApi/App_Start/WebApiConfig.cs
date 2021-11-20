@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
+using WebApiContrib.Formatting.Jsonp;
+using System.Web.Http.Cors;
 
 namespace FirstWebApi
 {
@@ -34,6 +36,13 @@ namespace FirstWebApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional}
             );
+            //cors can be enabled on specific site ,second param is accpet headers , third 
+            //is the http methods you will accepts get,post,...,we can enable cors on specific controllers only
+            EnableCorsAttribute cors = new EnableCorsAttribute("*", "*","*");
+            config.EnableCors(cors);
+            
+            //var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
+            //config.Formatters.Add(jsonpFormatter);
 
             //foramtter custom configrations 
            // config.Formatters.Remove(config.Formatters.XmlFormatter);//will not return xml  
