@@ -10,18 +10,18 @@
 
             $('#btn').click(function () {
                 var username = $('#txtusername').val();
-                var password = $('txtpassword').val();
+                var password = $('#txtpassword').val();
                 $.ajax({
                     type: 'GET',
                     url: 'api/test',
                     dataType: 'json',
                     headers: {
-                        'Authorization':'Basic ' + btoa(username + ':' + password)      
+                        'Authorization': 'Basic ' + btoa(username + ':' + password)
                     },
                     success: function (data) {
                         ulTest.empty();
                         $.each(data, function (index, val) {
-                            var fulldata = val.name + ' ' + val.age;
+                            var fulldata = val.name + ' ' + val.age + ' ' + val.gender;
                             ulTest.append('<li>' + fulldata + '</li>')
                         });
                     },
@@ -41,10 +41,9 @@
     </script>
 </head>
 <body>
-    username: <input type="text" id="txtusername" />
-    password: <input type="password" id="txtpassword" />
+    username : <input type="text" id="txtusername" />
+    password : <input type="password" id="txtpassword" />
     <br />
-
     <input id="btn" type="button" value="Get All Employees" />
     <input id="btnClear" type="button" value="Clear" />
     <ul id="ultest"></ul>
