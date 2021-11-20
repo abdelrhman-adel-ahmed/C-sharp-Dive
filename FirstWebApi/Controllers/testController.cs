@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Web.Http;
 using EmployeeDataAceess;
 
@@ -20,23 +21,42 @@ namespace FirstWebApi.Controllers
         //}
 
         //end point accept query string
-        public HttpResponseMessage Get(string city="all")
+        [BasicAuthentication]
+        public HttpResponseMessage Get()
         {
+            //access the identity that we set in the BasicAuthenticationAttribute class
+            string username = Thread.CurrentPrincipal.Identity.Name;
             firstdbEntities2 db = new firstdbEntities2();
 
-            switch(city.ToLower())
+            switch (username.ToLower())
             {
-                case "all":
-                    return Request.CreateResponse(HttpStatusCode.OK, db.test1.ToList());
-                case "cairo":
-                    return Request.CreateResponse(HttpStatusCode.OK, db.test1.Where(x=>x.city.ToLower()=="cairo").ToList());
+                case "male":
+                    return Request.CreateResponse(HttpStatusCode.OK, db.test1.Where(x => x.gender.ToLower() == "male").ToList());
 
-                case "alex":
-                    return Request.CreateResponse(HttpStatusCode.OK, db.test1.Where(x => x.city.ToLower() == "alex").ToList());
+                case "female":
+                    return Request.CreateResponse(HttpStatusCode.OK, db.test1.Where(x => x.gender.ToLower() == "female").ToList());
                 default:
                     return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Not valid value");
             }
         }
+        //public HttpResponseMessage Get(string city="all")
+        //{
+        //    string username = Thread.CurrentPrincipal.Identity.Name;
+        //    firstdbEntities2 db = new firstdbEntities2();
+
+        //    switch(city.ToLower())
+        //    {
+        //        case "all":
+        //            return Request.CreateResponse(HttpStatusCode.OK, db.test1.ToList());
+        //        case "cairo":
+        //            return Request.CreateResponse(HttpStatusCode.OK, db.test1.Where(x=>x.city.ToLower()=="cairo").ToList());
+
+        //        case "alex":
+        //            return Request.CreateResponse(HttpStatusCode.OK, db.test1.Where(x => x.city.ToLower() == "alex").ToList());
+        //        default:
+        //            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Not valid value");
+        //    }
+        //}
         [HttpPost]
         public HttpResponseMessage CreateEmployee([FromBody]test1 test)
         {
