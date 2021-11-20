@@ -10,14 +10,34 @@ namespace FirstWebApi.Controllers
 {
     public class testController : ApiController
     {
+        //naming : either the method name start with the http verb or we add verb attribute
 
-        public IEnumerable<test1> Get()
+        //public IEnumerable<test1> GetTest()
+        //{
+        //    firstdbEntities2 tests = new firstdbEntities2();
+        //    return tests.test1.ToList();
+
+        //}
+
+        //end point accept query string
+        public HttpResponseMessage Get(string city="all")
         {
-            firstdbEntities2 tests = new firstdbEntities2();
-            return tests.test1.ToList();
+            firstdbEntities2 db = new firstdbEntities2();
+            switch(city.ToLower())
+            {
+                case "all":
+                    return Request.CreateResponse(HttpStatusCode.OK, db.test1.ToList());
+                case "cairo":
+                    return Request.CreateResponse(HttpStatusCode.OK, db.test1.Where(x=>x.city.ToLower()=="cairo").ToList());
 
+                case "alex":
+                    return Request.CreateResponse(HttpStatusCode.OK, db.test1.Where(x => x.city.ToLower() == "alex").ToList());
+                default:
+                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Note valid querystring");
+            }
         }
-        public HttpResponseMessage Post([FromBody]test1 test)
+        [HttpPost]
+        public HttpResponseMessage CreateEmployee([FromBody]test1 test)
         {
             try
             {
@@ -32,6 +52,39 @@ namespace FirstWebApi.Controllers
 
             }
 
+        }
+        public HttpResponseMessage Delete(int id)
+        {
+
+            try
+            {
+                firstdbEntities2 tests = new firstdbEntities2();
+                test1 t = tests.test1.FirstOrDefault(i => i.id == id);
+                tests.test1.Remove(t);
+                tests.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.OK, $"test with id {id} got deleted");
+            }
+            catch (Exception e)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, e.ToString());
+
+            }
+
+        }
+
+        public HttpResponseMessage Put(int id , [FromBody]test1 test)
+        {
+            firstdbEntities2 tests = new firstdbEntities2();
+            var tt = tests.test1.FirstOrDefault(x => x.id == id);
+            if(tt == null)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound,"test cannot be found");
+            }
+            tt.age = test.age;
+            tt.name = test.name;
+            tt.city = test.city;
+            tests.SaveChanges();
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }
