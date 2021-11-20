@@ -36,9 +36,10 @@ namespace FirstWebApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional}
             );
-            //cors can be enabled on specific site ,second param is accpet headers , third 
+            //cors can for specific sites to request from us ,second param is accpet headers , third 
             //is the http methods you will accepts get,post,...,we can enable cors on specific controllers only
-            EnableCorsAttribute cors = new EnableCorsAttribute("*", "*","*");
+            //or specific action inside the controllers by setting it like attribue in the controller
+            EnableCorsAttribute cors = new EnableCorsAttribute("https://localhost:44374", "*","*");
             config.EnableCors(cors);
             
             //var jsonpFormatter = new JsonpMediaTypeFormatter(config.Formatters.JsonFormatter);
