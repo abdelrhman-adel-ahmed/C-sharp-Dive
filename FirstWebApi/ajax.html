@@ -9,19 +9,27 @@
             var ulTest = $('#ultest');
 
             $('#btn').click(function () {
+                var username = $('#txtusername').val();
+                var password = $('txtpassword').val();
                 $.ajax({
                     type: 'GET',
-                    // Make sure to change the port number to
-                    // where you have the employee service
-                    // running on your local machine
                     url: 'api/test',
                     dataType: 'json',
+                    headers: {
+                        'Authorization':'Basic ' + btoa(username + ':' + password)      
+                    },
                     success: function (data) {
                         ulTest.empty();
                         $.each(data, function (index, val) {
                             var fulldata = val.name + ' ' + val.age;
                             ulTest.append('<li>' + fulldata + '</li>')
                         });
+                    },
+                    complete: function (jqXHR) {
+                        if (jqXHR.status == '401') {
+                            ulTest.empty();
+                            ulTest.append('<li>' + 'unauthorized ' + jqXHR.status + ' ' + jqXHR.statusText + '</li>');
+                        }
                     }
                 });
             });
@@ -33,6 +41,10 @@
     </script>
 </head>
 <body>
+    username: <input type="text" id="txtusername" />
+    password: <input type="password" id="txtpassword" />
+    <br />
+
     <input id="btn" type="button" value="Get All Employees" />
     <input id="btnClear" type="button" value="Clear" />
     <ul id="ultest"></ul>

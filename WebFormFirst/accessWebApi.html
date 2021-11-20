@@ -29,9 +29,10 @@
                         });
                     },
                     complete: function (jqXHR) {
-                        if (jqXHR.status == '401')
+                        if (jqXHR.status == '401') {
                             ulTest.empty();
-                            ulTest.append('<li>' +'unauthorized' + jqXHR.status+ '</li>')
+                            ulTest.append('<li>' + 'unauthorized ' + jqXHR.status + ' ' + jqXHR.statusText + '</li>');
+                        }
                     }
                 });
             });
