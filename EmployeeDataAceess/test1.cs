@@ -11,16 +11,12 @@ namespace EmployeeDataAceess
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-
-    public partial class Employee
+    
+    public partial class test1
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Gender { get; set; }
-        public Nullable<int> DepartmentId { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public Nullable<int> age { get; set; }
+        public string city { get; set; }
     }
 }

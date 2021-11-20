@@ -14,7 +14,6 @@ namespace FirstWebApi.Controllers
     {
         public IEnumerable<Employee> Get()
         {
-            string cs = ConfigurationManager.ConnectionStrings["firstdbEntities"].ConnectionString;
             firstdbEntities obj = new firstdbEntities();
             return obj.Employees.ToList();
         }
@@ -23,6 +22,24 @@ namespace FirstWebApi.Controllers
             firstdbEntities obj = new firstdbEntities();
             return obj.Employees.FirstOrDefault(e => e.ID == id);
         }
+        public HttpResponseMessage Post([FromBody]Employee employee)
+        {
+            firstdbEntities obj = new firstdbEntities();
+
+            try
+            {
+                obj.Employees.Add(employee);
+                obj.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.Created, employee);
+            }
+            catch (Exception e)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest,e.ToString());
+
+            }
+
+        }
+
         public string Delete(int id)
         {
             firstdbEntities obj = new firstdbEntities();
