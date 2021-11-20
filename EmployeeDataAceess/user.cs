@@ -12,12 +12,10 @@ namespace EmployeeDataAceess
     using System;
     using System.Collections.Generic;
     
-    public partial class test1
+    public partial class user
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public Nullable<int> age { get; set; }
-        public string city { get; set; }
-        public string gender { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
     }
 }

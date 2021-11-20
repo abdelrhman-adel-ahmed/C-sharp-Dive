@@ -23,6 +23,7 @@ namespace FirstWebApi.Controllers
         public HttpResponseMessage Get(string city="all")
         {
             firstdbEntities2 db = new firstdbEntities2();
+
             switch(city.ToLower())
             {
                 case "all":

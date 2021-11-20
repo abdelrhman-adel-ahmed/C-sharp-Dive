@@ -105,6 +105,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Test1DataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>Test1DataModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="EmployeeDataModel.edmx">
