@@ -22,6 +22,7 @@ namespace EmpolyeeAuthServiceApi.Controllers
             return stList;
         }
 
+        [Route("api/student/{id}")]
         public Student Get(int id)
         {
             return stList.FirstOrDefault(i => i.ID == id);
