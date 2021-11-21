@@ -76,11 +76,9 @@
                     // this page yet. So please add it to the
                     // EmployeeService project before running it
                     success: function (response) {
-                        sessionStorage.setItem("accessToken", response.access_token);
-                  
-                        sessionStorage.setItem("username", response.userName);
-                        $('#divErrorText').text(JSON.stringify(response));
-
+                       sessionStorage.setItem("accessToken", response.access_token);
+                       window.location.href = "Data.html";
+                       sessionStorage.setItem("username", response.userName);        
                     },
                     // Display errors if any in the Bootstrap alert <div>
                     error: function (jqXHR) {
