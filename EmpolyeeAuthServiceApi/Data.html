@@ -11,6 +11,8 @@
             <input id="btnLoadEmployees" class="btn btn-success"
                    type="button" value="Load Employees" />
         </div>
+        <input id="btnlogout" class="btn btn-success"
+               type="button" value="Log out" />
         <div id="divData" class="well hidden">
             <table class="table table-bordered" id="tblData">
                 <thead>
@@ -67,6 +69,12 @@
             $('#linkClose').click(function () {
                 $('#divError').hide('fade');
             });
+
+            $('btnlogout').click(function () {
+                sessionStorage.removeItem('accessToken');
+                window.location.href = "Login.html";
+            });
+
 
             $('#errorModal').on('hidden.bs.modal', function () {
                 window.location.href = "Login.html";
