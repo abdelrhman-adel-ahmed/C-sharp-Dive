@@ -10,6 +10,7 @@
         <div class="well">
             <input id="btnLoadEmployees" class="btn btn-success"
                    type="button" value="Load Employees" />
+            <span id="spanusername" class="text-muted"></span>
             <input id="btnlogout" class="btn btn-success pull-right"
                    type="button" value="Log out" />
         </div>
@@ -63,6 +64,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            $('#spanusername').text('Hello ' + sessionStorage.getItem('username'));
             if (sessionStorage.getItem('accessToken') == null) {
                 window.location.href = "Login.html";
             }
