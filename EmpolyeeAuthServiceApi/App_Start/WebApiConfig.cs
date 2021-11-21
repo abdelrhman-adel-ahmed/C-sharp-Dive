@@ -17,7 +17,7 @@ namespace EmpolyeeAuthServiceApi
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
-            // Web API routes
+            // Web API routes ,make the attribute routing work
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
