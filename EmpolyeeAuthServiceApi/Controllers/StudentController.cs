@@ -36,6 +36,11 @@ namespace EmpolyeeAuthServiceApi.Controllers
 
         }
 
+        public HttpResponseMessage Post(Student student)
+        {
+            stList.Add(student);
+            return Request.CreateResponse(HttpStatusCode.Created);
+        }
 
         // problem here that we have to get that accept only one paramter so we use attribute constraint
         //we can also use constraint argument to add some restrictions to our parameters 
