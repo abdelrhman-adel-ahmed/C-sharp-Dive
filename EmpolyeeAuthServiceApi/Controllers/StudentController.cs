@@ -39,7 +39,10 @@ namespace EmpolyeeAuthServiceApi.Controllers
         public HttpResponseMessage Post(Student student)
         {
             stList.Add(student);
-            return Request.CreateResponse(HttpStatusCode.Created);
+            var response= Request.CreateResponse(HttpStatusCode.Created);
+            //send url that user can access to view newly created student
+            response.Headers.Location = new Uri(Request.RequestUri + student.ID.ToString());
+            return response;
         }
 
         // problem here that we have to get that accept only one paramter so we use attribute constraint
