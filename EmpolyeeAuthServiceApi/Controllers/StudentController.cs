@@ -41,13 +41,18 @@ namespace EmpolyeeAuthServiceApi.Controllers
             stList.Add(student);
             var response= Request.CreateResponse(HttpStatusCode.Created);
             //send url that user can access to view newly created student
-            response.Headers.Location = new Uri(Request.RequestUri + student.ID.ToString());
+            //here if the user at then put / so we dont add it ,and vice versa or
+            //we can use the line builder and use the end point name :
+           // new Uri(Url.Link("GetStudentByid", new { id = student.ID }));
+            var req_uri = Request.RequestUri.ToString().EndsWith("/") ? 
+                Request.RequestUri.ToString() : Request.RequestUri.ToString() + "/";
+            response.Headers.Location = new Uri(req_uri + student.ID.ToString());
             return response;
         }
 
         // problem here that we have to get that accept only one paramter so we use attribute constraint
         //we can also use constraint argument to add some restrictions to our parameters 
-        [Route("{id:int:min(1)}")]
+        [Route("{id:int:min(1)}",Name ="GetStudentByid")]
         public Student Get(int id)
         {
             return stList.FirstOrDefault(i => i.ID == id);
