@@ -22,6 +22,20 @@ namespace EmpolyeeAuthServiceApi.Controllers
         {
             return stList;
         }
+
+        //overwrite the route prefix to avoid type api/student/api/teacher to enter the teacher controller
+        [Route("~api/teacher")]
+        public IEnumerable<Teacher> GetTeachers()
+        {
+            return new List<Teacher>()
+            {
+                new Teacher(){ID=1,Name="t1" },
+                new Teacher{ID=1,Name="t1" },
+                 
+            };
+
+        }
+
         [Route("api/student/{id}")]
         public Student Get(int id)
         {
