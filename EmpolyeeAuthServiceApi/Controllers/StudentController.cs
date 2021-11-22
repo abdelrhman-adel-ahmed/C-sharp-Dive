@@ -8,6 +8,7 @@ using EmpolyeeAuthServiceApi.Models;
 
 namespace EmpolyeeAuthServiceApi.Controllers
 {
+    [RoutePrefix("api/student")]
     public class StudentController : ApiController
     {
         static List<Student> stList = new List<Student>
@@ -21,13 +22,13 @@ namespace EmpolyeeAuthServiceApi.Controllers
         {
             return stList;
         }
-
+        [Route("api/student/{id}")]
         public Student Get(int id)
         {
             return stList.FirstOrDefault(i => i.ID == id);
         }
-
-        [Route("api/student/{id}/courses")]
+        //it used from the Route prefix
+        [Route("{id}/courses")]
         public List<string> GetStudentCourses(int id)
         {
             if (id == 1)
