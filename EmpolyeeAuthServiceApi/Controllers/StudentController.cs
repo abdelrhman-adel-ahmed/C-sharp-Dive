@@ -24,7 +24,7 @@ namespace EmpolyeeAuthServiceApi.Controllers
         }
 
         //overwrite the route prefix to avoid type api/student/api/teacher to enter the teacher controller
-        [Route("~api/teacher")]
+        [Route("~/api/teacher")]
         public IEnumerable<Teacher> GetTeachers()
         {
             return new List<Teacher>()
@@ -36,13 +36,19 @@ namespace EmpolyeeAuthServiceApi.Controllers
 
         }
 
-        [Route("~api/student/{id}")]
+
+        // problem here that we have to get that accept only one paramter
+        [Route("~/api/student/{id}")]
         public Student Get(int id)
         {
             return stList.FirstOrDefault(i => i.ID == id);
         }
 
-
+        [Route("~/api/student/{name}")]
+        public Student Get(string name)
+        {
+            return stList.FirstOrDefault(i => i.Name == name);
+        }
         //it used from the Route prefix
         [Route("{id}/courses")]
         public List<string> GetStudentCourses(int id)
