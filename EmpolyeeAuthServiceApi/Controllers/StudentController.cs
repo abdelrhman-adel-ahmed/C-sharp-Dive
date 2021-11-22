@@ -36,11 +36,13 @@ namespace EmpolyeeAuthServiceApi.Controllers
 
         }
 
-        [Route("api/student/{id}")]
+        [Route("~api/student/{id}")]
         public Student Get(int id)
         {
             return stList.FirstOrDefault(i => i.ID == id);
         }
+
+
         //it used from the Route prefix
         [Route("{id}/courses")]
         public List<string> GetStudentCourses(int id)
