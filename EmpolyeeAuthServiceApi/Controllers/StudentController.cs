@@ -37,14 +37,15 @@ namespace EmpolyeeAuthServiceApi.Controllers
         }
 
 
-        // problem here that we have to get that accept only one paramter
-        [Route("~/api/student/{id}")]
+        // problem here that we have to get that accept only one paramter so we use attribute constraint
+        //we can also use constraint argument to add some restrictions to our parameters 
+        [Route("{id:int:min(1)}")]
         public Student Get(int id)
         {
             return stList.FirstOrDefault(i => i.ID == id);
         }
 
-        [Route("~/api/student/{name}")]
+        [Route("{name:alpha}")]
         public Student Get(string name)
         {
             return stList.FirstOrDefault(i => i.Name == name);
