@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Design_Patterns.repository;
 
-namespace Design_Patterns.core
+namespace Design_Patterns.core.repository
 {
     interface IUnitOfWork:IDisposable
     {
-        ICourseRepository Course { get; }
+        IEmployeeRepository Employee { get; }
         int Complete();
     }
 }

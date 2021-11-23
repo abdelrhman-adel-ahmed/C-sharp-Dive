@@ -6,9 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.Entity;
+
 using Design_Patterns.core.repository;
 
-namespace Design_Patterns.Persistenec.repository
+namespace Design_Patterns.Persistence.repository
 {
     //Repository should encapsulate your query
     //
