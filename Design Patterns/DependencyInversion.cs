@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data;
+
 namespace Design_Patterns
 {
     class User
@@ -12,12 +14,14 @@ namespace Design_Patterns
     }
     interface activator
     {
+        
          void activate();
     }
     class Email: activator
     {
         public void activate()
         {
+          
             Console.WriteLine("email activator");
         }
     }

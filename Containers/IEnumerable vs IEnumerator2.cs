@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Containers_diff
-{
-    class IEnumerable_vs_IEnumerator2
+{ 
+    
+    
+
+class IEnumerable_vs_IEnumerator2
     {
 
 
