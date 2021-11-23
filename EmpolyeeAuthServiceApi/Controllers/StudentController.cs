@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using EmpolyeeAuthServiceApi.Models;
+using System.Data;
 
 namespace EmpolyeeAuthServiceApi.Controllers
 {
@@ -20,6 +21,7 @@ namespace EmpolyeeAuthServiceApi.Controllers
 
         public IEnumerable<Student> Get()
         {
+           
             return stList;
         }
 
