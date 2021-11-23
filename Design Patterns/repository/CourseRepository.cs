@@ -11,22 +11,24 @@ using Design_Patterns.repository;
 
 namespace Design_Patterns.Persistence.repository
 {
-     class CourseRepository : Repository<Employee>, IEmployeeRepository
+     class EmployeeRepository : Repository<Employee>, IEmployeeRepository
     {
-        public CourseRepository(MeContext meContext) :base(meContext)
+        public EmployeeRepository(MeContext meContext) :base(meContext)
         {
 
         }
-        public IEnumerable<Employee> GetCoursesWithAuthor(int PageIndex, int pageSize)
-        {
-            return MeContext.Employee.ToList();
-        }
-
-        public IEnumerable<Employee> GetTopSellingCourses(int count)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public MeContext MeContext { get { return Context as MeContext; } }
+
+        public IEnumerable<Employee> GetMaleEmployees()
+        {
+            return MeContext.Employee.Where(x => x.Gender == "Male").ToList();
+        }
+
+        public IEnumerable<Employee> GetFemaleEmployees()
+        {
+            return MeContext.Employee.Where(x => x.Gender == "Female").ToList();
+        }
     }
 }

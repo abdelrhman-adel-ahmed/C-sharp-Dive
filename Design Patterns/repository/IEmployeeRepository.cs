@@ -11,8 +11,8 @@ namespace Design_Patterns.core.repository
 {
     interface IEmployeeRepository : IRepository<Employee>
     {
-        IEnumerable<Employee> GetTopSellingCourses(int count);
-        IEnumerable<Employee> GetCoursesWithAuthor(int PageIndex, int pageSize);
+        IEnumerable<Employee> GetMaleEmployees();
+        IEnumerable<Employee> GetFemaleEmployees();
 
 
     }
