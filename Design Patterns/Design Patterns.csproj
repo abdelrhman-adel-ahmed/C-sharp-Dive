@@ -67,6 +67,7 @@
     <Compile Include="repository\IRepository.cs" />
     <Compile Include="repository\IUnitOfWork.cs" />
     <Compile Include="repository\Repository.cs" />
+    <Compile Include="repository\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
