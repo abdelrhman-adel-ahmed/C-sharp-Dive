@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Design_Patterns.MVC;
+using Design_Patterns.repository;
 
 namespace Design_Patterns
 {
@@ -21,7 +22,7 @@ namespace Design_Patterns
        
 
             Console.WriteLine("---------Repository--------");
-            
+            Start.run();
             Console.ReadLine();
         }
     }
