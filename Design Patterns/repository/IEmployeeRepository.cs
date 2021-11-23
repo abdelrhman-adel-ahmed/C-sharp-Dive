@@ -9,10 +9,10 @@ using Design_Patterns.Domian.repository;
 
 namespace Design_Patterns.core.repository
 {
-    interface IEmployeeRepository : IRepository<Employee>
+    interface IEmployeeRepository : IRepository<Employees>
     {
-        IEnumerable<Employee> GetMaleEmployees();
-        IEnumerable<Employee> GetFemaleEmployees();
+        IEnumerable<Employees> GetMaleEmployees();
+        IEnumerable<Employees> GetFemaleEmployees();
 
 
     }

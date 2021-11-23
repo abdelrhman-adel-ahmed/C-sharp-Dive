@@ -12,10 +12,11 @@ namespace Design_Patterns.repository
 
         public static void run()
         {
-            using (var unitOfWork= new UnitOfWork(new MeContext()))
+            using (var unitOfWork = new UnitOfWork(new MeContext()))
             {
-              var emps= unitOfWork.Employee.GetAll();
+                var emps = unitOfWork.Employee.GetAll();
                 emps.ToList().ForEach(x => Console.WriteLine(x));
+                //any changes we will make
             }
         }
     }

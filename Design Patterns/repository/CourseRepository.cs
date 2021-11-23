@@ -11,7 +11,7 @@ using Design_Patterns.repository;
 
 namespace Design_Patterns.Persistence.repository
 {
-     class EmployeeRepository : Repository<Employee>, IEmployeeRepository
+     class EmployeeRepository : Repository<Employees>, IEmployeeRepository
     {
         public EmployeeRepository(MeContext meContext) :base(meContext)
         {
@@ -21,12 +21,12 @@ namespace Design_Patterns.Persistence.repository
 
         public MeContext MeContext { get { return Context as MeContext; } }
 
-        public IEnumerable<Employee> GetMaleEmployees()
+        public IEnumerable<Employees> GetMaleEmployees()
         {
             return MeContext.Employee.Where(x => x.Gender == "Male").ToList();
         }
 
-        public IEnumerable<Employee> GetFemaleEmployees()
+        public IEnumerable<Employees> GetFemaleEmployees()
         {
             return MeContext.Employee.Where(x => x.Gender == "Female").ToList();
         }

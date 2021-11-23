@@ -12,9 +12,9 @@ namespace Design_Patterns.repository
    
     class MeContext : DbContext
     {
-        public MeContext() : base(@"Data Source=.;Initial Catalog=FirstDB;Integrated Security=True") { }
+        public MeContext() : base(@"connect timeout=30;Data Source=.;Initial Catalog=FirstDB;Integrated Security=True") { }
 
-        public static DbSet<Employee> Employee { get; set; }
+        public static DbSet<Employees> Employee { get; set; }
 
     }
 }
