@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using System.Linq.Expressions;
 
 namespace Design_Patterns.core.repository
-{ 
-    interface IRepository<TEntity>  where TEntity : class
+{
+    interface IRepository<TEntity> where TEntity : class
     {
         TEntity Get(int id);
         IEnumerable<TEntity> GetAll();
