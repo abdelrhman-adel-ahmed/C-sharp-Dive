@@ -26,7 +26,7 @@ namespace Dependency_injection_tools.our_own_DI_tool_with_lifetime
             var dependency = _container.GetDependency(type);
             //if the type we want to intialize have some parameterized constructor
             var construtor = dependency.Type.GetConstructors().Single();
-            //we used toarray because tolist doesnot have length function ! <---
+            //we used to array because tolist doesnot have length function ! <---
             var parameters = construtor.GetParameters().ToList();
             if (parameters.Count > 0)
             {
