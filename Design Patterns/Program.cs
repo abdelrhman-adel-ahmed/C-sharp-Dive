@@ -18,8 +18,10 @@ namespace Design_Patterns
             //Console.WriteLine("---------Dependency Inversion--------");
             //Entrypoint1.run();
 
-            Console.WriteLine("---------Repository--------");
+       
 
+            Console.WriteLine("---------Repository--------");
+            
             Console.ReadLine();
         }
     }
