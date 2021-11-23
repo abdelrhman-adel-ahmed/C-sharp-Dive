@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Design_Patterns.repository
+namespace Design_Patterns.core.repository
 {
     interface IUnitOfWork
     {

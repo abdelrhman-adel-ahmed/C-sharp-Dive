@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Entity;
 
-namespace Design_Patterns.repository
+namespace Design_Patterns.core.repository
 {
     //Repository should encapsulate your query
     //
