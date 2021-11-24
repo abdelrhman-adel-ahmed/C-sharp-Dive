@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns.Domian.repository
 {
-    class Employees
+    public class Employees
     {
         public int ID { get; set; }
         public string Name { get; set; }

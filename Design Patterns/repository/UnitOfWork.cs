@@ -12,10 +12,10 @@ namespace Design_Patterns.Persistence
     class UnitOfWork : IUnitOfWork
     {
         private readonly MeContext _meContext;
-        public UnitOfWork(MeContext meContext)
+        public UnitOfWork(ref MeContext meContext)
         {
             _meContext = meContext;
-            Employee = new EmployeeRepository(_meContext);
+            Employee = new EmployeeRepository(ref _meContext);
         }
 
         public IEmployeeRepository Employee { get; private set; }
