@@ -51,9 +51,11 @@ namespace EmpolyeeAuthServiceApi.Controllers
             return response;
         }
 
-        // problem here that we have to get that accept only one paramter so we use attribute constraint
         //we can also use constraint argument to add some restrictions to our parameters 
-        [Route("{id:int:min(1)}",Name ="GetStudentByid")]
+
+        //name attr we can use it leater to resoplbe the url of the controller dynamiccly without have to 
+        //explictly type it 
+        [Route("{id:int:min(1)}",Name = "GetStudentByid")]
         public Student Get(int id)
         {
             return stList.FirstOrDefault(i => i.ID == id);
