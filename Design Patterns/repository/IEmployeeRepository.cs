@@ -13,7 +13,5 @@ namespace Design_Patterns.core.repository
     {
         IEnumerable<Employees> GetMaleEmployees();
         IEnumerable<Employees> GetFemaleEmployees();
-
-
     }
 }

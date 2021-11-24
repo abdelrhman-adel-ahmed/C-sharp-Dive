@@ -24,9 +24,17 @@ namespace Design_Patterns.repository
 
         public static void run()
         {
-            using (var x =new UnitOfWork(new MeContext()))
+            using (var unitOfWork =new UnitOfWork(new MeContext()))
             {
-                Console.WriteLine(x.Employee.GetAll().ToList().Count);
+                unitOfWork.Employee.GetMaleEmployees().ToList().ForEach(x => Console.WriteLine(x.Name));
+                Employees emp = new Employees
+                {
+                    ID=10,
+                    Name = "aa",
+                    Gender = "male"
+                };
+                unitOfWork.Employee.Add(emp);
+                unitOfWork.Complete();
             }
 
         }
