@@ -14,7 +14,7 @@ namespace Design_Patterns.repository
     {
         public MeContext() : base(@"connect timeout=30;Data Source=.;Initial Catalog=FirstDB;Integrated Security=SSPI") { }
 
-        public  DbSet<Employees> Employee { get; set; }
+        public DbSet<Employees> Employee { get; set; }
 
     }
 }

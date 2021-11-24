@@ -24,9 +24,10 @@ namespace Design_Patterns.repository
 
         public static void run()
         {
-            x xx = new x();
-            var s = xx.Employee.ToList();
-            Console.WriteLine(s.Count);
+            using (var x =new UnitOfWork(new MeContext()))
+            {
+                Console.WriteLine(x.Employee.GetAll().ToList().Count);
+            }
 
         }
     }

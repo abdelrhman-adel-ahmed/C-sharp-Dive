@@ -13,7 +13,7 @@ namespace Design_Patterns.Persistence.repository
 {
      class EmployeeRepository : Repository<Employees>, IEmployeeRepository
     {
-        public EmployeeRepository(ref MeContext meContext) :base(meContext)
+        public EmployeeRepository(MeContext meContext) :base(meContext)
         {
 
         }
