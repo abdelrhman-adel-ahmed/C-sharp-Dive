@@ -12,6 +12,6 @@ namespace Design_Patterns.Domian.repository
         public string Name { get; set; }
 
         public string Gender { get; set; }
-        public int DepartmentId { get; set; }
+        public int? DepartmentId { get; set; }
     }
 }
