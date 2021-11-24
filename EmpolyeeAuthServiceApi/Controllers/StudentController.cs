@@ -19,6 +19,14 @@ namespace EmpolyeeAuthServiceApi.Controllers
            new Student {ID=3,Name="noha"}
         };
 
+
+        [Route("~/api/student/xx")]
+        public HttpResponseMessage GetUsing()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, stList);
+        }
+
+
         public IEnumerable<Student> Get()
         {          
             return stList;
@@ -53,7 +61,7 @@ namespace EmpolyeeAuthServiceApi.Controllers
 
         //we can also use constraint argument to add some restrictions to our parameters 
 
-        //name attr we can use it leater to resoplbe the url of the controller dynamiccly without have to 
+        //name attr we can use it later to resolve the url of the controller dynamiclly without have to 
         //explictly type it 
         [Route("{id:int:min(1)}",Name = "GetStudentByid")]
         public Student Get(int id)
