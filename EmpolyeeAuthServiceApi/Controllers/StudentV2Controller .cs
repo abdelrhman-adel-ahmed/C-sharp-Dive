@@ -13,9 +13,9 @@ namespace EmpolyeeAuthServiceApi.Controllers
 
         static List<StudentV2> stList = new List<StudentV2>
         {
-           new StudentV2 {ID=1,Name="ahmed"},
-           new StudentV2 {ID=2,Name="sara"},
-           new StudentV2 {ID=3,Name="noha"}
+           new StudentV2 {ID=1,Name="ahmed",Age=25},
+           new StudentV2 {ID=2,Name="sara",Age=30},
+           new StudentV2 {ID=3,Name="noha",Age=3}
         };
 
         public IEnumerable<StudentV2> Get()
