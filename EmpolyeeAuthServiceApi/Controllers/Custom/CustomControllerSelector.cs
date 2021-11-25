@@ -45,9 +45,14 @@ namespace EmpolyeeAuthServiceApi.Controllers.Custom
                 controllerName += "v2";
             }
 
+            //we can either use TryGetValue to get the contrller descirptor obj or we can do it out self by 
+            //accesing the controllers list and get the controller name and the value of contrllers dict is
+            //the contrllerdesciptor it self
+            var controllertype = controllers[controllerName];
             HttpControllerDescriptor controllerDesc;
+            //it get the specifide controller using the controller name
             controllers.TryGetValue(controllerName, out controllerDesc);
-            return controllerDesc;
+            return controllertype;
         }
     }
 }
