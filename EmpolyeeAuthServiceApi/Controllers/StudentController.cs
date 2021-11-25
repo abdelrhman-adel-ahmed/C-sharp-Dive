@@ -40,14 +40,14 @@ namespace EmpolyeeAuthServiceApi.Controllers
         [Route("aaa/{id}")]
         public IHttpActionResult GetStudentActionResult(int id)
         {
+            //IHttpActionResult introduced in web api 2 have more cleaner methods and functionality
             var student = stList.FirstOrDefault(x => x.ID == id);
             if (student != null)
             {
                 return Ok(student);
             }
             else
-                return Ok(HttpStatusCode.NotFound);
-
+                return NotFound();
         }
 
         public IEnumerable<Student> Get()
