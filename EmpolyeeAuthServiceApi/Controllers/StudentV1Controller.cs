@@ -17,5 +17,17 @@ namespace EmpolyeeAuthServiceApi.Controllers
            new StudentV1 {ID=2,Name="sara"},
            new StudentV1 {ID=3,Name="noha"}
         };
+
+        public IEnumerable<StudentV1> Get()
+        {
+            return stList;
+        }
+        public HttpResponseMessage Get(int id )
+        {
+            var student = stList.FirstOrDefault(x => x.ID == id);
+            if (student != null)
+                return Request.CreateResponse(student);
+            return Request.CreateResponse(HttpStatusCode.NotFound);
+        }
     }
 }
