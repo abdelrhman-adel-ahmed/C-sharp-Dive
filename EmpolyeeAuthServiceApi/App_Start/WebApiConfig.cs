@@ -20,6 +20,8 @@ namespace EmpolyeeAuthServiceApi
             // Web API routes ,make the attribute routing work
             config.MapHttpAttributeRoutes();
 
+
+            //or we can use the route attribute
             config.Routes.MapHttpRoute(
                name: "Version1",
                routeTemplate: "api/v1/student/{id}",
