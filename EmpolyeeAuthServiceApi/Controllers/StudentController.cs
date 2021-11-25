@@ -39,11 +39,11 @@ namespace EmpolyeeAuthServiceApi.Controllers
         public IHttpActionResult GetStudentActionResult(int id)
 
         {
-         return Ok
+            return Ok
         }
 
-public IEnumerable<Student> Get()
-        {          
+        public IEnumerable<Student> Get()
+        {
             return stList;
         }
 
@@ -55,7 +55,7 @@ public IEnumerable<Student> Get()
             {
                 new Teacher(){ID=1,Name="t1" },
                 new Teacher{ID=1,Name="t1" },
-                 
+
             };
 
         }
@@ -63,12 +63,12 @@ public IEnumerable<Student> Get()
         public HttpResponseMessage Post(Student student)
         {
             stList.Add(student);
-            var response= Request.CreateResponse(HttpStatusCode.Created);
+            var response = Request.CreateResponse(HttpStatusCode.Created);
             //send url that user can access to view newly created student
             //here if the user at then put / so we dont add it ,and vice versa or
             //we can use the line builder and use the end point name :
-           // new Uri(Url.Link("GetStudentByid", new { id = student.ID }));
-            var req_uri = Request.RequestUri.ToString().EndsWith("/") ? 
+            // new Uri(Url.Link("GetStudentByid", new { id = student.ID }));
+            var req_uri = Request.RequestUri.ToString().EndsWith("/") ?
                 Request.RequestUri.ToString() : Request.RequestUri.ToString() + "/";
             response.Headers.Location = new Uri(req_uri + student.ID.ToString());
             return response;
@@ -78,7 +78,7 @@ public IEnumerable<Student> Get()
 
         //name attr we can use it later to resolve the url of the controller dynamiclly without have to 
         //explictly type it 
-        [Route("{id:int:min(1)}",Name = "GetStudentByid")]
+        [Route("{id:int:min(1)}", Name = "GetStudentByid")]
         public Student Get(int id)
         {
             return stList.FirstOrDefault(i => i.ID == id);
