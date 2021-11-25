@@ -18,10 +18,14 @@ namespace EmpolyeeAuthServiceApi.Controllers.Custom
         }
         public override HttpControllerDescriptor SelectController(HttpRequestMessage request)
         {
+            //get all the controllers that inherete from apicontroller
             var controllers = GetControllerMapping();
+            //gets the request route data the route data 
             var routedata=request.GetRouteData();
+            //the route data value is a dict that have name that we use in the url api/student -->have the student
             string controllerName=routedata.Values["Controller"].ToString();
             string versionNumber = "1";
+            //dict of key value pairs of the query string .
             var versionQueryString = request.GetQueryNameValuePairs();
             var versionQueryString1 = HttpUtility.ParseQueryString(request.RequestUri.Query);
             if (versionQueryString1["v"]!=null)

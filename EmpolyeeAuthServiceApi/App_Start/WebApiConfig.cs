@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Dispatcher;
+using EmpolyeeAuthServiceApi.Controllers.Custom;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 
@@ -20,6 +22,8 @@ namespace EmpolyeeAuthServiceApi
             // Web API routes ,make the attribute routing work
             config.MapHttpAttributeRoutes();
 
+            //overwrite the httpcontroller selector to implement our own selector 
+            config.Services.Replace(typeof(IHttpControllerSelector), new CustomControllerSelector(config));
 
             //or we can use the route attribute
            // config.Routes.MapHttpRoute(
