@@ -21,29 +21,32 @@ namespace EmpolyeeAuthServiceApi.Controllers.Custom
             //get all the controllers that inherete from apicontroller
             var controllers = GetControllerMapping();
             //gets the request route data the route data 
-            var routedata=request.GetRouteData();
+            var routedata = request.GetRouteData();
             //the route data value is a dict that have name that we use in the url api/student -->have the student
-            string controllerName=routedata.Values["Controller"].ToString();
+            string controllerName = routedata.Values["Controller"].ToString();
             string versionNumber = "1";
             //dict of key value pairs of the query string .
             var versionQueryString = request.GetQueryNameValuePairs();
             var versionQueryString1 = HttpUtility.ParseQueryString(request.RequestUri.Query);
-            if (versionQueryString1["v"]!=null)
+            if (versionQueryString1["v"] != null)
             {
                 versionNumber = versionQueryString1["v"];
             }
 
-            if(versionNumber=="1")
+            if (versionNumber == "1")
             {
+                //we have the controller name that we put in the url api/student --> we have student ,
+                //but the actual controller named studentv1 so we append v1 or v2 depend on what we specife in the 
+                //query string
                 controllerName += "v1";
             }
-            else if(versionNumber == "2")
+            else if (versionNumber == "2")
             {
                 controllerName += "v2";
             }
 
-            HttpControllerDescriptor controllerDesc ;
-            controllers.TryGetValue(controllerName,out controllerDesc);
+            HttpControllerDescriptor controllerDesc;
+            controllers.TryGetValue(controllerName, out controllerDesc);
             return controllerDesc;
         }
     }
