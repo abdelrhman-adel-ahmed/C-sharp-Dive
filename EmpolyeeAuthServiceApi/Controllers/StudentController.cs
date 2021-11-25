@@ -43,7 +43,7 @@ namespace EmpolyeeAuthServiceApi.Controllers
             var student = stList.FirstOrDefault(x => x.ID == id);
             if (student != null)
             {
-                return Ok(student );
+                return Ok(student);
             }
             else
                 return Ok(HttpStatusCode.NotFound);
