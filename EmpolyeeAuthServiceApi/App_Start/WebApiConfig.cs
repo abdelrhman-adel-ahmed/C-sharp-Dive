@@ -21,6 +21,12 @@ namespace EmpolyeeAuthServiceApi
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+               name: "Version1",
+               routeTemplate: "api/v1/student/{id}",
+               defaults: new { id = RouteParameter.Optional ,controller="StudentV1"}
+           );
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
