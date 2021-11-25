@@ -8,7 +8,7 @@ using EmpolyeeAuthServiceApi.Models;
 
 namespace EmpolyeeAuthServiceApi.Controllers
 {
-    public class StudentV1Controller : ApiController
+    public class StudentV2Controller : ApiController
     {
 
         static List<StudentV2> stList = new List<StudentV2>
@@ -18,7 +18,7 @@ namespace EmpolyeeAuthServiceApi.Controllers
            new StudentV2 {ID=3,Name="noha"}
         };
 
-        public IEnumerable<StudentV1> Get()
+        public IEnumerable<StudentV2> Get()
         {
             return stList;
         }
