@@ -36,12 +36,14 @@ namespace EmpolyeeAuthServiceApi.Controllers
             }
             return Request.CreateResponse(HttpStatusCode.Found, student);
         }
+
+        [Route("aaa/{id}")]
         public IHttpActionResult GetStudentActionResult(int id)
         {
             var student = stList.FirstOrDefault(x => x.ID == id);
-            if (student == null)
+            if (student != null)
             {
-                return Ok(student + "aaa");
+                return Ok(student );
             }
             else
                 return Ok(HttpStatusCode.NotFound);
