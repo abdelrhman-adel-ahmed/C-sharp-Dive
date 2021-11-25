@@ -25,7 +25,11 @@ namespace EmpolyeeAuthServiceApi
                routeTemplate: "api/v1/student/{id}",
                defaults: new { id = RouteParameter.Optional ,controller="StudentV1"}
            );
-
+            config.Routes.MapHttpRoute(
+          name: "Version2",
+          routeTemplate: "api/v2/student/{id}",
+          defaults: new { id = RouteParameter.Optional, controller = "StudentV2" }
+                 );
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
