@@ -8,6 +8,12 @@ using EmpolyeeAuthServiceApi.Models;
 
 namespace EmpolyeeAuthServiceApi.Controllers
 {
+    /*
+     * web api versioning: we can eaither use 
+     * 1- using url routes attribute or add routes in webconfig and specife the controller that the rout will goes to
+     * 2- using the qury string and then use the deafulthttpselector to override the controller seletor ,and detirmine
+     * out self 
+     */
     public class StudentV1Controller : ApiController
     {
 
