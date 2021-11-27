@@ -19,11 +19,11 @@ namespace concurrency_and_parallelism
            // Console.WriteLine("----------------Hello_World_Thread--------------------");
            // Hello_World_Thread.run();
 
-           // Console.WriteLine("----------------Sync--------------------");
-           // Sync.run();
+            Console.WriteLine("----------------Sync--------------------");
+            Sync.run();
 
-            Console.WriteLine("----------------Difference_Between_Background_and_Foreground_Thread--------------------");
-            Difference_Between_Background_and_Foreground_Thread.run();
+            //Console.WriteLine("----------------Difference_Between_Background_and_Foreground_Thread--------------------");
+            //Difference_Between_Background_and_Foreground_Thread.run();
         }
 
     }
