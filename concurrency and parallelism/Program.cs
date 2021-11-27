@@ -16,8 +16,14 @@ namespace concurrency_and_parallelism
 
             // ThreadOverHead.ThreadoverHead();
 
-            Console.WriteLine("----------------Hello_World_Thread--------------------");
-            Hello_World_Thread.run();
+           // Console.WriteLine("----------------Hello_World_Thread--------------------");
+           // Hello_World_Thread.run();
+
+           // Console.WriteLine("----------------Sync--------------------");
+           // Sync.run();
+
+            Console.WriteLine("----------------Difference_Between_Background_and_Foreground_Thread--------------------");
+            Difference_Between_Background_and_Foreground_Thread.run();
         }
 
     }
