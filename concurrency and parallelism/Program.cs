@@ -6,15 +6,18 @@ namespace concurrency_and_parallelism
 {
     class Program
     {
-      
+
         //static async Task Main(string[] args)
         //{
-          //await AsyncMakeTea.run(); 
+        //await AsyncMakeTea.run(); 
         //}
         static void Main(string[] args)
         {
 
-            ThreadOverHead.ThreadoverHead();
+            // ThreadOverHead.ThreadoverHead();
+
+            Console.WriteLine("----------------Hello_World_Thread--------------------");
+            Hello_World_Thread.run();
         }
 
     }

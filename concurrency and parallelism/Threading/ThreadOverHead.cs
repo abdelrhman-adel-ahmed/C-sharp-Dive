@@ -8,12 +8,10 @@ namespace concurrency_and_parallelism.Threading
 {
     class ThreadOverHead
     {
-        ParameterizedThreadStart  d(ManualResetEvent m);
-        static void wakeThread(ManualResetEvent m) { }
+        public static void xx(object obj) { }
         
         public static void ThreadoverHead()
         {
-            d dd = wakeThread;
             const int OneMB = 1024 * 1024;
             using (ManualResetEvent wakeThread = new ManualResetEvent(false))
             {
@@ -22,7 +20,7 @@ namespace concurrency_and_parallelism.Threading
                 {
                     while(true)
                     {
-                        Thread t = new Thread(dd);
+                        Thread t = new Thread(xx);
                         t.Start(wakeThread);
                         Console.WriteLine($"{++ThreadNum} {Process.GetCurrentProcess().VirtualMemorySize64/OneMB}MB");
                     }
@@ -35,5 +33,7 @@ namespace concurrency_and_parallelism.Threading
                 }
             }
         }
+
+    
     }
 }
