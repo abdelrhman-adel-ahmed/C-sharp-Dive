@@ -6,8 +6,4 @@
     <RootNamespace>concurrency_and_parallelism</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Threading\" />
-  </ItemGroup>
-
 </Project>
