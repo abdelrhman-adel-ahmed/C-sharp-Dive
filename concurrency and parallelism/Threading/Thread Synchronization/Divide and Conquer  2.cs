@@ -14,7 +14,7 @@ namespace concurrency_and_parallelism.Threading
         static List<long> numbers = new List<long>();
         static List<long> PortionResults = new List<long>(Environment.ProcessorCount);
         static int PortionSize;
-        static object zrbo = new object();
+
         public static void run()
         {
             generateRand();
@@ -34,8 +34,8 @@ namespace concurrency_and_parallelism.Threading
 
             Console.WriteLine();
 
-            Stopwatch watch2 = new Stopwatch();
-            watch2.Start();
+            watch.Reset();
+            watch.Start();
             List<Thread> threads = new List<Thread>();
             for (int i = 0; i < Environment.ProcessorCount; i++)
             {
@@ -51,9 +51,9 @@ namespace concurrency_and_parallelism.Threading
             {
                 total2 += item;
             }
-            watch2.Stop();
+            watch.Stop();
             Console.WriteLine(total2);
-            Console.WriteLine("time taken to sum 2 " + watch2.Elapsed);
+            Console.WriteLine("time taken to sum 2 " + watch.Elapsed);
         }
         static void SumYourPortion(object portionnumber)
         {
@@ -73,12 +73,8 @@ namespace concurrency_and_parallelism.Threading
         {
             // Random rand = new Random();
             for (long i = 0; i < 500000000; i++)
-            {
-                lock (zrbo)
-                {
+            {   
                     numbers.Add(i);
-                }
-
             }
         }
     }
