@@ -23,6 +23,7 @@ namespace concurrency_and_parallelism.Threading
         static void UseBathRoomStall()
         {
             Console.WriteLine(Thread.CurrentThread.ManagedThreadId + " trying to obtain bathroom");
+            //lock(zrbo) ==
             Monitor.Enter(zrbo);
             try
             {
@@ -30,10 +31,10 @@ namespace concurrency_and_parallelism.Threading
                 Thread.Sleep(rand.Next(2000));
                 Console.WriteLine(Thread.CurrentThread.ManagedThreadId + " on my way to release the lock");
             }
-            catch (Exception)
+            finally 
             {
 
-                throw;
+                Monitor.Exit(zrbo);
             }
             Console.WriteLine(Thread.CurrentThread.ManagedThreadId + " on my way to exit");
         }
