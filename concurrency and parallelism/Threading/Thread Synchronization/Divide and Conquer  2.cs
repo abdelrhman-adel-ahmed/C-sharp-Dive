@@ -31,6 +31,29 @@ namespace concurrency_and_parallelism.Threading
             watch.Stop();
             Console.WriteLine(total);
             Console.WriteLine("time taken to sum " + watch.Elapsed);
+
+            Console.WriteLine();
+
+            Stopwatch watch2 = new Stopwatch();
+            watch2.Start();
+            List<Thread> threads = new List<Thread>();
+            for (int i = 0; i < Environment.ProcessorCount; i++)
+            {
+                threads.Add(new Thread(SumYourPortion));
+                threads[i].Start(i);
+            }
+            foreach (Thread item in threads)
+            {
+                item.Join();
+            }
+            long total2 = 0;
+            foreach (long item in PortionResults)
+            {
+                total2 += item;
+            }
+            watch2.Stop();
+            Console.WriteLine(total2);
+            Console.WriteLine("time taken to sum 2 " + watch2.Elapsed);
         }
         static void SumYourPortion(object portionnumber)
         {
@@ -38,7 +61,9 @@ namespace concurrency_and_parallelism.Threading
             int Portionnumber = (int)portionnumber;
             //we start from the portion number * the size of the portion ,i.e portion 1 the size of each portion is 10
             //so we start from index 10 , tell the 1 *10 +10 = 20
-            for (int i = Portionnumber * PortionSize; i < Portionnumber * PortionSize+ PortionSize;i++)
+            int baseIndex = Portionnumber * PortionSize;
+            int BoundIndex = Portionnumber * PortionSize + PortionSize;
+            for (int i = baseIndex; i < BoundIndex; i++)
             {
                 sum += numbers[i];
             }
@@ -46,14 +71,14 @@ namespace concurrency_and_parallelism.Threading
         }
         static void generateRand()
         {
-           // Random rand = new Random();
+            // Random rand = new Random();
             for (long i = 0; i < 500000000; i++)
             {
-                lock(zrbo)
+                lock (zrbo)
                 {
                     numbers.Add(i);
                 }
-               
+
             }
         }
     }
