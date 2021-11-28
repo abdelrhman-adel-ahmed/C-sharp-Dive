@@ -29,7 +29,7 @@ namespace concurrency_and_parallelism.Threading
                     count = temp + 1;
                     Console.WriteLine($"thread id= {Thread.CurrentThread.ManagedThreadId} count= {count}");
                 }
-            
+                
                 Thread.Sleep(1000);
             }
         }
