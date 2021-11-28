@@ -36,8 +36,12 @@ namespace concurrency_and_parallelism
             // LockKeyWord.run();
 
 
-            Console.WriteLine("----------------Divide_and_Conquer__1--------------------");
-            Divide_and_Conquer__1.run();
+            //Console.WriteLine("----------------Divide_and_Conquer__1--------------------");
+            //Divide_and_Conquer__1.run();
+
+
+            Console.WriteLine("----------------Divide_and_Conquer__2--------------------");
+            Divide_and_Conquer__2.run();
 
 
 
