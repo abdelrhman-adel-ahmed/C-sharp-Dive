@@ -26,7 +26,6 @@ namespace concurrency_and_parallelism.Threading
                 lock(zrbo)
                 {
                     int temp = count;
-                    Thread.Sleep(1000);
                     count = temp + 1;
                     Console.WriteLine($"thread id= {Thread.CurrentThread.ManagedThreadId} count= {count}");
                 }
