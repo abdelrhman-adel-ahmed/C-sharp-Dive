@@ -4,6 +4,7 @@ using concurrency_and_parallelism.Async;
 using concurrency_and_parallelism.Threading;
 namespace concurrency_and_parallelism
 {
+
     class Program
     {
 
@@ -27,14 +28,17 @@ namespace concurrency_and_parallelism
 
             // Console.WriteLine("----------------Basic_Thread_Synchronization--------------------");
             // Basic_Thread_Synchronization.run();
-           
+
             // Console.WriteLine("----------------AnotherSyncExample--------------------");
             // AnotherSyncExample.run();
 
-            Console.WriteLine("----------------LockKeyWord--------------------");
-            LockKeyWord.run();
+            // Console.WriteLine("----------------LockKeyWord--------------------");
+            // LockKeyWord.run();
 
-            
+
+            Console.WriteLine("----------------Divide_and_Conquer__1--------------------");
+            Divide_and_Conquer__1.run();
+
 
 
         }
