@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace concurrency_and_parallelism.Threading
 {
@@ -22,11 +23,17 @@ namespace concurrency_and_parallelism.Threading
         static void UseBathRoomStall()
         {
             Console.WriteLine(Thread.CurrentThread.ManagedThreadId + " trying to obtain bathroom");
-            lock (zrbo)
+            Monitor.Enter(zrbo);
+            try
             {
                 Console.WriteLine(Thread.CurrentThread.ManagedThreadId + " obtained the lock");
                 Thread.Sleep(rand.Next(2000));
                 Console.WriteLine(Thread.CurrentThread.ManagedThreadId + " on my way to release the lock");
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
             Console.WriteLine(Thread.CurrentThread.ManagedThreadId + " on my way to exit");
         }
