@@ -2,12 +2,14 @@
 using System.Threading.Tasks;
 using concurrency_and_parallelism.Async;
 using concurrency_and_parallelism.Threading;
+using System.Threading;
+
 namespace concurrency_and_parallelism
 {
 
     class Program
     {
-
+        static NoneBlockingQueue<int> s = new NoneBlockingQueue<int>();
         //static async Task Main(string[] args)
         //{
         //await AsyncMakeTea.run(); 
@@ -45,14 +47,32 @@ namespace concurrency_and_parallelism
             //Console.WriteLine("----------------Producer_Consumer_1--------------------");
             //Producer_Consumer_1.run();
 
-            Console.WriteLine("----------------ProducerConsumerImp1--------------------");
-            ProducerConsumerImp1.run();
+            //Console.WriteLine("----------------ProducerConsumerImp1--------------------");
+            //ProducerConsumerImp1.run();
 
-            Console.WriteLine("----------------ProducerConsumerImp1--------------------");
-            NoneBlockingQueue s = new NoneBlockingQueue();
+            Console.WriteLine("----------------NoneBlockingQueue--------------------");
+            Thread t1 = new Thread(producerThread);
+            Thread t2 = new Thread(consumner);
+            t1.Start();
+            t2.Start();
+    
+        }
 
-
-       
+        static void producerThread()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                Thread.Sleep(1000);
+                Console.WriteLine($"Producer Thread produced {i}");
+                s.Enqueue(i);
+            }
+        }
+        static void consumner()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                Console.WriteLine($"Consumer Thread Consumed {s.Dequeuee()}"); 
+            }
         }
 
     }
