@@ -47,15 +47,13 @@ namespace concurrency_and_parallelism
             //Console.WriteLine("----------------Producer_Consumer_1--------------------");
             //Producer_Consumer_1.run();
 
-            //Console.WriteLine("----------------ProducerConsumerImp1--------------------");
-            //ProducerConsumerImp1.run();
+            Console.WriteLine("----------------ProducerConsumerImp1--------------------");
+            ProducerConsumerImp1.run();
 
-            Console.WriteLine("----------------NoneBlockingQueue--------------------");
-            Thread t1 = new Thread(producerThread);
-            Thread t2 = new Thread(consumner);
-            t1.Start();
-            t2.Start();
-    
+            //Console.WriteLine("----------------NoneBlockingQueue--------------------");
+            //new Thread(producerThread).Start();
+            //new Thread(consumner).Start();
+
         }
 
         static void producerThread()
@@ -71,7 +69,7 @@ namespace concurrency_and_parallelism
         {
             for (int i = 0; i < 100; i++)
             {
-                Console.WriteLine($"Consumer Thread Consumed {s.Dequeuee()}"); 
+                Console.WriteLine($"Consumer Thread Consumed {s.Dequeuee()}");
             }
         }
 

@@ -13,8 +13,10 @@ namespace concurrency_and_parallelism.Threading
         const int ThreadNum = 3;
         //the capacity of the list will be the num of threads ,each thread will put the sum that it calcualted in the 
         //Sums list 
-        static List<int> Sums = new List<int>(ThreadNum);
+        static List<int> Sums = new List<int>() { 0, 0, 0 };
         static List<Thread> threads = new List<Thread>();
+        static object xx = new object();
+        static bool ProducerFinish = false;
         public static void run()
         {
             new Thread(ProduceNumers).Start();
@@ -47,14 +49,21 @@ namespace concurrency_and_parallelism.Threading
             //inside the loop even if there is nothing to pull
             while ((DateTime.Now - StartTime).Seconds < 10)
             {
-                if (Numbers.Count != 0)
+                lock (xx)
                 {
-                    int CurrentNum = Numbers.Dequeue();
-                    Console.WriteLine($"consuming thread {ThreadNum} : consume {CurrentNum}");
-                    mySum += CurrentNum;
+                    if (Numbers.Count != 0)
+                    {
+                        int CurrentNum = Numbers.Dequeue();
+
+                        Console.WriteLine($"consuming thread {ThreadNumber} : consume { CurrentNum}");
+                        mySum += CurrentNum;
+                    }
                 }
             }
-            Sums[(int)ThreadNumber] = mySum;
+            Sums.Insert((int)ThreadNumber, mySum);
+            //may be all consuming threads finish before the producer finish so they will print out the sums 
+            //so i want them to wait until the producer finish even if the time they supose to run in finishes
+            while (!ProducerFinish) { continue; }
         }
         static void ProduceNumers()
         {
@@ -65,6 +74,7 @@ namespace concurrency_and_parallelism.Threading
                 Numbers.Enqueue(i);
                 Thread.Sleep(rand.Next(1000));
             }
+            ProducerFinish = true;
         }
 
 
