@@ -27,6 +27,10 @@ namespace concurrency_and_parallelism.Threading
         {
             DateTime StartTime = DateTime.Now;
             int mySum = 0;
+            //thread will keep pulling out numbers from the queue as long as 
+            //1- the between the thread start and now is less than 10 sec ,2- there is somthing in the queue 
+            //but if the time is not pased and there is nothing in the queue the thread will keep thrashing the cpu
+            //inside the loop even if there is nothing to pull
             while ((DateTime.Now - StartTime).Seconds < 10)
             {
                 if (Numbers.Count != 0)
@@ -40,7 +44,8 @@ namespace concurrency_and_parallelism.Threading
         {
             for (int i = 0; i < 25; i++)
             {
-                Numbers.Enqueue(rand.Next(10));
+                //Numbers.Enqueue(rand.Next(10));
+                Numbers.Enqueue(i);
                 Thread.Sleep(rand.Next(1000));
             }
         }
