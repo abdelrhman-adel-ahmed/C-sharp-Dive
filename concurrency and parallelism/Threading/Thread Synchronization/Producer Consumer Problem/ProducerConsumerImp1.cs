@@ -8,7 +8,7 @@ namespace concurrency_and_parallelism.Threading
 {
     class ProducerConsumerImp1
     {
-        static Queue<int> queue = new Queue<int>();
+        static Queue<int> Numbers = new Queue<int>();
         static Random rand = new Random();
         const int ThreadNum = 3;
         //the capacity of the list will be the num of threads ,each thread will put the sum that it calcualted in the 
@@ -19,18 +19,27 @@ namespace concurrency_and_parallelism.Threading
             ProduceNumers();
         }
 
-        static void Consumer()
+        static void SumNumbers()
         {
+            DateTime StartTime = DateTime.Now;
+            while ((DateTime.Now - StartTime).Seconds < 10)
+            {
+                if (Numbers.Count != 0)
+                {
 
+                }
+            }
         }
         static void ProduceNumers()
         {
             for (int i = 0; i < 25; i++)
             {
-                queue.Enqueue(rand.Next(10));
+                Numbers.Enqueue(rand.Next(10));
                 Thread.Sleep(rand.Next(1000));
             }
         }
+
+
 
     }
 }
