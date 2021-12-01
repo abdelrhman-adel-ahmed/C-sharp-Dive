@@ -17,18 +17,24 @@ namespace concurrency_and_parallelism.Threading
         public static void run()
         {
             ProduceNumers();
+            for (int i = 0; i < 3; i++)
+            {
+                new Thread(SumNumbers).Start(i);
+            }
         }
 
-        static void SumNumbers()
+        static void SumNumbers(object ThreadNumber)
         {
             DateTime StartTime = DateTime.Now;
+            int mySum = 0;
             while ((DateTime.Now - StartTime).Seconds < 10)
             {
                 if (Numbers.Count != 0)
                 {
-
+                    mySum += Numbers.Dequeue();
                 }
             }
+            Sums[(int)ThreadNumber] = mySum;
         }
         static void ProduceNumers()
         {

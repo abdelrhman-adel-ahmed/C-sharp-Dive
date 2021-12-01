@@ -45,8 +45,14 @@ namespace concurrency_and_parallelism
            //Console.WriteLine("----------------Producer_Consumer_1--------------------");
            //Producer_Consumer_1.run();
 
-            Console.WriteLine("----------------ProducerConsumerImp1--------------------");
-            ProducerConsumerImp1.run();
+           // Console.WriteLine("----------------ProducerConsumerImp1--------------------");
+           // ProducerConsumerImp1.run();
+            int sum = 0;
+            for (int i = 0; i < 25; i++)
+            {
+                sum += i;
+            }
+            Console.WriteLine(sum);
         }
 
     }
