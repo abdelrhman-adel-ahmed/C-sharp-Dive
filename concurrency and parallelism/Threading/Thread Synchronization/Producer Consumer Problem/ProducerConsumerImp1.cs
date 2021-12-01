@@ -18,6 +18,7 @@ namespace concurrency_and_parallelism.Threading
         public static void run()
         {
             new Thread(ProduceNumers).Start();
+            Thread.Sleep(1000);
             for (int i = 0; i < ThreadNum; i++)
             {
                 Thread t1 = new Thread(SumNumbers);
@@ -49,7 +50,7 @@ namespace concurrency_and_parallelism.Threading
                 if (Numbers.Count != 0)
                 {
                     int CurrentNum = Numbers.Dequeue();
-                    Console.WriteLine($"consuming thread: {ThreadNum} consume {CurrentNum}");
+                    Console.WriteLine($"consuming thread {ThreadNum} : consume {CurrentNum}");
                     mySum += CurrentNum;
                 }
             }
