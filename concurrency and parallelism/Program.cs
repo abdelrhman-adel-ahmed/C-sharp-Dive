@@ -42,8 +42,11 @@ namespace concurrency_and_parallelism
             //Console.WriteLine("----------------Divide_and_Conquer__2--------------------");
             //Divide_and_Conquer__2.run();
 
-            Console.WriteLine("----------------Producer_Consumer_1--------------------");
-            Producer_Consumer_1.run();
+           //Console.WriteLine("----------------Producer_Consumer_1--------------------");
+           //Producer_Consumer_1.run();
+
+            Console.WriteLine("----------------ProducerConsumerImp1--------------------");
+            ProducerConsumerImp1.run();
         }
 
     }
