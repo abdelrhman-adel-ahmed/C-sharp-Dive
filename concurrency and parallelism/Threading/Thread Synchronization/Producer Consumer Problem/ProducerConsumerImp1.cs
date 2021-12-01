@@ -14,13 +14,26 @@ namespace concurrency_and_parallelism.Threading
         //the capacity of the list will be the num of threads ,each thread will put the sum that it calcualted in the 
         //Sums list 
         static List<int> Sums = new List<int>(ThreadNum);
+        static List<Thread> threads = new List<Thread>();
         public static void run()
         {
             ProduceNumers();
             for (int i = 0; i < 3; i++)
             {
-                new Thread(SumNumbers).Start(i);
+                Thread t1 = new Thread(SumNumbers);
+                t1.Start(i);
+                threads.Add(t1);
             }
+            foreach (var thread in threads)
+            {
+                thread.Join();
+            }
+            int sum = 0;
+            foreach (var num in Sums)
+            {
+                sum += num;
+            }
+            Console.WriteLine(sum);
         }
 
         static void SumNumbers(object ThreadNumber)
