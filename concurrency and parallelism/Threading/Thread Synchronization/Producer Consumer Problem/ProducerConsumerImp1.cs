@@ -60,7 +60,8 @@ namespace concurrency_and_parallelism.Threading
                     }
                 }
             }
-            lock(Sums)
+            //or we can use conccurent collection 
+            lock (Sums)
                 Sums.Insert((int)ThreadNumber, mySum);
             //may be all consuming threads finish before the producer finish so they will print out the sums 
             //so i want them to wait until the producer finish even if the time they supose to run in finishes
