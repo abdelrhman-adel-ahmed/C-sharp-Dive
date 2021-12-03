@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using System.Net;
-
+using System.Threading;
 namespace AsyncTest
 {
     /// <summary>
@@ -40,12 +40,11 @@ namespace AsyncTest
             resultWindow.Text += $"Total time to of execution is: {timeTaken}";
         }
 
-        private void AsyncExec_Click(object sender, RoutedEventArgs e)
+        private async void AsyncExec_Click(object sender, RoutedEventArgs e)
         {
             var watch = Stopwatch.StartNew();
+            await RunDownloadAsync();
 
-            RunDownloadAsync();
-            
             watch.Stop();
             var timeTaken = watch.ElapsedMilliseconds;
             resultWindow.Text += $"Total time to of execution is: {timeTaken}";
@@ -56,6 +55,9 @@ namespace AsyncTest
             List<string> websites = PrepData();
             foreach (var website in websites)
             {
+                //await will return to the caller so the caller is now free to run untill the awit is finished 
+                //note: that after function that get awaited finishes it continute in diffrent thread than the one 
+                //it was running in 
                 WebSiteDTO result = await Task.Run(() => DownLoadWebSiteAsync(website));
                 ReportWebSiteInfo(result);
             }
@@ -106,6 +108,7 @@ namespace AsyncTest
             output.Add("https://www.google.com");
             output.Add("https://www.microsoft.com");
             output.Add("https://www.stackoverflow.com");
+            output.Add("https://en.wikipedia.org");
 
             return output;
         }
