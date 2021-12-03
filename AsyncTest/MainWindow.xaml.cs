@@ -54,6 +54,21 @@ namespace AsyncTest
             resultWindow.Text += $"Total time to of execution is: {timeTaken}";
 
         }
+        private async Task RunDownloadAsyncParallel()
+        {
+            //the old approach of async we used,we have to wait for each call till it finish and procced to the next 
+            //here we dont wait for any call we make them all in parrallel, but still we will wait untill all of them 
+            //finishes to make call to ReportWebSiteInfo func ,so the total time we take is the time the longest request
+            //take to finish 
+            List<string> websites = PrepData();
+            List<Task<WebSiteDTO>> tasks = new List<Task<WebSiteDTO>>();
+
+            foreach (var website in websites)
+            {
+                tasks.Add(Task.Run(() => DownLoadWebSiteAsync(website)));
+            }
+            var results = await Task.WhenAll(tasks);
+        }
         private async Task RunDownloadAsync()
         {
             List<string> websites = PrepData();
