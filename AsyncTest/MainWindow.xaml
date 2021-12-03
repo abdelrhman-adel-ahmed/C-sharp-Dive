@@ -10,6 +10,7 @@
         <Button Content="Normal Execution&#xD;&#xA;" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top" Height="41" Width="489" Click="NormalExec_Click"/>
         <Button Content="Async Execution&#xD;&#xA;" HorizontalAlignment="Left" Margin="150,87,0,0" VerticalAlignment="Top" Height="49" Width="489" Click="AsyncExec_Click"/>
         <TextBox x:Name="resultWindow" HorizontalAlignment="Left" Margin="150,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="489" Height="143"/>
+        <TextBox x:Name="ThreadNumTextBox" HorizontalAlignment="Left" Margin="150,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" Height="80"/>
 
     </Grid>
 </Window>

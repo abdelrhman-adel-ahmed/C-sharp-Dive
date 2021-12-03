@@ -37,13 +37,17 @@ namespace AsyncTest
             RunDownloadSync();
             watch.Stop();
             var timeTaken = watch.ElapsedMilliseconds;
-            resultWindow.Text += $"Total time to of execution is: {timeTaken}";
+            resultWindow.Text += $"Total time to of execution is: {timeTaken} {Environment.NewLine}";
         }
 
         private async void AsyncExec_Click(object sender, RoutedEventArgs e)
         {
+            ThreadNumTextBox.Text = "";
             var watch = Stopwatch.StartNew();
+
+            ThreadNumTextBox.Text += $"async contoller before await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
             await RunDownloadAsync();
+            ThreadNumTextBox.Text += $"async contoller after await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
 
             watch.Stop();
             var timeTaken = watch.ElapsedMilliseconds;
@@ -58,7 +62,9 @@ namespace AsyncTest
                 //await will return to the caller so the caller is now free to run untill the awit is finished 
                 //note: that after function that get awaited finishes it continute in diffrent thread than the one 
                 //it was running in 
+                // ThreadNumTextBox.Text += $"RunDownloadAsync before await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
                 WebSiteDTO result = await Task.Run(() => DownLoadWebSiteAsync(website));
+                //ThreadNumTextBox.Text += $"RunDownloadAsync after await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
                 ReportWebSiteInfo(result);
             }
         }
