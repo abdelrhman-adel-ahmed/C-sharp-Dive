@@ -47,15 +47,22 @@ namespace concurrency_and_parallelism
             //Console.WriteLine("----------------Producer_Consumer_1--------------------");
             //Producer_Consumer_1.run();
 
-            Console.WriteLine("----------------ProducerConsumerImp1--------------------");
-            ProducerConsumerImp1.run();
+           // Console.WriteLine("----------------ProducerConsumerImp1--------------------");
+           // ProducerConsumerImp1.run();
 
             //Console.WriteLine("----------------NoneBlockingQueue--------------------");
             //new Thread(producerThread).Start();
             //new Thread(consumner).Start();
 
-        }
+            Action x = (() => addfive());
+            x();
 
+
+        }
+        static void addfive()
+        {
+            Console.WriteLine("five");
+        }
         static void producerThread()
         {
             for (int i = 0; i < 100; i++)
