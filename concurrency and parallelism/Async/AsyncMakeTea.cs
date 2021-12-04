@@ -43,7 +43,7 @@ namespace concurrency_and_parallelism.Async
 
             Console.WriteLine("waiting for the kettle");
             await Task.Delay(2000);
-            //any thing that have await , will be done in deffrent thread and the rest of the function will be done 
+            //any thing that have await , will be done in diffrent thread and the rest of the function will be done 
             //in that thread 
             Console.WriteLine("@@@the waiting Task done by another thread " + Thread.CurrentThread.ManagedThreadId);
 

@@ -82,9 +82,9 @@ namespace AsyncTest
                 //await will return to the caller so the caller is now free to run untill the awit is finished 
                 //note: that after function that get awaited finishes it continute in diffrent thread than the one 
                 //it was running in 
-                // ThreadNumTextBox.Text += $"RunDownloadAsync before await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
+                ThreadNumTextBox.Text += $"RunDownloadAsync before await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
                 WebSiteDTO result = await Task.Run(() => DownLoadWebSiteAsync(website));
-                //ThreadNumTextBox.Text += $"RunDownloadAsync after await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
+                ThreadNumTextBox.Text += $"RunDownloadAsync after await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
                 ReportWebSiteInfo(result);
             }
         }
