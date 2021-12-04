@@ -33,6 +33,7 @@ namespace AsyncTest
             //1- we cannot do any thing with the UI till the event finish
             //2-we can see the results all at once not in the order of there execution because the event fucntion
             //is not returned 
+            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
             var watch = Stopwatch.StartNew();
             RunDownloadSync();
             watch.Stop();
