@@ -68,6 +68,10 @@ namespace AsyncTest
                 tasks.Add(Task.Run(() => DownLoadWebSiteAsync(website)));
             }
             var results = await Task.WhenAll(tasks);
+            foreach (var item in results)
+            {
+                ReportWebSiteInfo(item);
+            }
         }
         private async Task RunDownloadAsync()
         {
