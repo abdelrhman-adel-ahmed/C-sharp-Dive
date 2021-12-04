@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AsyncTest"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
         <Button Content="Normal Execution&#xD;&#xA;" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top" Height="41" Width="489" Click="NormalExec_Click"/>
-        <Button Content="Async Execution&#xD;&#xA;" HorizontalAlignment="Left" Margin="150,87,0,0" VerticalAlignment="Top" Height="49" Width="489" Click="AsyncExec_Click"/>
-        <TextBox x:Name="resultWindow" HorizontalAlignment="Left" Margin="150,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="489" Height="143"/>
-        <TextBox x:Name="ThreadNumTextBox" HorizontalAlignment="Left" Margin="150,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="504" Height="60"/>
-        <ProgressBar HorizontalAlignment="Left" Height="21" Margin="150,141,0,0" VerticalAlignment="Top" Width="489"/>
+        <Button Content="Async Execution&#xD;&#xA;" HorizontalAlignment="Left" Margin="150,76,0,0" VerticalAlignment="Top" Height="49" Width="489" Click="AsyncExec_Click"/>
+        <TextBox x:Name="resultWindow" HorizontalAlignment="Left" Margin="150,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="489" Height="143"/>
+        <TextBox x:Name="ThreadNumTextBox" HorizontalAlignment="Center" Margin="0,481,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="478" Height="60"/>
+        <ProgressBar HorizontalAlignment="Left" Height="21" Margin="150,263,0,0" VerticalAlignment="Top" Width="489"/>
+        <Button Content="Prallel Async Execution" HorizontalAlignment="Left" Margin="150,141,0,0" VerticalAlignment="Top" Width="489" Height="38" Click="ParallelExecuteAsync_Click"/>
+        <Button Content="Cancle" HorizontalAlignment="Left" Margin="150,198,0,0" VerticalAlignment="Top" Width="489" Height="48"/>
 
     </Grid>
 </Window>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AsyncTest
 {
-    class WebSiteDTO
+    public class WebSiteDTO
     {
         public string websiteUrl { get; set; }
 
