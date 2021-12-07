@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns.MimicWebResult
 {
-    class Provider1:Iprovider
+    class Provider1 : Iprovider
     {
-
+        public void addParameters()
+        {
+            Console.WriteLine("Adding Parameters");
+        }
     }
 }
