@@ -56,6 +56,7 @@
     <Compile Include="DependencyInversion.cs" />
     <Compile Include="MimicWebResult\Iprovider.cs" />
     <Compile Include="MimicWebResult\Login.cs" />
+    <Compile Include="MimicWebResult\Provider1.cs" />
     <Compile Include="MVC\EntryPoint.cs" />
     <Compile Include="MVC\FirstAttempt.cs" />
     <Compile Include="MVC\MVCContainer.cs" />

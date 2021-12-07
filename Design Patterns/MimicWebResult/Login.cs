@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Design_Patterns.MimicWebResult
+namespace Design_Patterns
 {
-    class Login
+    class StartUp
     {
     }
 }

@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Design_Patterns
+namespace Design_Patterns.MimicWebResult
 {
-    interface Iprovider
+    class Provider1:Iprovider
     {
 
-        void addParameters();
     }
 }
