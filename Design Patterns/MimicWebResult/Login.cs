@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns.MimicWebResult
 {
-    interface Iprovider
+    class Login
     {
-
-
     }
 }
