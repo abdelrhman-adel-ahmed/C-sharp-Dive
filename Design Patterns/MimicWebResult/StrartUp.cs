@@ -8,7 +8,16 @@ namespace Design_Patterns
 {
     class StartUp
     {
-        public static void 
+      public static void run()
+        {
+            Func<Iprovider,int> x = (Iprovider provider) =>
+            {
+                return 1;
+            };
+
+            int yy=x(new Provider1());
+            Console.WriteLine(yy);
+        }
 
     }
 }
