@@ -8,7 +8,7 @@ namespace Design_Patterns
 {
     class StartUp
     {
-
+        public static void 
 
     }
 }
