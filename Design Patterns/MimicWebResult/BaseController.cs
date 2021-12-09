@@ -10,12 +10,14 @@ namespace Design_Patterns
     class BaseController
     {
         protected TOutput Execute<TOutput>(Func<Iprovider, TOutput> processDelegate,
-                                                           string genericErrorMessage, bool isTransaction = false)
+                                                      string genericErrorMessage, bool isTransaction = false)
         {
-            Iprovider provider = new Provider1();
-            TOutput output = default(TOutput);
-            output =processDelegate(provider);
+            
+            BaseDSL baseDSL = new BaseDSL();
+            TOutput output = baseDSL.Execute(processDelegate, genericErrorMessage, isTransaction);
             return output;
+
+
         }
 
 
