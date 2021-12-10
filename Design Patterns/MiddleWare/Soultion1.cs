@@ -53,13 +53,14 @@ namespace Design_Patterns
             _mainaction = mainaction;
             _pipetype = new List<Type>();
         }
-        public void AddPipe(Type pipetype)
+        public PipeBuilder AddPipe(Type pipetype)
         {
             if(!pipetype.IsInstanceOfType(typeof(Pipe)))
             {
                 throw new Exception();
             }
             _pipetype.Add(pipetype);
+            return this;
         }
         public Action<string> Build()
         {
@@ -70,7 +71,11 @@ namespace Design_Patterns
 
     class Soultion1
     {
-        
+        public static void run()
+        {
+            var Pipe = new PipeBuilder(First).AddPipe(typeof(Try)).AddPipe(typeof(Wrap)).Build();
+            Pipe("a");
+        }
         public static void First(string msg)
         {
             Console.WriteLine($"exc first func {msg}");
