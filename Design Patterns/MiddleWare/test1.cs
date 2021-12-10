@@ -11,8 +11,10 @@ namespace Design_Patterns
 
         public static void run()
         {
-            Wrap(First);
-            Wrap(Second);
+            //Wrap(First);
+            //Wrap(Second);
+            Try(() => Wrap(First));
+            Wrap(() => Try(Second));
         }
         public static void First()
         {
@@ -30,6 +32,19 @@ namespace Design_Patterns
             Console.WriteLine("start");
             function();
             Console.WriteLine("end");
+        }
+
+        public static void Try(Action function)
+        {
+            try
+            {
+                Console.WriteLine("trying");
+                function();
+            }
+            catch(Exception)
+            {
+
+            }
         }
 
     }

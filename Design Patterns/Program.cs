@@ -31,6 +31,7 @@ namespace Design_Patterns
 
             Console.WriteLine("---------MiddleWare--------");
             test1.run();
+            Console.ReadKey();
         }
         }
     }
