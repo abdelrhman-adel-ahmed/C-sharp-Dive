@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -37,14 +38,22 @@ namespace WebApiCore
             }
 
             app.UseHttpsRedirection();
+            //our custome middleware before it hit the routing middleware and after that
+            app.UseMiddleware<EndpointLogging>();
 
             app.UseRouting();
+            
+            app.UseMiddleware<EndpointLogging>();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapGet("/", async context => 
+                {
+                    await context.Response.WriteAsync("hello to the shity api");
+                });
             });
         }
     }
