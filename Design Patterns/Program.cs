@@ -26,8 +26,11 @@ namespace Design_Patterns
             //Console.WriteLine("---------Repository--------");
             //Start.run();
 
-            Console.WriteLine("---------Mimic Webresult--------");
-            StartUp.run();
-            }
+            //Console.WriteLine("---------Mimic Webresult--------");
+            //StartUp.run();
+
+            Console.WriteLine("---------MiddleWare--------");
+            test1.run();
+        }
         }
     }
