@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="DependencyInversion.cs" />
     <Compile Include="MiddleWare\test1.cs" />
+    <Compile Include="MiddleWare\test2.cs" />
     <Compile Include="MimicWebResult\BaseController.cs" />
     <Compile Include="MimicWebResult\BaseDSL.cs" />
     <Compile Include="MimicWebResult\Iprovider.cs" />

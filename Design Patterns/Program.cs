@@ -30,7 +30,8 @@ namespace Design_Patterns
             //StartUp.run();
 
             Console.WriteLine("---------MiddleWare--------");
-            test1.run();
+            //test1.run();
+            test2.run();
             Console.ReadKey();
         }
         }
