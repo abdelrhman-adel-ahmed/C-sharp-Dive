@@ -33,7 +33,8 @@ namespace Design_Patterns
             //test1.run();
             //test2.run();
             //test3.run();
-            Soultion1.run();
+            //Soultion1.run();
+            FinalSolution.FinalSolution.run();
 
             Console.ReadKey();
         }

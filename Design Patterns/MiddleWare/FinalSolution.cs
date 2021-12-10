@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 
-namespace Design_Patterns
+namespace Design_Patterns.FinalSolution
 {
-    class FinalSolution
-    {
+
         public abstract class Pipe
         {
             protected Action<string> _action;
@@ -63,23 +62,39 @@ namespace Design_Patterns
                 _pipetype.Add(pipetype);
                 return this;
             }
-            public Pipe Build()
+
+            private Action<string> CreatePipe(int index)
             {
-                //it will always return whatever pipe we specife in here , but we want a composition        
-                Pipe pipe = (Pipe)Activator.CreateInstance(_pipetype[0], _mainaction);
-                return pipe;
+                if(index <_pipetype.Count -1)
+                {
+                    var ChildPipeHanle = CreatePipe(index + 1);
+                    var pipe= (Pipe) Activator.CreateInstance(_pipetype[index], ChildPipeHanle);
+                    return pipe.Handle;
+                }
+                else 
+                {
+                    var finalPipe=(Pipe) Activator.CreateInstance(_pipetype[index], _mainaction);
+                    return finalPipe.Handle;
+                }
+            }
+            public Action<string> Build()
+            {
+                return CreatePipe(0);
             }
         }
 
-        class Soultion1
+        class FinalSolution
         {
             public static void run()
             {
-                PipeBuilder Pipebuilder = new PipeBuilder(First);
-                var middle1 = Pipebuilder.AddPipe(typeof(Try));
-                var middel2 = Pipebuilder.AddPipe(typeof(Wrap));
-                var pipe = Pipebuilder.Build();
-                pipe.Handle("a");
+                //PipeBuilder Pipebuilder = new PipeBuilder(First);
+                //var middle1 = Pipebuilder.AddPipe(typeof(Try));
+                //var middel2 = Pipebuilder.AddPipe(typeof(Wrap));
+                //var handle = Pipebuilder.Build();
+                //handle("a");
+                //or write it this way 
+                var pipe = new PipeBuilder(First).AddPipe(typeof(Try)).AddPipe(typeof(Wrap)).Build();
+                pipe("heeeelo");
             }
             public static void First(string msg)
             {
@@ -94,4 +109,3 @@ namespace Design_Patterns
 
         }
     }
-}
