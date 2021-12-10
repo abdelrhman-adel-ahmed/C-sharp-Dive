@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Design_Patterns
 {
@@ -43,7 +44,29 @@ namespace Design_Patterns
             }
         }
     }
-
+    public class PipeBuilder
+    {
+        Action<string> _mainaction;
+        List<Type> _pipetype;
+        public PipeBuilder(Action<string> mainaction)
+        {
+            _mainaction = mainaction;
+            _pipetype = new List<Type>();
+        }
+        public void AddPipe(Type pipetype)
+        {
+            if(!pipetype.IsInstanceOfType(typeof(Pipe)))
+            {
+                throw new Exception();
+            }
+            _pipetype.Add(pipetype);
+        }
+        public Action<string> Build()
+        {
+            var pipe = Activator.CreateInstance(_pipetype[0], _mainaction);
+            return null;
+        }
+    }
 
     class Soultion1
     {
