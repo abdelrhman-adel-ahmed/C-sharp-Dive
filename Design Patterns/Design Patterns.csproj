@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DependencyInversion.cs" />
+    <Compile Include="MiddleWare\Soultion1.cs" />
     <Compile Include="MiddleWare\test1.cs" />
     <Compile Include="MiddleWare\test2.cs" />
     <Compile Include="MiddleWare\test3.cs" />
