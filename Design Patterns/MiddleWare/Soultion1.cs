@@ -17,7 +17,6 @@ namespace Design_Patterns
         }
         public abstract void Handle(string msg);
     }
-
     public class Wrap : Pipe
     {
         public Wrap(Action<string> action) : base(action) { }
@@ -69,7 +68,6 @@ namespace Design_Patterns
             return pipe;
         }
     }
-
     class Soultion1
     {
         public static void run()
@@ -90,6 +88,5 @@ namespace Design_Patterns
             Console.WriteLine($"exc Second func {msg}");
 
         }
-
     }
 }

@@ -9,7 +9,6 @@ namespace Design_Patterns
 {
     class FinalSolution
     {
-
         public abstract class Pipe
         {
             protected Action<string> _action;
