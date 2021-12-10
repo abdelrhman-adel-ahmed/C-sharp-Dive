@@ -64,6 +64,7 @@ namespace Design_Patterns
         }
         public Pipe Build()
         {
+            //it will always return whatever pipe we specife in here , but we want a composition        
             Pipe pipe =(Pipe) Activator.CreateInstance(_pipetype[0], _mainaction);
             return pipe;
         }
@@ -76,9 +77,8 @@ namespace Design_Patterns
             PipeBuilder Pipebuilder= new PipeBuilder(First);
             var middle1 = Pipebuilder.AddPipe(typeof(Try));
             var middel2 = Pipebuilder.AddPipe(typeof(Wrap));
-            var pipe = middel2.Build();
-            pipe.Handle("a");
-            
+            var pipe = Pipebuilder.Build();
+            pipe.Handle("a");         
         }
         public static void First(string msg)
         {
