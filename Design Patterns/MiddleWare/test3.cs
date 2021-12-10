@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns
 {
-    class test2
+    class test3
     {
         public static void run()
         {
-            //we can use lambda function to send the arg without alter the action to make it take parameters 
-            //and the misl code will generate the delegate that will get sent to Try and then to wrap
-            Try(() => Wrap(() => First("a")));
-            //Wrap(() => Try(Second("a")));
+            //Wrap("a", First);
+            //another problem if we want to pipleline here , so we send the message to the try and the delegate 
+            //that the compiler will create from the lambda expression , then the msg will get sent to the wrap
+            //function and then the wrap function will execute the first and send the msg 
+            Try("a", (msg) => Wrap(msg, First));
         }
         public static void First(string msg)
         {
@@ -26,19 +27,19 @@ namespace Design_Patterns
 
         }
 
-        public static void Wrap(Action function)
+        public static void Wrap(string msg, Action<string> function)
         {
             Console.WriteLine("start");
-            function();
+            function(msg);
             Console.WriteLine("end");
         }
 
-        public static void Try(Action function)
+        public static void Try(string msg, Action<string> function)
         {
             try
             {
                 Console.WriteLine("trying");
-                function();
+                function(msg);
             }
             catch (Exception)
             {
