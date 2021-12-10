@@ -55,17 +55,17 @@ namespace Design_Patterns
         }
         public PipeBuilder AddPipe(Type pipetype)
         {
-            if(!pipetype.IsInstanceOfType(typeof(Pipe)))
+            if (!pipetype.GetType().IsInstanceOfType(typeof(Pipe)))
             {
                 throw new Exception();
             }
             _pipetype.Add(pipetype);
             return this;
         }
-        public Action<string> Build()
+        public Pipe Build()
         {
-            var pipe = Activator.CreateInstance(_pipetype[0], _mainaction);
-            return null;
+            Pipe pipe =(Pipe) Activator.CreateInstance(_pipetype[0], _mainaction);
+            return pipe;
         }
     }
 
@@ -73,8 +73,12 @@ namespace Design_Patterns
     {
         public static void run()
         {
-            var Pipe = new PipeBuilder(First).AddPipe(typeof(Try)).AddPipe(typeof(Wrap)).Build();
-            Pipe("a");
+            PipeBuilder Pipebuilder= new PipeBuilder(First);
+            var middle1 = Pipebuilder.AddPipe(typeof(Try));
+            var middel2 = Pipebuilder.AddPipe(typeof(Wrap));
+            var pipe = middel2.Build();
+            pipe.Handle("a");
+            
         }
         public static void First(string msg)
         {
