@@ -39,6 +39,8 @@ namespace WebApiCore
 
             app.UseHttpsRedirection();
             //our custome middleware before it hit the routing middleware and after that
+            //so the first time here the UseRouting middleware is not called yet so we didnot match a route 
+            //to the request path  
             app.UseMiddleware<EndpointLogging>();
 
             app.UseRouting();
