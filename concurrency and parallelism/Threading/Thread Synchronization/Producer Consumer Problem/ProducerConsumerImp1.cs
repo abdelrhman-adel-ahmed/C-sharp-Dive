@@ -52,12 +52,17 @@ namespace concurrency_and_parallelism.Threading
                 //we put the lock here beacuse one thread can enter and dequee and item and then queue will be empty
                 //and then other thread come and try to deqeueu so it will throw an excpetion , also the queue here
                 //i think is not support conccurency so i think two thread can dequee the same item 
+
+                /*
+                 in .net 1.0 if there is an excption in non main thread if the excption is not handled ,the thread
+                would die but the process will keep going ,in version 2.0 if the thread that have un handeled 
+                excption the entire process will die, you can configure that 
+                 */
                 lock (xx)
                 {
                     if (Numbers.Count != 0)
                     {
-                        int CurrentNum = Numbers.Dequeue();
-
+                        int CurrentNum = Numbers.Dequeue();                  
                         Console.WriteLine($"consuming thread {ThreadNumber} : consume { CurrentNum}");
                         mySum += CurrentNum;
                     }
