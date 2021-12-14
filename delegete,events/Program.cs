@@ -75,12 +75,7 @@ namespace delegete_events
             };
             int[] s = new int[] { 1, 2, 3 };
 
-            var t = s.Select(x => x);
-            foreach (var item in t)
-            {
-                Console.WriteLine(item);
-            }
-            Console.ReadLine();
+       
 
         }
 
