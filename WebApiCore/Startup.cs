@@ -23,7 +23,7 @@ namespace WebApiCore
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -40,7 +40,7 @@ namespace WebApiCore
             app.UseHttpsRedirection();
             //our custome middleware before it hit the routing middleware and after that
             //so the first time here the UseRouting middleware is not called yet so we didnot match a route 
-            //to the request path  
+            //to the request path. 
             app.UseMiddleware<EndpointLogging>();
 
             app.UseRouting();
