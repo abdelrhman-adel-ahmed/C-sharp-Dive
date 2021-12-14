@@ -1,7 +1,9 @@
 ﻿using System;
 using delegete_events_weather;
 using delegete_events.Delegate_Event;
-
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace delegete_events
 {
@@ -66,7 +68,20 @@ namespace delegete_events
             //test t = new test();
             //t.mm += sub;
             //t.mm(1);
+
+            List<int> ss = new List<int>()
+            {
+                1,2,3,4
+            };
+            int[] s = new int[] { 1, 2, 3 };
+
+            var t = s.Select(x => x);
+            foreach (var item in t)
+            {
+                Console.WriteLine(item);
+            }
             Console.ReadLine();
+
         }
 
         class test

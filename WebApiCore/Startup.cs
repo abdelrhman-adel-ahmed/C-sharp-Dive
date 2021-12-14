@@ -54,7 +54,7 @@ namespace WebApiCore
                 endpoints.MapControllers();
                 endpoints.MapGet("/", async context => 
                 {
-                    await context.Response.WriteAsync("hello to the shity api");
+                    await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName);
                 });
             });
         }
