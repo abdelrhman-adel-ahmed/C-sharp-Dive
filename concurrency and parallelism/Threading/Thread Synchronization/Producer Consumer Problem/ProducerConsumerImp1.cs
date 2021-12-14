@@ -50,8 +50,9 @@ namespace concurrency_and_parallelism.Threading
             while ((DateTime.Now - StartTime).Seconds < 10)
             {
                 //we put the lock here beacuse one thread can enter and dequee and item and then queue will be empty
-                //and then other thread come and try to deqeueu so it will throw an excpetion , also the queue here
-                //i think is not support conccurency so i think two thread can dequee the same item 
+                //and then other thread pass the condition before the other thread dequeue then it try to deqeueu
+                //so it will throw an excpetion , also the queue here i think is not support conccurency so
+                //i think two thread can dequee the same item 
 
                 /*
                  in .net 1.0 if there is an excption in non main thread if the excption is not handled ,the thread
