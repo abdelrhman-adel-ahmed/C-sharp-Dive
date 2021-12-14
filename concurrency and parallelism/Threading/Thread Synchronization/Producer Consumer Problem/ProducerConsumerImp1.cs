@@ -49,6 +49,9 @@ namespace concurrency_and_parallelism.Threading
             //inside the loop even if there is nothing to pull
             while ((DateTime.Now - StartTime).Seconds < 10)
             {
+                //we put the lock here beacuse one thread can enter and dequee and item and then queue will be empty
+                //and then other thread come and try to deqeueu so it will throw an excpetion , also the queue here
+                //i think is not support conccurency so i think two thread can dequee the same item 
                 lock (xx)
                 {
                     if (Numbers.Count != 0)
