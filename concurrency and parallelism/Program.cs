@@ -16,8 +16,10 @@ namespace concurrency_and_parallelism
            // await AsyncMakeTea.run();
 
             Console.WriteLine("----------------ListOfUrls Async--------------------");
-            await ListOfUrls.run();
-            
+             await ListOfUrls.run();
+            SyncDownload.run();
+
+
         }
        // static void Main(string[] args)
        // {
