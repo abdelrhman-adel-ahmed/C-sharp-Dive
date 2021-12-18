@@ -27,11 +27,9 @@ namespace concurrency_and_parallelism
             foreach (var url in urls)
             {
                 HttpClient c = new HttpClient();
-                Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
                 Tasks.Add(Task.Run(() => c.GetAsync(url)));
             }
             var result = Task.WhenAll(Tasks);
-            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
             profiler.Stop();
             Console.WriteLine($"Async Parrallel takes {profiler.Elapsed.TotalSeconds} senconds");
 

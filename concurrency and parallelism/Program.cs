@@ -12,12 +12,12 @@ namespace concurrency_and_parallelism
         static NoneBlockingQueue<int> s = new NoneBlockingQueue<int>();
         static async Task Main(string[] args)
         {
-           // Console.WriteLine("----------------AsyncMakeTea--------------------");
-           // await AsyncMakeTea.run();
+            Console.WriteLine("----------------AsyncMakeTea--------------------");
+            await AsyncMakeTea.run();
 
-            Console.WriteLine("----------------ListOfUrls Async--------------------");
-             await ListOfUrls.run();
-            SyncDownload.run();
+           // Console.WriteLine("----------------ListOfUrls Async--------------------");
+           // await ListOfUrls.run();
+           // SyncDownload.run();
 
 
         }
