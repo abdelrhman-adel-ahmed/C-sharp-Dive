@@ -17,6 +17,7 @@ namespace concurrency_and_parallelism
 
             Console.WriteLine("----------------ListOfUrls Async--------------------");
             await ListOfUrls.run();
+            
         }
        // static void Main(string[] args)
        // {

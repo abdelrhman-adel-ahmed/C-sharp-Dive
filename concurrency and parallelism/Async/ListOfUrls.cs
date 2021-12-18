@@ -13,6 +13,7 @@ namespace concurrency_and_parallelism
         public static async Task run()
         {
             await AsyncDownload();
+            await AsyncDownloadParrallel();
         }
 
         public static async Task AsyncDownloadParrallel()
@@ -48,9 +49,8 @@ namespace concurrency_and_parallelism
                 };
                 output.Add(o);
             }
-            s.Stop();
-            Console.WriteLine(s.Elapsed.TotalSeconds);
-
+            profiler.Stop();
+            Console.WriteLine($"Async takes {profiler.Elapsed.TotalSeconds} senconds");
         }
         private static HttpClient Factory()
         {
@@ -58,7 +58,11 @@ namespace concurrency_and_parallelism
 
             return c;
         }
+        public static Task<string> ParseContent(HttpResponseMessage response)
+        {
+            return response.Content.ReadAsStringAsync();
 
+        }
         private static List<string> Urls()
         {
             List<string> urls = new List<string>();
