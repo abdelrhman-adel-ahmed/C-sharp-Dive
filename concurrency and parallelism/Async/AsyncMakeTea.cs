@@ -20,7 +20,7 @@ namespace concurrency_and_parallelism.Async
         public static async Task run()
         {
             Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            Console.WriteLine(await(Maketee()));
+            Console.WriteLine(await (Maketee()));
         }
         static async Task<string> Maketee()
         {
@@ -32,7 +32,6 @@ namespace concurrency_and_parallelism.Async
 
             var water = await bollingWater;
             string tea = $"pour {water} in cups";
-            
             return tea;
         }
 
@@ -42,7 +41,7 @@ namespace concurrency_and_parallelism.Async
             Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
 
             Console.WriteLine("waiting for the kettle");
-            await Task.Delay(2000);
+            await Task.Delay(1000);
             //any thing that have await , will be done in diffrent thread and the rest of the function will be done 
             //in that thread 
             Console.WriteLine("@@@the waiting Task done by another thread " + Thread.CurrentThread.ManagedThreadId);
