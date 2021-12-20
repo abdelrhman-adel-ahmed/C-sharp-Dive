@@ -8,7 +8,13 @@ using System.Threading.Tasks;
 namespace WindowsServiceTest1
 {
     class anyoneinhereteFromSerivceBaseIconChanges : ServiceBase
-    {
+     {
+    #if DEBUG
+
+    #else
+
+    #endif
+
     }
 
 

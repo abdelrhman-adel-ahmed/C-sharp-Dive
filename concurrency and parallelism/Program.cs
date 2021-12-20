@@ -3,17 +3,32 @@ using System.Threading.Tasks;
 using concurrency_and_parallelism.Async;
 using concurrency_and_parallelism.Threading;
 using System.Threading;
+using System.IO;
 
 namespace concurrency_and_parallelism
 {
+
+    class test
+    {
+        public static void convertToPDF()
+        {
+            string xpsPath = "D:\\convertXpsToPdf\\xps\\example.xps";
+            string pdfPath = "D:\\convertXpsToPdf\\pdf";
+            using (PdfSharp.Xps.XpsModel.XpsDocument pdfXpsDoc = PdfSharp.Xps.XpsModel.XpsDocument.Open(xpsPath))
+            {
+                PdfSharp.Xps.XpsConverter.Convert(pdfXpsDoc, pdfPath, 0);
+            }
+        }
+    }
 
     class Program
     {
         static NoneBlockingQueue<int> s = new NoneBlockingQueue<int>();
         static async Task Main(string[] args)
         {
-            Console.WriteLine("----------------AsyncMakeTea--------------------");
-            await AsyncMakeTea.run();
+            test.convertToPDF();
+            //Console.WriteLine("----------------AsyncMakeTea--------------------");
+            //await AsyncMakeTea.run();
 
            // Console.WriteLine("----------------ListOfUrls Async--------------------");
            // await ListOfUrls.run();

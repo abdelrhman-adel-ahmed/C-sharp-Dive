@@ -6,4 +6,9 @@
     <RootNamespace>concurrency_and_parallelism</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="PdfSharp" Version="1.50.5147" />
+    <PackageReference Include="PdfSharp.Xps" Version="1.0.0" />
+  </ItemGroup>
+
 </Project>
