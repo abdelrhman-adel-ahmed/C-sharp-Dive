@@ -45,8 +45,8 @@ namespace LINQ
             //{
             //    Console.WriteLine(item);
             //}
-            IEnumerator<int> iterator =result.GetEnumerator();
-            while(iterator.MoveNext())
+            IEnumerator<int> iterator = result.GetEnumerator();
+            while (iterator.MoveNext())
                 Console.WriteLine(iterator.Current);
 
         }

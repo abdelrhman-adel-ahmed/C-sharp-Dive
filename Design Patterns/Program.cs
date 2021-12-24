@@ -9,13 +9,28 @@ using Design_Patterns.repository;
 namespace Design_Patterns
 {
 
-        class Program
+
+    class test
+    {
+        public static void convertToPDF()
         {
-
-
-            static void Main(string[] args)
+            string xpsPath = "D:\\convertXpsToPdf\\xps\\example.xps";
+            string pdfPath = "D:\\convertXpsToPdf\\pdf\\output.pdf";
+            using (PdfSharp.Xps.XpsModel.XpsDocument pdfXpsDoc = PdfSharp.Xps.XpsModel.XpsDocument.Open(xpsPath))
             {
+               PdfSharp.Xps.XpsConverter.Convert(pdfXpsDoc, pdfPath, 0);
+            }
+        }
+    }
+    class Program
+    {
 
+
+        static void Main(string[] args)
+        {
+            // test.convertToPDF();
+            string name = "321321.aspx";
+            int num = int.Parse(name.Split('.')[0]);
             //Console.WriteLine("---------MVC--------");
             //EntryPoint.Start();
             //Console.WriteLine("---------Dependency Inversion--------");
@@ -29,14 +44,14 @@ namespace Design_Patterns
             //Console.WriteLine("---------Mimic Webresult--------");
             //StartUp.run();
 
-            Console.WriteLine("---------MiddleWare--------");
-            //test1.run();
-            //test2.run();
-            test3.run();
-            //Soultion1.run();
-            FinalSolution.FinalSolution.run();
+           //Console.WriteLine("---------MiddleWare--------");
+           ////test1.run();
+           ////test2.run();
+           //test3.run();
+           ////Soultion1.run();
+           //FinalSolution.FinalSolution.run();
 
             Console.ReadKey();
         }
-        }
     }
+}

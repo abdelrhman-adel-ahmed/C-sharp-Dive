@@ -37,8 +37,8 @@ namespace LINQ
             //Compiler_Translation_of_a_Larger_Example.run();
 
 
-            //Console.WriteLine("-------------------Introduction_To_Deferred_Execution------------------");
-            //Introduction_To_Deferred_Execution.run();
+            Console.WriteLine("-------------------Introduction_To_Deferred_Execution------------------");
+            Introduction_To_Deferred_Execution.run();
 
 
 
@@ -62,9 +62,9 @@ namespace LINQ
 
             //Console.WriteLine("-------------------orderby------------------");
             //orderby.run();
-
-            Console.WriteLine("-------------------Random_Ordering------------------");
-            Random_Ordering.run();
+           
+           // Console.WriteLine("-------------------Random_Ordering------------------");
+           // Random_Ordering.run();
 
 
             //Console.WriteLine(default(Runtime_Created_Assembly_Lines));
