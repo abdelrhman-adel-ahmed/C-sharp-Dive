@@ -54,6 +54,7 @@ namespace WebApiCore
                 endpoints.MapControllers();
                 endpoints.MapGet("/", async context => 
                 {
+                    //if it use iisexpress it will print iisexperss , if it use kestral it will print the same name of the project
                     await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName);
                 });
             });
