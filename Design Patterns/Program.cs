@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,8 +30,8 @@ namespace Design_Patterns
         static void Main(string[] args)
         {
             // test.convertToPDF();
-            string name = "321321.aspx";
-            int num = int.Parse(name.Split('.')[0]);
+            //string name = "321321.aspx";
+            //int num = int.Parse(name.Split('.')[0]);
             //Console.WriteLine("---------MVC--------");
             //EntryPoint.Start();
             //Console.WriteLine("---------Dependency Inversion--------");
@@ -44,13 +45,26 @@ namespace Design_Patterns
             //Console.WriteLine("---------Mimic Webresult--------");
             //StartUp.run();
 
-           //Console.WriteLine("---------MiddleWare--------");
-           ////test1.run();
-           ////test2.run();
-           //test3.run();
-           ////Soultion1.run();
-           //FinalSolution.FinalSolution.run();
-
+            //Console.WriteLine("---------MiddleWare--------");
+            ////test1.run();
+            ////test2.run();
+            //test3.run();
+            ////Soultion1.run();
+           // //FinalSolution.FinalSolution.run();
+           // string path = "c:\\logs,,";
+           // var values = path.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+           // Console.WriteLine(values.GetType());
+           // Console.WriteLine(values);
+           // var value2=path.Split(',');
+           // foreach (var item in values)
+           // {
+           //     Console.WriteLine(item);
+           // }
+            //var x = new DirectoryInfo("D:\\log2");
+            //Directory.Delete(x.FullName, true);
+            var url = "192.168.15.1:80";
+            var result = new Uri(new Uri(url), "/api/postlist/").AbsolutePath;
+            Console.WriteLine(result);
             Console.ReadKey();
         }
     }
