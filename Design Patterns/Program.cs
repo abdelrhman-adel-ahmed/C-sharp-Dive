@@ -23,49 +23,93 @@ namespace Design_Patterns
             }
         }
     }
+    public enum DisplayReportOption
+    {
+        AllServiceReportOnly = 5,
+        GroupsReportsOnly = 6,
+        Both = 7
+    }
+    public enum ReportStatus
+    {
+        None = 0,
+        NotReviwed = 1,
+        Reviewed = 2
+    }
+     public enum UploadStorageType
+    {
+        GoogleDrive = 1,
+        AzureFileStorage = 2,
+        AzureBlobStorage = 3
+    }
+    public class ReportDTO
+    {
+        public UploadStorageType StorageTypeId { get; set; }
+        public string AzureFilePath { get; set; }
+        public string ContainerName { get; set; }
+        public long? DriveAccountID { get; set; }
+        public long AccessionId { get; set; }
+        public float? SizeInKB { get; set; }
+        public string GoogleFileId { get; set; }
+        public string OracleId { get; set; }
+        public bool Report_clicked { get; set; }
+        public string DownloadLink { get; set; }
+        public string GoogleDriveUrl { get; set; }
+        public DateTime? ResultDate { get; set; }
+        public DateTime VisitDate { get; set; }
+        public string Type { get; set; }
+        public string Name { get; set; }
+        public ReportStatus Report_status { get; set; }
+        public long Id { get; set; }
+        public string AzureAccessToken { get; set; }
+        public DisplayReportOption? DisplayReportOption { get; set; }
+    }
+    public class AccessionResultDTO
+    {
+        public long AccNumber { get; set; }
+        public DateTime VisitDate { get; set; }
+        public string PatientName { get; set; }
+        public string PatientNumber { get; set; }
+        public string ClinicRefNo { get; set; }
+        public DateTime? ResultDate { get; set; }
+        public long Id { get; set; }
+        public bool IsAccesstionContainReviewedResult { get; set; }
+        public bool IsAnyReportNotClicked { get; set; }
+        public DisplayReportOption? DisplayReportOption { get; set; }
+        public List<ReportDTO> ReportDTOList { get; set; }
+    }
+    public class SearchModelDTO
+    {
+        public int TotalRecord { get; set; }
+        public string GeneralName { get; set; }
+        public List<AccessionResultDTO> AccessionResultDTOList { get; set; }
+    }
     class Program
     {
 
-
+        static void AddReportsToAccession(SearchModelDTO searchModelDTO)
+        {
+            if (searchModelDTO != null && searchModelDTO.AccessionResultDTOList != null && searchModelDTO.AccessionResultDTOList.Count > 0)
+            {
+                List<ReportDTO> reportDTOList = new List<ReportDTO>
+                    {
+                        new ReportDTO{AccessionId=100},
+                    };
+                searchModelDTO.AccessionResultDTOList.ForEach(c => c.ReportDTOList = reportDTOList.Where(x => x.AccessionId == c.Id)?.ToList());
+                searchModelDTO.AccessionResultDTOList.ForEach(c => c.IsAccesstionContainReviewedResult = reportDTOList.Any(x => x.AccessionId == c.Id && !string.IsNullOrEmpty(x.GoogleDriveUrl)));
+                searchModelDTO.AccessionResultDTOList.ForEach(c => c.IsAnyReportNotClicked = reportDTOList.Any(x => x.AccessionId == c.Id && !x.Report_clicked));
+            }
+        }
         static void Main(string[] args)
         {
-            // test.convertToPDF();
-            //string name = "321321.aspx";
-            //int num = int.Parse(name.Split('.')[0]);
-            //Console.WriteLine("---------MVC--------");
-            //EntryPoint.Start();
-            //Console.WriteLine("---------Dependency Inversion--------");
-            //Entrypoint1.run();
-
-
-
-            //Console.WriteLine("---------Repository--------");
-            //Start.run();
-
-            //Console.WriteLine("---------Mimic Webresult--------");
-            //StartUp.run();
-
-            //Console.WriteLine("---------MiddleWare--------");
-            ////test1.run();
-            ////test2.run();
-            //test3.run();
-            ////Soultion1.run();
-           // //FinalSolution.FinalSolution.run();
-           // string path = "c:\\logs,,";
-           // var values = path.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-           // Console.WriteLine(values.GetType());
-           // Console.WriteLine(values);
-           // var value2=path.Split(',');
-           // foreach (var item in values)
-           // {
-           //     Console.WriteLine(item);
-           // }
-            //var x = new DirectoryInfo("D:\\log2");
-            //Directory.Delete(x.FullName, true);
-            var url = "192.168.15.1:80";
-            var result = new Uri(new Uri(url), "/api/postlist/").AbsolutePath;
-            Console.WriteLine(result);
-            Console.ReadKey();
+            SearchModelDTO searchModelDTO = new SearchModelDTO
+            {
+                AccessionResultDTOList = new List<AccessionResultDTO>
+                {
+                    new AccessionResultDTO { AccNumber = 100 }
+                },
+                TotalRecord = 10,
+            };
+            AddReportsToAccession(searchModelDTO);
         }
     }
 }
