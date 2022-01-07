@@ -1,1 +1,1 @@
-Scaffold-DbContext "DataSource=.;Initial Catalog=FirstDB;Integrated Secutiry=True "Microsoft.EntityFrameworkCore.SqlServer -OutputDir Model
+Scaffold-DbContext "Data Source=.;Initial Catalog=FirstDB;Integrated Security=SSPI;Connection Timeout=30" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Model
