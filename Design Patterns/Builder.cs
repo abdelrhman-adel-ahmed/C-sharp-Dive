@@ -8,7 +8,7 @@ namespace Design_Patterns
 {
     class Builder
     {
-        //take the constrction part of a thing and sperate it from ites representation
+        //take the constrction part of a thing and sperate it from the representation or what you bulding
         public static void Run()
         {
             //QueryBuilder builder = new QueryBuilder();
