@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace WebApiCore
 {
+ 
     public class Program
     {
         public static void Main(string[] args)
