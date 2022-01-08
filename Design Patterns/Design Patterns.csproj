@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder.cs" />
     <Compile Include="DependencyInversion.cs" />
     <Compile Include="MiddleWare\FinalSolution.cs" />
     <Compile Include="MiddleWare\Soultion1.cs" />
