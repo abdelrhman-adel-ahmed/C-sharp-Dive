@@ -101,15 +101,19 @@ namespace Design_Patterns
         }
         static void Main(string[] args)
         {
-            SearchModelDTO searchModelDTO = new SearchModelDTO
-            {
-                AccessionResultDTOList = new List<AccessionResultDTO>
-                {
-                    new AccessionResultDTO { AccNumber = 100 }
-                },
-                TotalRecord = 10,
-            };
-            AddReportsToAccession(searchModelDTO);
+            // SearchModelDTO searchModelDTO = new SearchModelDTO
+            // {
+            //     AccessionResultDTOList = new List<AccessionResultDTO>
+            //     {
+            //         new AccessionResultDTO { AccNumber = 100 }
+            //     },
+            //     TotalRecord = 10,
+            // };
+            // AddReportsToAccession(searchModelDTO);
+
+            Console.WriteLine("builder design pattern ");
+            Builder.Run();
+            Console.ReadKey();
         }
     }
 }
