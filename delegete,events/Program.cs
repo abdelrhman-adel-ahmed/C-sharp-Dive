@@ -60,7 +60,7 @@ namespace delegete_events
             //Console.WriteLine("---------------student course observer-------------");
             //StudentCourse_observer.run();
             //Weather_News_observer.run();
-            StudentCourse_observer2.run();
+            //StudentCourse_observer2.run();
 
             //Console.WriteLine("---------------Viedo Encoder Event Delegate-------------");
             //VideoEncoder.run();
@@ -69,11 +69,8 @@ namespace delegete_events
             //t.mm += sub;
             //t.mm(1);
 
-            List<int> ss = new List<int>()
-            {
-                1,2,3,4
-            };
-            int[] s = new int[] { 1, 2, 3 };
+            test t = new test();
+
 
        
 
@@ -81,15 +78,8 @@ namespace delegete_events
 
         class test
         {
-            public Action<int> mm;
-            
+            string? x = null;
           
         }
-        static void sub(int x)
-        {
-            Console.WriteLine("ahmed");
-        }
-
-
     }
 }
