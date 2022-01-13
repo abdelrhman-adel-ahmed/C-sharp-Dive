@@ -26,11 +26,11 @@ namespace delegete_events
             //Console.WriteLine("------------------chaning delegete-------------------");
             //chaningDelegete.run();
 
-            Console.WriteLine("---------------multicastdelegate vs delegate-------------");
-            multicastdelegate_vs_delegate.run();
-
-            Console.WriteLine("---------------MulticastingWithParameters-------------");
-            MulticastingWithParameters.run();
+           //Console.WriteLine("---------------multicastdelegate vs delegate-------------");
+           //multicastdelegate_vs_delegate.run();
+           //
+           //Console.WriteLine("---------------MulticastingWithParameters-------------");
+           //MulticastingWithParameters.run();
             
             //Console.WriteLine("---------------generic delegate,func, action -------------");
             //generic_delegate_func_action.run();
@@ -69,16 +69,17 @@ namespace delegete_events
             //t.mm += sub;
             //t.mm(1);
 
-            test t = new test();
+            test t = null;
 
-
+            string yy = "ahmed" + t?.x;
+            Console.WriteLine(yy);
        
 
         }
 
         class test
         {
-            string? x = null;
+            public string x = null;
           
         }
     }
