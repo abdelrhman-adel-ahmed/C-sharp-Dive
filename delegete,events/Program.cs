@@ -4,6 +4,7 @@ using delegete_events.Delegate_Event;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace delegete_events
 {
@@ -69,14 +70,30 @@ namespace delegete_events
             //t.mm += sub;
             //t.mm(1);
 
-            test t = null;
+           // test t = null;
+           //
+           // string yy = "ahmed" + t?.x;
+           // Console.WriteLine(yy);
 
-            string yy = "ahmed" + t?.x;
-            Console.WriteLine(yy);
-       
+            string result= ConvertToBase64("abc");
+            Console.WriteLine(result);
+            Console.ReadKey();
+
 
         }
 
+
+        private static string ConvertToBase64(string data)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (char c in data.ToCharArray())
+            {
+                sb.Append(Convert.ToString(c, 2).PadLeft(8, '0'));
+            }
+            string binary = sb.ToString();
+            return binary;
+        }
         class test
         {
             public string x = null;
