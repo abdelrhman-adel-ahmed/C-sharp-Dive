@@ -27,12 +27,12 @@ namespace delegete_events
             //Console.WriteLine("------------------chaning delegete-------------------");
             //chaningDelegete.run();
 
-           //Console.WriteLine("---------------multicastdelegate vs delegate-------------");
-           //multicastdelegate_vs_delegate.run();
-           //
-           //Console.WriteLine("---------------MulticastingWithParameters-------------");
-           //MulticastingWithParameters.run();
-            
+            //Console.WriteLine("---------------multicastdelegate vs delegate-------------");
+            //multicastdelegate_vs_delegate.run();
+            //
+            //Console.WriteLine("---------------MulticastingWithParameters-------------");
+            //MulticastingWithParameters.run();
+
             //Console.WriteLine("---------------generic delegate,func, action -------------");
             //generic_delegate_func_action.run();
 
@@ -70,19 +70,30 @@ namespace delegete_events
             //t.mm += sub;
             //t.mm(1);
 
-           // test t = null;
-           //
-           // string yy = "ahmed" + t?.x;
-           // Console.WriteLine(yy);
+            // test t = null;
+            //
+            // string yy = "ahmed" + t?.x;
+            // Console.WriteLine(yy);
 
-            string result= ConvertToBase64("abc");
-            Console.WriteLine(result);
+            var container = new SomeContainer();
+
+            var range = Enumerable.Range(0, 10);
+
+            foreach (var item in range)
+                container.SomeNumbers.GetType().GetProperty("SomeNumbers").GetGetMethod().Invoke(container,null);
+            Console.WriteLine(container.SomeNumbers.Count);
             Console.ReadKey();
 
 
         }
 
+        public class SomeContainer
 
+        {
+
+            public List<int> SomeNumbers => new List<int>();
+
+        }
         private static string ConvertToBase64(string data)
         {
             StringBuilder sb = new StringBuilder();
