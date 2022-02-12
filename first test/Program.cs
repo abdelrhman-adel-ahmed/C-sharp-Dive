@@ -1,10 +1,5 @@
 ﻿using System;
-using System.IO;
-using genericss;
 using System.Collections;
-using System.Collections.Generic;
-using first_test.Test_LDM;
-using System.Reflection;
 
 namespace first_test
 {
@@ -18,8 +13,35 @@ namespace first_test
         }
     }
    
+    public interface IBaseDto
+    {
+        public int age { get; set; }
+        public int name { get; set; }
+    }
+    public interface ICUstome: IBaseDto
+    {
+        public int add1 { get; set; }
+        public int add2 { get; set; }
+    }
 
+    public class BaseDTO : IBaseDto
+    {
+        public int age { get; set; }
+        public int name { get; set; }
+    }
+    public  class CustomeDTO :BaseDTO , ICUstome
+    {
+        public int add1 { get; set; }
+        public int add2 { get; set; }
+    }
 
+    public class Dal
+    {
+        public static void rrr(ICUstome b)
+        {
+            Console.WriteLine(b.add1);
+        }
+    }
     class Program
     {
 
@@ -511,12 +533,17 @@ namespace first_test
             //    Console.WriteLine($"dsa {x}");
 
 
-           var listOFproperties = typeof(TestCach).GetProperties();
-            foreach (PropertyInfo item in listOFproperties)
-            {
-               var value= item.GetGetMethod().Invoke(null,null);
-            }
+            //var listOFproperties = typeof(TestCach).GetProperties();
+            // foreach (PropertyInfo item in listOFproperties)
+            // {
+            //    var value= item.GetGetMethod().Invoke(null,null);
+            // }
+            // decimal UsedSpace = 103999892M;
+            // decimal totalspace = 2147483648M;
+            // Console.WriteLine((UsedSpace / totalspace) *100);
 
+            CustomeDTO b = new CustomeDTO { age = 1, name = 2,add1=1,add2=3 };
+            Dal.rrr(b);
 
         }
 
