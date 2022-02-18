@@ -4,17 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Diagnostics;
-using System.Net;
 using System.Threading;
+
 namespace AsyncTest
 {
     /// <summary>
@@ -42,7 +34,7 @@ namespace AsyncTest
             var timeTaken = watch.ElapsedMilliseconds;
             resultWindow.Text += $"Total time to of execution is: {timeTaken} {Environment.NewLine}";
         }
-       public  async Task RunDownloadAsync(IProgress<ProgressReportModel> Progress)
+       public async Task RunDownloadAsync(IProgress<ProgressReportModel> Progress)
         {
             List<string> websites = HelperMethods.PrepData();
             ProgressReportModel report = new ProgressReportModel();
@@ -60,7 +52,8 @@ namespace AsyncTest
         private async void AsyncExec_Click(object sender, RoutedEventArgs e)
         {
             ThreadNumTextBox.Text = "";
-            var watch = Stopwatch.StartNew();
+            resultWindow.Text = " ";
+            Stopwatch watch = Stopwatch.StartNew();
             Progress<ProgressReportModel> progress = new Progress<ProgressReportModel>();
             progress.ProgressChanged += ReportProgress;
             ThreadNumTextBox.Text += $"async contoller before await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
@@ -68,7 +61,7 @@ namespace AsyncTest
             ThreadNumTextBox.Text += $"async contoller after await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
 
             watch.Stop();
-            var timeTaken = watch.ElapsedMilliseconds;
+            long timeTaken = watch.ElapsedMilliseconds;
             resultWindow.Text += $"Total time to of execution is: {timeTaken}";
         }
 
@@ -81,6 +74,7 @@ namespace AsyncTest
         private async void ParallelExecuteAsync_Click(object sender, RoutedEventArgs e)
         {
             ThreadNumTextBox.Text = "";
+            resultWindow.Text = " ";
             var watch = Stopwatch.StartNew();
 
             ThreadNumTextBox.Text += $"async contoller before await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
@@ -100,7 +94,6 @@ namespace AsyncTest
                 resultWindow.Text += $"{result.websiteUrl} Downloaded: {result.websiteData.Length} Charachters long. " +
                         $"{Environment.NewLine}";
             }
-
         }
         private  void ReportWebSiteInfo(WebSiteDTO result)
         {

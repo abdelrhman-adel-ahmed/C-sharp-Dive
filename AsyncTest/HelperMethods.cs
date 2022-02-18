@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net;
-using System.Text;
+using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace AsyncTest
 {
-    public class HelperMethods
+    public class HelperMethods : Window
     {
         public static async Task<List<WebSiteDTO>> RunDownloadAsyncParallel()
         {
@@ -21,7 +22,7 @@ namespace AsyncTest
             {
                 tasks.Add(Task.Run(() => DownLoadWebSiteAsync(website)));
             }
-            var results = await Task.WhenAll(tasks);
+            WebSiteDTO[] results = await Task.WhenAll(tasks);
             return new List<WebSiteDTO>(results);
         }
 
@@ -56,13 +57,19 @@ namespace AsyncTest
 
 
 
-        public static WebSiteDTO DownLoadWebSiteAsync(string websiteUrl)
+        public async static Task<WebSiteDTO> DownLoadWebSiteAsync(string websiteUrl)
         {
             WebSiteDTO output = new WebSiteDTO();
-            WebClient clinet = new WebClient();
+            HttpClient clinet = new HttpClient();
 
+            System.Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
             output.websiteUrl = websiteUrl;
-            output.websiteData = clinet.DownloadString(websiteUrl);
+            HttpResponseMessage message = await clinet.GetAsync(websiteUrl);
+            System.Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+
+            output.websiteData = await message.Content.ReadAsStringAsync();
+            System.Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+
 
             return output;
         }

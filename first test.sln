@@ -52,7 +52,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmpolyeeAuthServiceApi", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "concurrency and parallelism", "concurrency and parallelism\concurrency and parallelism.csproj", "{01B62806-6823-416A-9128-11E84E2CA1A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiffrentHttpLibInCsharp", "DiffrentHttpLibInCsharp\DiffrentHttpLibInCsharp.csproj", "{A2B0EB9A-3AD0-4371-8FED-52B0043C177A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiffrentHttpLibInCsharp", "DiffrentHttpLibInCsharp\DiffrentHttpLibInCsharp.csproj", "{A2B0EB9A-3AD0-4371-8FED-52B0043C177A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncTest", "AsyncTest\AsyncTest.csproj", "{62B99667-BECB-44C2-91AF-36FA7DD0BD67}"
 EndProject
@@ -62,7 +62,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiCore", "WebApiCore\We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsServiceTest1", "WindowsServiceTest1\WindowsServiceTest1.csproj", "{8EB811B2-6520-4D29-A480-D649B81EB100}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scaffoldingDbUsingEfCore", "scaffoldingDbUsingEfCore\scaffoldingDbUsingEfCore.csproj", "{CF006151-6654-430F-9B20-23B6AAD758A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "scaffoldingDbUsingEfCore", "scaffoldingDbUsingEfCore\scaffoldingDbUsingEfCore.csproj", "{CF006151-6654-430F-9B20-23B6AAD758A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async Programming", "Async Programming\Async Programming.csproj", "{B7CFA480-05AC-4007-89DA-01A6151488BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -182,6 +184,10 @@ Global
 		{CF006151-6654-430F-9B20-23B6AAD758A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF006151-6654-430F-9B20-23B6AAD758A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF006151-6654-430F-9B20-23B6AAD758A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7CFA480-05AC-4007-89DA-01A6151488BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7CFA480-05AC-4007-89DA-01A6151488BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7CFA480-05AC-4007-89DA-01A6151488BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7CFA480-05AC-4007-89DA-01A6151488BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
