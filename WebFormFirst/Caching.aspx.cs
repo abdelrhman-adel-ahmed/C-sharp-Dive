@@ -15,18 +15,19 @@ namespace WebFormFirst
         }
         protected void LoadData_Click(object sender, EventArgs e)
         {
-          string cs = ConfigurationManager.ConnectionStrings["firstdb"].ConnectionString;
-          using (SqlConnection conn = new SqlConnection(cs))
-          {
-              SqlDataAdapter da = new SqlDataAdapter("select * from tblemployees", conn);
-              DataSet ds = new DataSet();
-              da.Fill(ds);
-              GridView1.DataSource = ds;
-              GridView1.DataBind();
-              Label1.Text = DateTime.Now.ToString();
-          }
+            string cs = ConfigurationManager.ConnectionStrings["firstdb"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(cs))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("select * from tblemployees", conn);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                GridView1.DataSource = ds;
+                GridView1.DataBind();
+                Label1.Text = DateTime.Now.ToString();
+            }
         }
-      
+
 
         protected void ClearCach_Click(object sender, EventArgs e)
         {

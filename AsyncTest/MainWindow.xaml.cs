@@ -42,24 +42,29 @@ namespace AsyncTest
             var timeTaken = watch.ElapsedMilliseconds;
             resultWindow.Text += $"Total time to of execution is: {timeTaken} {Environment.NewLine}";
         }
-       public  async Task RunDownloadAsync(IProgress<string> Progress)
+       public  async Task RunDownloadAsync(IProgress<ProgressReportModel> Progress)
         {
             List<string> websites = HelperMethods.PrepData();
+            ProgressReportModel report = new ProgressReportModel();
 
             foreach (var website in websites)
             {
                 WebSiteDTO result = await Task.Run(() => HelperMethods.DownLoadWebSiteAsync(website));
-                ReportWebSiteInfo(result);
-                Progress.Report()
+
+                report.SiteDownloaded = result;
+                report.PercentageCompleted += 100 / websites.Count;
+                Progress.Report(report);
+                //ReportWebSiteInfo(website);
             }
         }
         private async void AsyncExec_Click(object sender, RoutedEventArgs e)
         {
             ThreadNumTextBox.Text = "";
             var watch = Stopwatch.StartNew();
-
+            Progress<ProgressReportModel> progress = new Progress<ProgressReportModel>();
+            progress.ProgressChanged += ReportProgress;
             ThreadNumTextBox.Text += $"async contoller before await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
-            await RunDownloadAsync();
+            await RunDownloadAsync(progress);
             ThreadNumTextBox.Text += $"async contoller after await thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
 
             watch.Stop();
@@ -67,6 +72,11 @@ namespace AsyncTest
             resultWindow.Text += $"Total time to of execution is: {timeTaken}";
         }
 
+        private void ReportProgress(object sender, ProgressReportModel e)
+        {
+            dashboardprogress.Value = e.PercentageCompleted;
+            ReportWebSiteInfo(e.SiteDownloaded);
+        }
 
         private async void ParallelExecuteAsync_Click(object sender, RoutedEventArgs e)
         {
@@ -94,7 +104,8 @@ namespace AsyncTest
         }
         private  void ReportWebSiteInfo(WebSiteDTO result)
         {
-                resultWindow.Text += $"{result.websiteUrl} Downloaded: {result.websiteData.Length} Charachters long. " +
+            //resultWindow.Text = " ";
+            resultWindow.Text += $"{result.websiteUrl} Downloaded: {result.websiteData.Length} Charachters long. " +
                         $"{Environment.NewLine}";
         }
     }

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace AsyncTest
 {
-    class ProgressReportModel
+   public class ProgressReportModel
     {
         public int PercentageCompleted { get; set; } = 0;
-        public List<WebSiteDTO> SiteDownloaded { get; set; } = new List<WebSiteDTO>();
+        public WebSiteDTO SiteDownloaded { get; set; } = new WebSiteDTO();
     }
 }

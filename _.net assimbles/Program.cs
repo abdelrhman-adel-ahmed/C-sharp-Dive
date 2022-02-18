@@ -11,12 +11,18 @@ namespace _.net_assemblies
     {
         static void Main(string[] args)
         {
-            var frameworkPath = RuntimeEnvironment.GetRuntimeDirectory();
+           // var frameworkPath = RuntimeEnvironment.GetRuntimeDirectory();
+           //
+           // var cscPath = Path.Combine(frameworkPath, "csc.exe");
+           // Console.WriteLine(frameworkPath);  // C:\Windows\Microsoft.NET\Framework\v4.0.30319
+           // Console.WriteLine(cscPath);
+           // Console.ReadLine();
 
-            var cscPath = Path.Combine(frameworkPath, "csc.exe");
-            Console.WriteLine(frameworkPath);  // C:\Windows\Microsoft.NET\Framework\v4.0.30319
-            Console.WriteLine(cscPath);
+            string BackupRetention = "1";
+            int x = Convert.ToInt32((string.IsNullOrEmpty(BackupRetention) ? "0" : BackupRetention));
+            Console.WriteLine(x);
             Console.ReadLine();
+
         }
     }
 }
