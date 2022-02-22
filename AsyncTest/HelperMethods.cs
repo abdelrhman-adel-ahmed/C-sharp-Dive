@@ -62,17 +62,14 @@ namespace AsyncTest
             WebSiteDTO output = new WebSiteDTO();
             HttpClient clinet = new HttpClient();
 
-            System.Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+           
             output.websiteUrl = websiteUrl;
             HttpResponseMessage message = await clinet.GetAsync(websiteUrl);
-            System.Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
 
             output.websiteData = await message.Content.ReadAsStringAsync();
-            System.Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
-
 
             return output;
-        }
+        } 
         public static WebSiteDTO DownLoadWebSite(string websiteUrl)
         {
             WebSiteDTO output = new WebSiteDTO();

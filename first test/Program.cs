@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using IronPython.Hosting;
 
 namespace first_test
 {
@@ -542,9 +545,21 @@ namespace first_test
             // decimal totalspace = 2147483648M;
             // Console.WriteLine((UsedSpace / totalspace) *100);
 
-            CustomeDTO b = new CustomeDTO { age = 1, name = 2,add1=1,add2=3 };
-            Dal.rrr(b);
+            //CustomeDTO b = new CustomeDTO { age = 1, name = 2,add1=1,add2=3 };
+            //Dal.rrr(b);
 
+            //List<int> l1 = new List<int> { 1, 2, 3, 4 };
+            //List<int> l2 = new List<int> { 1, 2 };
+            //l1 = l1.Except(l2).ToList();
+            //foreach (var item in l1)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Console.ReadKey();
+
+            dynamic python = Python.CreateRuntime().UseFile("./calculator.py");
+            var calculator = python.Calculator;
+            Console.WriteLine(calculator.add(1,2));
         }
 
         //constrain that t is classone or inherete from class one ,and it has parameterless constructor

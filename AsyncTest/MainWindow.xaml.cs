@@ -15,11 +15,16 @@ namespace AsyncTest
     public partial class MainWindow : Window
     {
         HelperMethods HelperMethods = new HelperMethods();
+        public static MainWindow InstanceMainWindow = new MainWindow();
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        public void UpdateThreadText()
+        {
+            ThreadNumTextBox.Text += $"async contoller thread id: {Thread.CurrentThread.ManagedThreadId} {Environment.NewLine}";
+        }
         private void NormalExec_Click(object sender, RoutedEventArgs e)
         {
             //we have to problem with sync:
