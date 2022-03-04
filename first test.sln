@@ -68,6 +68,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Async Programming", "Async 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "benchMark", "benchMark\benchMark.csproj", "{510F67BF-C553-4BAE-8EB5-FCBFC17785B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutableAndImutableIndotNet", "MutableAndImutableIndotNet\MutableAndImutableIndotNet.csproj", "{CF9A8C62-7844-4B5F-9A43-EFA2B0E6980B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -194,6 +196,10 @@ Global
 		{510F67BF-C553-4BAE-8EB5-FCBFC17785B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{510F67BF-C553-4BAE-8EB5-FCBFC17785B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{510F67BF-C553-4BAE-8EB5-FCBFC17785B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF9A8C62-7844-4B5F-9A43-EFA2B0E6980B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9A8C62-7844-4B5F-9A43-EFA2B0E6980B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9A8C62-7844-4B5F-9A43-EFA2B0E6980B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9A8C62-7844-4B5F-9A43-EFA2B0E6980B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
