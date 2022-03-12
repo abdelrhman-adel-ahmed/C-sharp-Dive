@@ -70,7 +70,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "benchMark", "benchMark\benc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutableAndImutableIndotNet", "MutableAndImutableIndotNet\MutableAndImutableIndotNet.csproj", "{CF9A8C62-7844-4B5F-9A43-EFA2B0E6980B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutableAndImutableIndotNetCore", "MutableAndImutableIndotNetCore\MutableAndImutableIndotNetCore.csproj", "{9CF68995-9B10-4A21-8B7D-DCE1C4CE17D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutableAndImutableIndotNetCore", "MutableAndImutableIndotNetCore\MutableAndImutableIndotNetCore.csproj", "{9CF68995-9B10-4A21-8B7D-DCE1C4CE17D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
