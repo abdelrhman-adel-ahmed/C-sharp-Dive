@@ -556,12 +556,20 @@ namespace first_test
             //    Console.WriteLine(item);
             //}
             //Console.ReadKey();
-
+            
             dynamic python = Python.CreateRuntime().UseFile("./calculator.py");
             var calculator = python.Calculator;
             Console.WriteLine(calculator.add(1,2));
+            int x = 1;
+            ss(ref x) = 10;
         }
-
+        static ref int ss(ref int x)
+        {
+            ref int sss= ref x;
+            sss = 100;
+            int z = x;
+            return ref sss;
+        }
         //constrain that t is classone or inherete from class one ,and it has parameterless constructor
         static T product<T>() where T :  new()
         {
