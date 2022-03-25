@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CF9A8C62-7844-4B5F-9A43-EFA2B0E6980B}</ProjectGuid>
+    <ProjectGuid>{67218DC4-70C8-42BD-A3F1-4EDA8EA4D03C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MutableAndImutableIndotNet</RootNamespace>
-    <AssemblyName>MutableAndImutableIndotNet</AssemblyName>
+    <RootNamespace>BeforeFieldInitDotNET4</RootNamespace>
+    <AssemblyName>BeforeFieldInitDotNET4</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EAGER INITIALIZATION.cs" />
+    <Compile Include="LAZY.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="test1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -2,6 +2,9 @@
 using Containers_;
 using Containers_Ienumerable;
 using Containers_diff;
+using System.IO;
+using System.Text;
+
 namespace Containers
 {
 
@@ -21,25 +24,47 @@ namespace Containers
         }
     }
 
+
+    class test1
+    {
+        public int tt { get; }
+        public string ss { get; } = new string("Dsaddddddddd");
+
+        public test1(int x, string y)
+        {
+            Console.WriteLine(ss.GetHashCode());
+            tt = x;
+            ss = y;
+            Console.WriteLine(ss.GetHashCode());
+        }
+    }
+
     class Program
     {
+        static readonly string DBPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory ?? "", @"UploaderDB.db");
+
         static void Main(string[] args)
         {
-           
 
-            intfce b1 = new drivied2();
-            drived1 d = (drived1)b1;
-
-
+            Console.ReadKey();
+            using (var xpsConverter = new Xps2Image("multipage.xps"))
+{
+	var images = xpsConverter.ToBitmap(new Parameters
+	{
+		ImageType = ImageType.Png,
+		Dpi = 300
+	});
+}
             //Console.WriteLine("---------------arrays-------------------");
+            //
             //arrays.run();
-
+            //
             //Console.WriteLine("---------------IEnumeratorr-------------------");
             //IEnumeratorr.run();
-
+            //
             //Console.WriteLine("---------------IEnumerable_vs_IEnumerator-------------------");
             //IEnumerable_vs_IEnumerator.run();
-
+            //
             //Console.WriteLine("---------------IEnumerable_vs_IEnumerator2-------------------");
             //IEnumerable_vs_IEnumerator2.run();
 

@@ -53,6 +53,14 @@ namespace MutableAndImutableIndotNet
         }
         static void Main(string[] args)
         {
+            Console.WriteLine("---------------------------test1-------------------------------------");
+            //  var t = new test1(1,"dsa");
+            drivedFromImmutable naughty = new drivedFromImmutable(1);
+            UnsealedImmutable mmm = naughty;
+            Console.WriteLine(mmm); // note: base class can access the drived class override tostring method
+            naughty.otherValue = 100;
+            Console.WriteLine(mmm);
+            Console.WriteLine("-------------------------------------------------------------------------");
             ref readonly var x =ref tt();
             x[0] = 100;
             Console.WriteLine(ss[0]);

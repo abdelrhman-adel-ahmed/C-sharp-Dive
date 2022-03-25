@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Containers_Ienumerable
 {
@@ -66,6 +67,7 @@ namespace Containers_Ienumerable
             // IEnumerator can remember the state IEnumerable cannot
             IEnumerable<int> ienm = Ages;
             IEnumerator<int> iterator = Ages.GetEnumerator();
+            Task.Delay(10000);
             IterateFrom10to30(ref ienm);
 
         }

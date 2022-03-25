@@ -27,16 +27,16 @@ namespace DiffrentHttpLibInCsharp.Controllers
         public async Task<String> Get(string CityName)
         {
             string ApiKey = "879f31d0e4294ab7bb6181804212911";
-            var url = new Uri($"http://api.weatherapi.com/v1/current.json?key={ApiKey}&q={CityName}");
-            using (HttpClient httpclient = new HttpClient())
-            {
-                var x = new HttpContentHeaders();
-
-            System.Net.Http.Headers.HttpContentHeaders
-
-            var response = await httpclient.GetAsync(url);
-            return await response.Content.ReadAsStringAsync();
-            }
+            var url = new Uri($"http://api.weatherapi.com/v1/current.json?key={ApiKey}&q={CityName}"); 
+            // using (HttpClient httpclient = new HttpClient())
+          // {
+          //     var x = new HttpContentHeaders();
+          //
+          // System.Net.Http.Headers.HttpContentHeaders
+          //
+          // var response = await httpclient.GetAsync(url);
+          // return await response.Content.ReadAsStringAsync()
+          return "dsa";
         }
     }
 }

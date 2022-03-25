@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Containers_
 {
-    class List<T>:IEnumerable<T>
+    class List<T> : IEnumerable<T>
     {
         T[] arr = new T[6];
         int count;
@@ -15,13 +15,13 @@ namespace Containers_
                 Array.Resize(ref arr, arr.Length * 2);
             arr[count++] = item;
         }
-        
+
         public IEnumerator<T> GetEnumerator()
         {
             //in 99% we can just use yield return ,but if you want to write some logic inside the 
             //IEnumerator you can override the behaviour and do so
             return new MyIEnumerator(this);
- 
+
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -98,7 +98,7 @@ namespace Containers_
             //iterator.MoveNext();
             //Console.WriteLine(iterator.Current);
 
-            
+
             List<int> Ages = new List<int>()
             {
                 10,
