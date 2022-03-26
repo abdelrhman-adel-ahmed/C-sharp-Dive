@@ -1,0 +1,64 @@
+﻿<Window x:Class="WPFTest1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTest1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <!--<StackPanel HorizontalAlignment="Left" VerticalAlignment="center">
+        <Button Content="button" Width="50" Height="50" Click="Button_Click" >
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Foreground" Value="Blue"/>
+                    <Style.Triggers>
+                        --><!---Data trigger--><!--
+                        <DataTrigger Binding="{Binding ElementName=checkbox1 , Path=IsChecked}" Value="True">
+                            <Setter Property="Foreground" Value="Crimson"/>
+                        </DataTrigger>
+                        --><!--property trigger--><!--
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="Green"/>
+                            <Setter Property="FontWeight" Value="ExtraBold"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseCaptured" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <CheckBox Name="checkbox1" Content="clickme" Checked="checkbox1_Checked"></CheckBox>
+    </StackPanel>-->
+
+    <Grid>
+        <TextBlock Name="textblock1" Text="iam animated text block using event triggers" FontSize="18" HorizontalAlignment="center" VerticalAlignment="Center">
+
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="30"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="18"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+    </Grid>
+
+</Window>
