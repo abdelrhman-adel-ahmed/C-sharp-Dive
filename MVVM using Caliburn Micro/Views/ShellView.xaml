@@ -4,9 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM_using_Caliburn_Micro.Views"
-        mc:Ignorable="d"
-        Title="ShellView" Height="450" Width="800">
+        mc:Ignorable="d" FontSize="18" WindowStartupLocation="CenterScreen"
+        Title="ShellView" Height="300" Width="300">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <TextBlock  Text="{Binding Path=FullName, Mode=OneWay}" Grid.Row="0" Grid.Column="1"></TextBlock>
+        <TextBox MinWidth="100" x:Name="FirstName" Grid.Row="2" Grid.Column="1"></TextBox>
+        <TextBox MinWidth="100" x:Name="LastName" Grid.Row="2" Grid.Column="2"></TextBox>
+
     </Grid>
 </Window>
