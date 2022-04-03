@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BanqueMisrOnlinePayment.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -10,31 +11,37 @@ namespace GCC
     {
         static void Main(string[] args)
         {
+            HttpService.HttpPost<string>("https://localhost:44334/api/test/zrbo", "ddd");
             //System.Threading.Timer t = new System.Threading.Timer(TimerCallback, null, 0, 2000);
             //Timer t = new Timer();
             //t.Elapsed += TimerCallback1;
             //t.Interval = 2000;
             //t.Start();
             // test re = new test();
-            string xpspath = @"D:\XSP\12332311_1.xps";
-            string imagepath = @"D:\XSP\IMage\12332311_1.jpg";
-            string[] ssss = imagepath.Split('_');
+            //string xpspath = @"D:\XSP\12332311_1.xps";
+            //string imagepath = @"D:\XSP\IMage\12332311_1.jpg";
+            //string[] ssss = imagepath.Split('_');
+            //
+            //using (var xpsConverter = new Xps2Image(xpspath))
+            //{
+            //    IEnumerable<Bitmap> images = xpsConverter.ToBitmap(new Parameters
+            //    {
+            //        ImageType = ImageType.Png,
+            //        Dpi = 300,
+            //    });
+            //    foreach (var image in images)
+            //    {
+            //        var height = image.Height;
+            //        var widt = image.Width;
+            //        image.Save(imagepath);
+            //    }
+            //    long accnumber = GetAcessionNumberFromOutFileName(imagepath);
+            //}
+            string baseuri = "localhost:1222/api";
+            string ApiUrlResource = "/api/getshortUrl";
+             int UploaderSeq = baseuri.Equals(null) ? Convert.ToInt32(baseuri) : -1;
 
-            using (var xpsConverter = new Xps2Image(xpspath))
-            {
-                IEnumerable<Bitmap> images = xpsConverter.ToBitmap(new Parameters
-                {
-                    ImageType = ImageType.Png,
-                    Dpi = 300,
-                });
-                foreach (var image in images)
-                {
-                    var height = image.Height;
-                    var widt = image.Width;
-                    image.Save(imagepath);
-                }
-                long accnumber = GetAcessionNumberFromOutFileName(imagepath);
-            }
+                Console.WriteLine(baseuri+ ApiUrlResource);
             Console.ReadKey();
         }
 
