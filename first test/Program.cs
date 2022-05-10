@@ -453,25 +453,25 @@ namespace first_test
             //drivobj = (Conversion_dirve)baseobj; // alowed because base refrence drive object
 
 
-            //Console.WriteLine("-----------------conversion operator------------------");
-            //scoter sc = new scoter() {mileage= 12};
-            //carr ca = new carr() { mileage =1};
-            //ca = sc;
+           Console.WriteLine("-----------------conversion operator------------------");
+           scoter sc = new scoter() {mileage= 12};
+           carr ca = new carr() { mileage =1};
+           ca = sc;
 
-            //Console.WriteLine(ca.mileage);
-            //Console.WriteLine(sc.mileage);
+           Console.WriteLine(ca.mileage);
+           Console.WriteLine(sc.mileage);
 
-            ////Address addr = new Address();
-            ////ZipCode zip = new ZipCode("1234");
-            ////addr.ZipCode = zip;
-            ////Console.WriteLine(addr.ZipCode);
-            //Address addr = new Address();
-            //addr.ZipCode = (ZipCode)"1234"; 
-            //Console.WriteLine(addr.ZipCode);
-            //string zipp = addr.ZipCode;
-            //Console.WriteLine(zipp);
-            //if(addr is  Address)
-            //    Console.WriteLine("yse");
+           //Address addr = new Address();
+           //ZipCode zip = new ZipCode("1234");
+           //addr.ZipCode = zip;
+           //Console.WriteLine(addr.ZipCode);
+           Address addr = new Address();
+           addr.ZipCode = (ZipCode)"1234"; 
+           Console.WriteLine(addr.ZipCode);
+           string zipp = addr.ZipCode;
+           Console.WriteLine(zipp);
+           if(addr is  Address)
+               Console.WriteLine("yse");
 
             //Console.WriteLine("-----------------------");
 
@@ -557,11 +557,11 @@ namespace first_test
             //}
             //Console.ReadKey();
             
-            dynamic python = Python.CreateRuntime().UseFile("./calculator.py");
-            var calculator = python.Calculator;
-            Console.WriteLine(calculator.add(1,2));
-            int x = 1;
-            ss(ref x) = 10;
+           //dynamic python = Python.CreateRuntime().UseFile("./calculator.py");
+           //var calculator = python.Calculator;
+           //Console.WriteLine(calculator.add(1,2));
+           //int x = 1;
+           //ss(ref x) = 10;
         }
         static ref int ss(ref int x)
         {
