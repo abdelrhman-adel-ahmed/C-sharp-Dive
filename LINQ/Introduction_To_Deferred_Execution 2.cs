@@ -78,7 +78,7 @@ namespace LINQ
                         its just a lazy evaluation pipline,and the laziness * is in each stage
             */
 
-            IEnumerator<int> iterator = result4.GetEnumerator();
+            IEnumerator<int> iterator = result.GetEnumerator();
             while (iterator.MoveNext())
                 Console.WriteLine(iterator.Current);
 

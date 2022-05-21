@@ -15,8 +15,7 @@ namespace LINQ
             foreach (T item in collection)
             {
                 if (predicate(item))
-                {
-                    
+                {                  
                     yield return item;
                 }
             }
