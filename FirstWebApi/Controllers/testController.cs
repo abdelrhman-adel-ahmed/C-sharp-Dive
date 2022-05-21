@@ -74,6 +74,11 @@ namespace FirstWebApi.Controllers
             }
 
         }
+        [HttpPost]
+        public HttpResponseMessage zrbo([FromBody]string xxx)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, "dd");
+        }
         public HttpResponseMessage Delete(int id)
         {
 
