@@ -82,6 +82,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeforeFieldInitDotNET4", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM using Caliburn Micro", "MVVM using Caliburn Micro\MVVM using Caliburn Micro.csproj", "{DFA3B17F-7A8F-4625-AA79-AC1F0C4EF3B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTest1", "WPFTest1\WPFTest1.csproj", "{D350658E-BD1E-47F2-873C-D627F9227A51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{6A902AE9-9A9D-4F67-96C1-5870E3914CF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageConverter", "ImageConverter\ImageConverter.csproj", "{C18D811D-0961-4EAA-B447-02D366FB7C0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TDD", "TDD", "{836444BD-5B92-4AD9-BDEF-536CA4F2FA5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstTest", "FirstTest\FirstTest.csproj", "{2AD06B32-2787-4F38-A85A-9A76233FFA5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageResizer", "ImageResizer\ImageResizer.csproj", "{9CA0ABE1-475A-467C-A518-4B447885BCD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -236,9 +248,32 @@ Global
 		{DFA3B17F-7A8F-4625-AA79-AC1F0C4EF3B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFA3B17F-7A8F-4625-AA79-AC1F0C4EF3B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFA3B17F-7A8F-4625-AA79-AC1F0C4EF3B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D350658E-BD1E-47F2-873C-D627F9227A51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D350658E-BD1E-47F2-873C-D627F9227A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D350658E-BD1E-47F2-873C-D627F9227A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D350658E-BD1E-47F2-873C-D627F9227A51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A902AE9-9A9D-4F67-96C1-5870E3914CF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A902AE9-9A9D-4F67-96C1-5870E3914CF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A902AE9-9A9D-4F67-96C1-5870E3914CF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A902AE9-9A9D-4F67-96C1-5870E3914CF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C18D811D-0961-4EAA-B447-02D366FB7C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C18D811D-0961-4EAA-B447-02D366FB7C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C18D811D-0961-4EAA-B447-02D366FB7C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C18D811D-0961-4EAA-B447-02D366FB7C0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD06B32-2787-4F38-A85A-9A76233FFA5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD06B32-2787-4F38-A85A-9A76233FFA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD06B32-2787-4F38-A85A-9A76233FFA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD06B32-2787-4F38-A85A-9A76233FFA5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA0ABE1-475A-467C-A518-4B447885BCD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA0ABE1-475A-467C-A518-4B447885BCD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA0ABE1-475A-467C-A518-4B447885BCD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA0ABE1-475A-467C-A518-4B447885BCD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2AD06B32-2787-4F38-A85A-9A76233FFA5D} = {836444BD-5B92-4AD9-BDEF-536CA4F2FA5A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B0BF96B-25A6-4E7B-A043-84E9F7725E39}
