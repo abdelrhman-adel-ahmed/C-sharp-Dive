@@ -15,6 +15,14 @@ namespace AsyncTest
             //here we dont wait for any call we make them all in parrallel, but still we will wait untill all of them 
             //finishes to make call to ReportWebSiteInfo func ,so the total time we take is the time the longest request
             //take to finish 
+            byte[][] dsa = new byte[][]
+            {
+                new byte[]{1,2,3},
+                new byte[]{1,2,3},
+
+            };
+            List<byte[]> bb = new List<byte[]>(dsa);
+            
             List<string> websites = PrepData();
             List<Task<WebSiteDTO>> tasks = new List<Task<WebSiteDTO>>();
 
