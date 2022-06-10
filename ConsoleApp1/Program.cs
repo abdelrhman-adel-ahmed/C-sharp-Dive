@@ -10,9 +10,21 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-  
+
     class Program
     {
+        class t1
+        {
+            public string x = "t1 x";
+            public t2 t = new t2();
+        }
+        class t2
+        {
+            public string y ="t2 y";
+            public string z = "t2 z";
+            public int x = 100;
+        }
+
         static void dss(ref List<string> hh)
         {
             hh = null;
@@ -32,14 +44,13 @@ namespace ConsoleApp1
             //Action funcc = test.outerFunc();
             //funcc();
             List<string> hh = new List<string> { "123", "1231" };
+            t1 tt = new t1();
+            t1 ttt = tt;
+            tt.t.y = "zrboo";
+            tt.t.x = 200;
+            Console.WriteLine(ttt.t.y);
+            Console.WriteLine(ttt.t.x);
 
-        }
-        static void fff(testt t)
-        {
-            t = new testt();
-            t.y = new zzz();
-            t.y.sss = 200;
-            t.x = 100;
         }
         static async Task zz()
         {
@@ -67,6 +78,6 @@ namespace ConsoleApp1
             return innerFunc;
         }
     }
-  
+
 
 }
