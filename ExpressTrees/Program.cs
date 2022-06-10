@@ -33,9 +33,9 @@ namespace ExpressTrees
             //Building_Queries_at_Runtime.run();
 
 
-            Console.WriteLine("--------------Generic_vs_Non_Generic_Expression--------------------");
-            Generic_vs_Non_Generic_Expression.run();
-
+            //Console.WriteLine("--------------Generic_vs_Non_Generic_Expression--------------------");
+            //Generic_vs_Non_Generic_Expression.run();
+          
             
             Console.ReadLine();
         }

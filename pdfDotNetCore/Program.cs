@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Net.Sockets;
 
 namespace pdfDotNetCore
 {
@@ -24,17 +25,20 @@ namespace pdfDotNetCore
             {
                 pdfsAsBytes.Add(File.ReadAllBytes(path));
             }
+
             Merg(MergePDSharper, pdfsAsBytes, "pdfsharper","sharper.pdf");
             Merg(MergePDFsItextSharp, pdfsAsBytes, "ITextSharp","itext.pdf");
+
             Console.ReadKey();
         }
 
-        public static void Merg(Func<List<byte[]>, byte[]> func, List<byte[]> pdfsAsBytes, string MergLib,string outFileName)
+        public static void Merg(Func<List<byte[]>, byte[]> mergFunc, List<byte[]> pdfsAsBytes, string MergLib,string outFileName)
         {
             var watch = Stopwatch.StartNew();
-            byte[] mergedPdfs = func(pdfsAsBytes);
+            byte[] mergedPdfs = mergFunc(pdfsAsBytes);
             watch.Stop();
             Console.WriteLine($"Time Taken By {MergLib} dontNet = {watch.ElapsedMilliseconds} in Milliseconds");
+            Console.WriteLine($"Time Taken By {MergLib} dontNet = {watch.ElapsedTicks} in ticks");
             File.WriteAllBytes(@$"C:\Users\abdelrahman.adel\Desktop\{outFileName}", mergedPdfs);
 
         }
