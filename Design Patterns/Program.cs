@@ -111,25 +111,26 @@ namespace Design_Patterns
             //     TotalRecord = 10,
             // };
             // AddReportsToAccession(searchModelDTO);
-           //DateTime dateTime;
-           //string dateInStringFormat = "1/1/1980 12:00:00 AM";
-           //string formatType = "Long";
-           //if(!DateTime.TryParseExact(dateInStringFormat,
-           //                                GetDateFormate(), new CultureInfo("en-US"),
-           //                                DateTimeStyles.None, out dateTime))
-           //{
-           //
-           //}
-           //int xx = 86399;
-           //DateTime ss = new DateTime(Convert.ToDateTime("4/19/2022 1:33:41 AM"));
+            //DateTime dateTime;
+            //string dateInStringFormat = "1/1/1980 12:00:00 AM";
+            //string formatType = "Long";
+            //if(!DateTime.TryParseExact(dateInStringFormat,
+            //                                GetDateFormate(), new CultureInfo("en-US"),
+            //                                DateTimeStyles.None, out dateTime))
+            //{
+            //
+            //}
+            //int xx = 86399;
+            //DateTime ss = new DateTime(Convert.ToDateTime("4/19/2022 1:33:41 AM"));
             //var xxx = new Uri("https://kauws.kau.edu.sa/KAU_WS_WEBAPI/api/Labs/UpdateResults");
             //Console.WriteLine("builder design pattern ");
             //Builder.Run();
-            string x = "username = test & loginType = 2 & IsWebForm = True";
-            Console.WriteLine(x);
-            string[] qq = x.Split('&');
-
-            Console.WriteLine(qq);
+            // string x = "username = test & loginType = 2 & IsWebForm = True";
+            // Console.WriteLine(x);
+            // string[] qq = x.Split('&');
+            //
+            // Console.WriteLine(qq);
+            EntryPoint.Start();
             Console.ReadKey();
         }
         private static string GetDateFormate()
