@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EAGER INITIALIZATION.cs" />
+    <Compile Include="genericRepo.cs" />
+    <Compile Include="GetUrl.cs" />
+    <Compile Include="IgenericRepo.cs" />
     <Compile Include="LAZY.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -15,10 +15,11 @@ namespace Client
         {
             // IPHostEntry host = Dns.GetHostEntry("localhost");
             // UsingTcpClientDSL.UsingTcpClient();
-            // UsingSocket.UsingSockets();
+            
+            UsingSocket.UsingSockets();
 
            // ttt();
-           test();
+          // test();
 
         }
         private static void test()

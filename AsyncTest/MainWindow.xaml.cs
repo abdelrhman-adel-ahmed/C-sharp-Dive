@@ -56,6 +56,7 @@ namespace AsyncTest
         }
         private async void AsyncExec_Click(object sender, RoutedEventArgs e)
         {
+            TaskCompletionSource<int> ss = new TaskCompletionSource<int>();
             ThreadNumTextBox.Text = "";
             resultWindow.Text = " ";
             Stopwatch watch = Stopwatch.StartNew();

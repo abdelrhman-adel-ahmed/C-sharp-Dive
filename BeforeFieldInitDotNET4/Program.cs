@@ -10,29 +10,31 @@ namespace BeforeFieldInitDotNET4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("------------------------EAGER INITIALIZATION---------------------------");
-            //not workin as articale said !!
-            if (args.Length == 0)
-            {
-                Console.WriteLine("No args");
-            }
-            else
-            {
-                Eager.StaticMethod();
-            }
+            GetUrl url = new GetUrl();
+            url.getShortUrl();
+          //Console.WriteLine("------------------------EAGER INITIALIZATION---------------------------");
+          ////not workin as articale said !!
+          //if (args.Length == 0)
+          //{
+          //    Console.WriteLine("No args");
+          //}
+          //else
+          //{
+          //    Eager.StaticMethod();
+          //}
 
-            Console.WriteLine("------------------------Lazy INITIALIZATION---------------------------");
-
-            Console.WriteLine("Before static method");
-            Lazy.StaticMethod();
-            Console.WriteLine("Before construction");
-            Lazy lazy = new Lazy();
-            Console.WriteLine("Before instance method");
-            lazy.InstanceMethod();
-            Console.WriteLine("Before static method using field");
-            Lazy.StaticMethodUsingField();
-            Console.WriteLine("End");
-            Console.ReadKey();
+         //Console.WriteLine("------------------------Lazy INITIALIZATION---------------------------");
+         //
+         //Console.WriteLine("Before static method");
+         //Lazy.StaticMethod();
+         //Console.WriteLine("Before construction");
+         //Lazy lazy = new Lazy();
+         //Console.WriteLine("Before instance method");
+         //lazy.InstanceMethod();
+         //Console.WriteLine("Before static method using field");
+         //Lazy.StaticMethodUsingField();
+         //Console.WriteLine("End");
+         //Console.ReadKey();
            // Console.WriteLine("Starting Main");
            // // Invoke a static method on Test
            // Test.EchoAndReturn("Echo!");
