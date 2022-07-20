@@ -11,13 +11,13 @@ namespace CloudStorage
     {
         static void Main(string[] args)
         {
-            // MainDSL.FileUpload();
-            // Response<string> response =  zrboo("ahmed", Token());
-            while (true)
-            {
-                appsettings.zrb = ConfigurationManager.AppSettings["zrbo"];
-                Console.WriteLine(appsettings.zrb);
-            }
+            MainDSL.FileUpload();
+            //Response<string> response =  zrboo("ahmed", Token());
+            //while (true)
+            //{
+            //    appsettings.zrb = ConfigurationManager.AppSettings["zrbo"];
+            //    Console.WriteLine(appsettings.zrb);
+            //}
         }
 
         static string Token()

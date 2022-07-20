@@ -68,9 +68,10 @@ namespace CloudStorage
         }
         public static void FileUpload()
         {
+            int random = new Random().Next(0, 1000);
             UploadFileDTO file = new UploadFileDTO
             {
-                FileName = "test1",
+                FileName = $"test{random}",
                 FilePath = @"C:\Users\abdelrahman.adel\Downloads\sample.pdf",
                 FileType = "application/pdf"
             };
