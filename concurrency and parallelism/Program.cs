@@ -4,81 +4,71 @@ using concurrency_and_parallelism.Async;
 using concurrency_and_parallelism.Threading;
 using System.Threading;
 using System.IO;
+using concurrency_and_parallelism.SynchronizationTechnique;
 
 namespace concurrency_and_parallelism
 {
 
-    class test
-    {
-        public static void convertToPDF()
-        {
-            string xpsPath = "D:\\convertXpsToPdf\\xps\\example.xps";
-            string pdfPath = "D:\\convertXpsToPdf\\pdf";
-            using (PdfSharp.Xps.XpsModel.XpsDocument pdfXpsDoc = PdfSharp.Xps.XpsModel.XpsDocument.Open(xpsPath))
-            {
-                PdfSharp.Xps.XpsConverter.Convert(pdfXpsDoc, pdfPath, 0);
-            }
-        }
-    }
-
     class Program
     {
         static NoneBlockingQueue<int> s = new NoneBlockingQueue<int>();
-        static async Task Main(string[] args)
-        {
-            test.convertToPDF();
-            //Console.WriteLine("----------------AsyncMakeTea--------------------");
-            //await AsyncMakeTea.run();
-
-           // Console.WriteLine("----------------ListOfUrls Async--------------------");
-           // await ListOfUrls.run();
-           // SyncDownload.run();
-
-
-        }
-       // static void Main(string[] args)
+       // static async Task Main(string[] args)
        // {
+       //     //Console.WriteLine("----------------AsyncMakeTea--------------------");
+       //     //await AsyncMakeTea.run();
+       //
+       //     // Console.WriteLine("----------------ListOfUrls Async--------------------");
+       //     // await ListOfUrls.run();
+       //     // SyncDownload.run();
+       //
+       //
+       // }
+        static void Main(string[] args)
+        {
 
-            // ThreadOverHead.ThreadoverHead();
-
-            // Console.WriteLine("----------------Hello_World_Thread--------------------");
-            // Hello_World_Thread.run();
-
-            // Console.WriteLine("----------------Sync--------------------");
-            // Sync.run();
-
-            // Console.WriteLine("----------------Difference_Between_Background_and_Foreground_Thread--------------------");
-            // Difference_Between_Background_and_Foreground_Thread.run();
-
-            // Console.WriteLine("----------------Basic_Thread_Synchronization--------------------");
-            // Basic_Thread_Synchronization.run();
-
-            // Console.WriteLine("----------------AnotherSyncExample--------------------");
-            // AnotherSyncExample.run();
-
-            // Console.WriteLine("----------------LockKeyWord--------------------");
-            // LockKeyWord.run();
-
-
+            //ThreadOverHead.ThreadoverHead();
+            //
+            //Console.WriteLine("----------------Hello_World_Thread--------------------");
+            //Hello_World_Thread.run();
+            //
+            //Console.WriteLine("----------------Sync--------------------");
+            //Sync.run();
+            //
+            //Console.WriteLine("----------------Difference_Between_Background_and_Foreground_Thread--------------------");
+            //Difference_Between_Background_and_Foreground_Thread.run();
+            //
+            //Console.WriteLine("----------------Basic_Thread_Synchronization--------------------");
+            //Basic_Thread_Synchronization.run();
+            //
+            //Console.WriteLine("----------------AnotherSyncExample--------------------");
+            //AnotherSyncExample.run();
+            //
+            //Console.WriteLine("----------------LockKeyWord--------------------");
+            //LockKeyWord.run();
+            //
+            //
             //Console.WriteLine("----------------Divide_and_Conquer__1--------------------");
             //Divide_and_Conquer__1.run();
-
+            //
             //Console.WriteLine("----------------Divide_and_Conquer__2--------------------");
             //Divide_and_Conquer__2.run();
-
+            //
             //Console.WriteLine("----------------Producer_Consumer_1--------------------");
             //Producer_Consumer_1.run();
-
+            //
+            Console.WriteLine("----------------Locks--------------------");
+            Locks.Run();
             //Console.WriteLine("----------------ProducerConsumerImp1--------------------");
             //ProducerConsumerImp1.run();
-
-
-
-
+            //
             //Console.WriteLine("----------------NoneBlockingQueue--------------------");
             //new Thread(producerThread).Start();
             //new Thread(consumner).Start();
-      //  }
+
+            //Console.WriteLine("----------------SynchronizationTechnique--------------------");
+            //ResetEvents.Run();
+         
+        }
         static void addfive()
         {
             Console.WriteLine("five");
