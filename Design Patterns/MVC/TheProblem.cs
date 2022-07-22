@@ -8,7 +8,8 @@ namespace Design_Patterns.MVC
 {
     class TheProblem
     {
-       public static void run()
+        static List<object> list = new List<object>();
+        public static void run()
         {
             var uri = new Uri("http://localhost/home/index");
             Console.WriteLine(uri.AbsolutePath);
@@ -19,6 +20,10 @@ namespace Design_Patterns.MVC
                 //problem here is that we will have many if else for each rout we have (not s
             }
             typeof(TheProblem).Assembly.GetTypes().ToList().ForEach(x => Console.WriteLine(x));
+        }
+        static T get<T>(string key)
+        {
+            return (T)list[0];
         }
     }
 }
