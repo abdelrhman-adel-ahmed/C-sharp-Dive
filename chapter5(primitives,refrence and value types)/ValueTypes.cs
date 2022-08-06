@@ -47,7 +47,7 @@ namespace chapter5_primitives_refrence_and_value_types_
         {
             Point p1 = new Point(10, 10);
             Point p2 = new Point(20, 20);
-
+            p1.Equals(p2);
             // p1 does NOT get boxed to call ToString (a virtual method). 
             Console.WriteLine(p1.ToString());// "(10, 10)" 
             // p DOES get boxed to call GetType (a non-virtual method). 
@@ -68,11 +68,12 @@ namespace chapter5_primitives_refrence_and_value_types_
             // c does NOT get boxed because it already refers to a boxed Point. 
             // p2 does get boxed because CompareTo(Object) is called. 
             Console.WriteLine(c.CompareTo(p2));// "-1" 
-                                               // c is unboxed, and fields are copied into p2. 
+            // c is unboxed, and fields are copied into p2. 
             p2 = (Point)c;
             // Proves that the fields got copied into p2. 
             Console.WriteLine(p2.ToString());// "(10, 10)" 
-
+            int x = 10;
+            int y = 10;
             Console.ReadLine();
         }
     }

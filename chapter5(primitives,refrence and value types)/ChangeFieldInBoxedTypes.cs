@@ -39,6 +39,10 @@ namespace chapter5_primitives_refrence_and_value_types_.ChangeField
             Console.WriteLine(o);
             ((Point)o).Change(3, 3);
             Console.WriteLine(o);
+
+            ((Point)p).Change(4, 4);
+            Console.WriteLine(p);
+
             // Boxes p, changes the boxed object and discards it 
             ((IChangeBoxedPoint)p).Change(4, 4);
             Console.WriteLine(p);

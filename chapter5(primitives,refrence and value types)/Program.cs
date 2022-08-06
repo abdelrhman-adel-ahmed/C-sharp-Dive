@@ -14,8 +14,13 @@ namespace chapter5_primitives_refrence_and_value_types_
            // Console.WriteLine("ValueTypes");
            // ValueTypes.Run();
 
-            Console.WriteLine("Change Field in boxed value type doesnt reflect in the original value");
-            ChangeFieldInBoxedTypes.Run();
+          // Console.WriteLine("Change Field in boxed value type doesnt reflect in the original value");
+          // ChangeFieldInBoxedTypes.Run();
+
+            Console.WriteLine("Dynamic Not Safe");
+            DynamicNotSafeTypes.Run();
+
+            Console.ReadKey();
         }
 
     }
