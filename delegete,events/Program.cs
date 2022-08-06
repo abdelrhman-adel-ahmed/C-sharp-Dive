@@ -12,32 +12,32 @@ namespace delegete_events
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("--------------hellowrold----------------");
-            //Helloworld.run();
-
-            //Console.WriteLine("--------------target and method----------------");
-            //Method_and_Target.run();
-
-            //Console.WriteLine("--------------why delegete------------------");
-            //why_delegate.run();
-
-            //Console.WriteLine("------------------why delegete soultion-------------------");
-            //why_delegate_Solution.run();
-
-            //Console.WriteLine("------------------chaning delegete-------------------");
-            //chaningDelegete.run();
-
-            //Console.WriteLine("---------------multicastdelegate vs delegate-------------");
-            //multicastdelegate_vs_delegate.run();
+            // Console.WriteLine("--------------hellowrold----------------");
+            // Helloworld.run();
             //
-            //Console.WriteLine("---------------MulticastingWithParameters-------------");
-            //MulticastingWithParameters.run();
-
-            //Console.WriteLine("---------------generic delegate,func, action -------------");
-            //generic_delegate_func_action.run();
-
-            //Console.WriteLine("---------------delegate exceptions -------------");
-            //delegetechainandexcptions.run();
+            // Console.WriteLine("--------------target and method----------------");
+            // Method_and_Target.run();
+            //
+            // Console.WriteLine("--------------why delegete------------------");
+            // why_delegate.run();
+            //
+            // Console.WriteLine("------------------why delegete soultion-------------------");
+            // why_delegate_Solution.run();
+            //
+            // Console.WriteLine("------------------chaning delegete-------------------");
+            // chaningDelegete.run();
+            //
+            // Console.WriteLine("---------------multicastdelegate vs delegate-------------");
+            // multicastdelegate_vs_delegate.run();
+            // 
+            // Console.WriteLine("---------------MulticastingWithParameters-------------");
+            // MulticastingWithParameters.run();
+            //
+            // Console.WriteLine("---------------generic delegate,func, action -------------");
+            // generic_delegate_func_action.run();
+            //
+            // Console.WriteLine("---------------delegate exceptions -------------");
+            // delegetechainandexcptions.run();
 
             //Console.WriteLine("---------------lambda and anonymous function -------------");
             //lambda_and_anonymous.run();
@@ -66,6 +66,12 @@ namespace delegete_events
             //Console.WriteLine("---------------Viedo Encoder Event Delegate-------------");
             //VideoEncoder.run();
 
+            Console.WriteLine("---------------Covariance And Contravariance-------------");
+            Contravariance.Run1();
+            Contravariance h = new Contravariance();
+            
+            Contravariance.Run2();
+
             //test t = new test();
             //t.mm += sub;
             //t.mm(1);
@@ -75,13 +81,13 @@ namespace delegete_events
             // string yy = "ahmed" + t?.x;
             // Console.WriteLine(yy);
 
-            var container = new SomeContainer();
-
-            var range = Enumerable.Range(0, 10);
-
-            foreach (var item in range)
-                container.SomeNumbers.GetType().GetProperty("SomeNumbers").GetGetMethod().Invoke(container,null);
-            Console.WriteLine(container.SomeNumbers.Count);
+            // var container = new SomeContainer();
+            //
+            // var range = Enumerable.Range(0, 10);
+            //
+            // foreach (var item in range)
+            //     container.SomeNumbers.GetType().GetProperty("SomeNumbers").GetGetMethod().Invoke(container,null);
+            // Console.WriteLine(container.SomeNumbers.Count);
             Console.ReadKey();
 
 

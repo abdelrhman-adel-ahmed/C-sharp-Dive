@@ -16,8 +16,8 @@ namespace delegete_events
             d += sue;
             d();
             //this is equal to
-            //d = (mydelegate)Delegate.Combine(d ,new mydelegate(goo));
-            //d= (mydelegate)Delegate.Combine(d, new mydelegate(sue));
+            //d =(mydelegate)Delegate.Combine(d ,new mydelegate(goo));
+            //d= (mydelegate)Delegate.Combine(d ,new mydelegate(sue));
             foreach(mydelegate m in d.GetInvocationList())
             {
                 Console.WriteLine(m.Method);
