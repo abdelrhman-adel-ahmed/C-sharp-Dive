@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NT.SharedKernel.SSNCore">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\NT.SharedKernel.SSNCore\bin\Release\netstandard2.0\NT.SharedKernel.SSNCore.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.Shared.Entities">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\NT.SharedKernel.SSNCore\bin\Release\netstandard2.0\OracleWebResult.Shared.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.Shared.Enums">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\NT.SharedKernel.SSNCore\bin\Release\netstandard2.0\OracleWebResult.Shared.Enums.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.Shared.Helper">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\NT.SharedKernel.SSNCore\bin\Release\netstandard2.0\OracleWebResult.Shared.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.Shared.Interfaces">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\NT.SharedKernel.SSNCore\bin\Release\netstandard2.0\OracleWebResult.Shared.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.SqlHelper">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\OracleWebResult.SqlHelper\bin\Release\netstandard2.0\OracleWebResult.SqlHelper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

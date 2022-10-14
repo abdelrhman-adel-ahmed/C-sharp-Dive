@@ -23,7 +23,8 @@ namespace concurrency_and_parallelism
        //
        //
        // }
-        static void Main(string[] args)
+
+        static async Task Main(string[] args)
         {
 
             //ThreadOverHead.ThreadoverHead();
@@ -67,7 +68,7 @@ namespace concurrency_and_parallelism
 
             //Console.WriteLine("----------------SynchronizationTechnique--------------------");
             //ResetEvents.Run();
-         
+
         }
         static void addfive()
         {

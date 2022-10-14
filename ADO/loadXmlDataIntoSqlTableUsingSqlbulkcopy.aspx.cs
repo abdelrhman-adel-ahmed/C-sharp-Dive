@@ -39,7 +39,6 @@ namespace ADO
                     bc.ColumnMappings.Add("Name", "Name");
                     bc.ColumnMappings.Add("Location", "Location");
                     bc.WriteToServer(DtDept);
-
                 }
                 using (SqlBulkCopy bc = new SqlBulkCopy(conn))
                 {

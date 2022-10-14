@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="System.Security.Permissions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NT.SharedKernel.AppContainer">
+      <HintPath>D:\NTECH_Libraries\SharedKernalLibraries\NT.SharedKernel.AppContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="NT.SharedKernel.ExceptionHandling">
+      <HintPath>D:\NTECH_Libraries\SharedKernalLibraries\NT.SharedKernel.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="NT.SharedKernel.SSNCore">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\NT.SharedKernel.SSNCore\bin\Release\netstandard2.0\NT.SharedKernel.SSNCore.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.Shared.Entities">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\NT.SharedKernel.SSNCore\bin\Release\netstandard2.0\OracleWebResult.Shared.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.Shared.Enums">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\NT.SharedKernel.SSNCore\bin\Release\netstandard2.0\OracleWebResult.Shared.Enums.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.Shared.Helper">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\NT.SharedKernel.SSNCore\bin\Release\netstandard2.0\OracleWebResult.Shared.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.Shared.Interfaces">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\NT.SharedKernel.SSNCore\bin\Release\netstandard2.0\OracleWebResult.Shared.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.SqlHelper">
+      <HintPath>D:\CloneWebResultV.4\OracleWebResult.Shared\OracleWebResult.SqlHelper\bin\Release\netstandard2.0\OracleWebResult.SqlHelper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

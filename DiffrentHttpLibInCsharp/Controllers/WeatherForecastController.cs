@@ -22,6 +22,10 @@ namespace DiffrentHttpLibInCsharp.Controllers
         {
             _logger = logger;
         }
+        public IActionResult Zrbo(Data[] data)
+        {
+            return Ok("zrboo");
+        }
 
         [HttpGet]
         public async Task<String> Get(string CityName)
@@ -38,5 +42,11 @@ namespace DiffrentHttpLibInCsharp.Controllers
           // return await response.Content.ReadAsStringAsync()
           return "dsa";
         }
+    }
+
+    public class Data
+    {
+        public string Patient { get; set; }
+        public string Age { get; set; }
     }
 }

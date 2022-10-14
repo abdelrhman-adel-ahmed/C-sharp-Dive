@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C673ABDF-E95F-4621-89F6-AE68D522C9BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MM.DataServices.Client.Analyzer</RootNamespace>
+    <AssemblyName>MM.DataServices.Client.Analyzer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MM.Entities.Administration">
+      <HintPath>D:\NTECH_Libraries\MMLibraries\MM.Entities.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="MM.Entities.Client">
+      <HintPath>D:\NTECH_Libraries\MMLibraries\MM.Entities.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="MM.Enums.Administration">
+      <HintPath>D:\NTECH_Libraries\MMLibraries\MM.Enums.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="MM.IDataService.Administration">
+      <HintPath>D:\NTECH_Libraries\MMLibraries\MM.IDataService.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="MM.IDataService.Client">
+      <HintPath>D:\NTECH_Libraries\MMLibraries\MM.IDataService.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="MM.IDataService.Shared">
+      <HintPath>D:\NTECH_Libraries\MMLibraries\MM.IDataService.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="MM.IRepo.Administration">
+      <HintPath>D:\NTECH_Libraries\MMLibraries\MM.IRepo.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="MM.IRepo.Client">
+      <HintPath>D:\NTECH_Libraries\MMLibraries\MM.IRepo.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="MM.Shared.Classes">
+      <HintPath>D:\NTECH_Libraries\MMLibraries\MM.Shared.Classes.dll</HintPath>
+    </Reference>
+    <Reference Include="NT.SharedKernel.AppContainer">
+      <HintPath>D:\NTECH_Libraries\SharedKernalLibraries\NT.SharedKernel.AppContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="NT.SharedKernel.OracleHelper">
+      <HintPath>D:\NTECH_Libraries\SharedKernalLibraries\NT.SharedKernel.OracleHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalyzerDSL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Copy "$(TargetPath)" "$(MMLibraries)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

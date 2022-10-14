@@ -1,5 +1,4 @@
-﻿using NT.Integration.SharedKernel.OracleManagedHelper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -16,9 +15,24 @@ namespace ConsoleApp1
 
     class Program
     {
-
+        static void foo(StringBuilder sb )
+        {
+            sb.Append("zrnboo");
+            sb = null;
+        }
+        static void foo2(object a)
+        {
+            Console.WriteLine(a.GetType());
+        }
         static void Main(string[] args)
         {
+            foo2(2);
+            foo2("aa");
+            foo2(DateTime.Now);
+            StringBuilder ss = new StringBuilder().Append("heelo");
+            foo(ss);
+            Console.WriteLine(ss.ToString());
+            Console.ReadKey();
             try
             {
                 Console.WriteLine("Please enter Project Path");

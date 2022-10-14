@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Drive.v3" Version="1.57.0.2684" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="GoogleDriveAPI">
+      <HintPath>D:\NTECH_Product\CloneWebResultV.4\OracleWebresult.SharedModule\Shared\GoogleDriveAPI\bin\Debug\netstandard2.0\GoogleDriveAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.IDataService.Shared">
+      <HintPath>D:\NTECH_Product\CloneWebResultV.4\OracleWebresult.SharedModule\Shared\GoogleDriveAPI\bin\Debug\netstandard2.0\OracleWebResult.IDataService.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.Shared.Entities">
+      <HintPath>D:\NTECH_Product\CloneWebResultV.4\OracleWebresult.SharedModule\Shared\GoogleDriveAPI\bin\Debug\netstandard2.0\OracleWebResult.Shared.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.Shared.Enums">
+      <HintPath>D:\NTECH_Product\CloneWebResultV.4\OracleWebresult.SharedModule\Shared\GoogleDriveAPI\bin\Debug\netstandard2.0\OracleWebResult.Shared.Enums.dll</HintPath>
+    </Reference>
+    <Reference Include="OracleWebResult.Shared.Interfaces">
+      <HintPath>D:\NTECH_Product\CloneWebResultV.4\OracleWebresult.SharedModule\Shared\GoogleDriveAPI\bin\Debug\netstandard2.0\OracleWebResult.Shared.Interfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
